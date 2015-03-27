@@ -34,6 +34,28 @@ class WeeksDAO extends DAO {
 			return $result;
 		}
 		return [];
+	}
+
+	public function update($id, $data) {
+		$errors = $this->getValidationErrors($data);
+		if(empty($errors)) {
+			$sql = "UPDATE `KK_weeks` 
+							SET `day1_id` = :day1_id, 
+								`day2_id` = :day2_id,
+								`day3_id` = :day3_id,
+								`day4_id` = :day4_id
+							WHERE `id` = :id";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindValue(':day1_id', $data['day1_id']);
+			$stmt->bindValue(':day2_id', $data['day2_id']);
+			$stmt->bindValue(':day3_id', $data['day3_id']);
+			$stmt->bindValue(':day4_id', $data['day4_id']);
+			$stmt->bindValue(':id', $id);
+			if($stmt->execute()) {
+				return $this->selectById($id);
+			}
+		}
+		return false;
 	}	
 
 	public function selectByFormat($format) {
@@ -62,12 +84,10 @@ class WeeksDAO extends DAO {
 	public function insert($data) {
 		$errors = $this->getValidationErrors($data);
 		if(empty($errors)) {
-			$sql = "INSERT INTO `KK_weeks` (`artist`, `title`, `format`) 
-							VALUES (:artist, :title, :format)";
+			$sql = "INSERT INTO `KK_weeks` (`startDate`) 
+							VALUES (:startDate)";
 			$stmt = $this->pdo->prepare($sql);
-			$stmt->bindValue(':artist', $data['artist']);
-			$stmt->bindValue(':title', $data['title']);
-			$stmt->bindValue(':format', $data['format']);
+			$stmt->bindValue(':startDate', $data['startDate']);
 			if($stmt->execute()) {
 				$insertedId = $this->pdo->lastInsertId();
 				return $this->selectById($insertedId);
@@ -78,14 +98,8 @@ class WeeksDAO extends DAO {
 
 	public function getValidationErrors($data) {
 		$errors = array();
-		if(empty($data['artist'])) {
-			$errors['artist'] = 'field artist has no value';
-		}
-		if(empty($data['title'])) {
-			$errors['title'] = 'field title has no value';
-		}
-		if(empty($data['format'])) {
-			$errors['format'] = 'field format has no value';
+		if(empty($data['startDate'])) {
+			$errors['startDate'] = 'field startDate has no value';
 		}
 		return $errors;
 	}

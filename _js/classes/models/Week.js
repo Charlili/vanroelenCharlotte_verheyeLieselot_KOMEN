@@ -10,7 +10,7 @@ var Week = Backbone.Model.extend({
 
 	methodUrl: function(method){
 		//if method === read; = checken als het een GET is! 
-		if(method === "read" && this.email){
+		if(method === "read" && this.register){
 			this.urlRoot = "/MAIV/deelexamen/api/weeks/last/";
 			return;
 		}

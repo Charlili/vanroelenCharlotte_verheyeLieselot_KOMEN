@@ -24,6 +24,20 @@ class DaysDAO extends DAO {
 			return $result;
 		}
 		return [];
+	}
+
+	public function selectByUserId($id) {
+		$sql = "SELECT * 
+						FROM `KK_days` 
+						WHERE `user_id` = :id";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(':id', $id);
+		$stmt->execute();
+		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+		if($result){
+			return $result;
+		}
+		return [];
 	}	
 
 	public function selectByFormat($format) {
@@ -52,12 +66,12 @@ class DaysDAO extends DAO {
 	public function insert($data) {
 		$errors = $this->getValidationErrors($data);
 		if(empty($errors)) {
-			$sql = "INSERT INTO `KK_days` (`artist`, `title`, `format`) 
-							VALUES (:artist, :title, :format)";
+			$sql = "INSERT INTO `KK_days` (`week_id`, `user_id`, `date`) 
+							VALUES (:week_id, :user_id, :date)";
 			$stmt = $this->pdo->prepare($sql);
-			$stmt->bindValue(':artist', $data['artist']);
-			$stmt->bindValue(':title', $data['title']);
-			$stmt->bindValue(':format', $data['format']);
+			$stmt->bindValue(':week_id', $data['week_id']);
+			$stmt->bindValue(':user_id', $data['user_id']);
+			$stmt->bindValue(':date', $data['date']);
 			if($stmt->execute()) {
 				$insertedId = $this->pdo->lastInsertId();
 				return $this->selectById($insertedId);
@@ -68,14 +82,14 @@ class DaysDAO extends DAO {
 
 	public function getValidationErrors($data) {
 		$errors = array();
-		if(empty($data['artist'])) {
-			$errors['artist'] = 'field artist has no value';
+		if(empty($data['week_id'])) {
+			$errors['week_id'] = 'field week_id has no value';
 		}
-		if(empty($data['title'])) {
-			$errors['title'] = 'field title has no value';
+		if(empty($data['user_id'])) {
+			$errors['user_id'] = 'field user_id has no value';
 		}
-		if(empty($data['format'])) {
-			$errors['format'] = 'field format has no value';
+		if(empty($data['date'])) {
+			$errors['date'] = 'field date has no value';
 		}
 		return $errors;
 	}

@@ -10,9 +10,9 @@ $app->get('/days/?',function() use ($daysDAO){
 });
 
 //GET -> /days/:id
-$app->get('/days/:id/?', function($id) use ($daysDAO){
+$app->get('/days/:user_id/?', function($user_id) use ($daysDAO){
     header("Content-Type: application/json");
-    echo json_encode($daysDAO->selectById($id), JSON_NUMERIC_CHECK);
+    echo json_encode($daysDAO->selectByUserId($user_id), JSON_NUMERIC_CHECK);
     exit();
 });
 
