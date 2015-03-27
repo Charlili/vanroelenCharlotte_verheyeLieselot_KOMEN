@@ -1,0 +1,27 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/Users/charlili/.nvm/v0.10.33/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'bcrypt' ]
+2 info using npm@2.5.0
+3 info using node@v0.10.33
+4 verbose stack Error: Invalid name: "Komen Kaarten"
+4 verbose stack     at ensureValidName (/Users/charlili/.nvm/v0.10.33/lib/node_modules/npm/node_modules/normalize-package-data/lib/fixer.js:322:15)
+4 verbose stack     at Object.module.exports.fixNameField (/Users/charlili/.nvm/v0.10.33/lib/node_modules/npm/node_modules/normalize-package-data/lib/fixer.js:211:5)
+4 verbose stack     at /Users/charlili/.nvm/v0.10.33/lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js:30:38
+4 verbose stack     at Array.forEach (native)
+4 verbose stack     at normalize (/Users/charlili/.nvm/v0.10.33/lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js:29:15)
+4 verbose stack     at final (/Users/charlili/.nvm/v0.10.33/lib/node_modules/npm/node_modules/read-package-json/read-json.js:342:33)
+4 verbose stack     at then (/Users/charlili/.nvm/v0.10.33/lib/node_modules/npm/node_modules/read-package-json/read-json.js:126:33)
+4 verbose stack     at /Users/charlili/.nvm/v0.10.33/lib/node_modules/npm/node_modules/read-package-json/read-json.js:316:48
+4 verbose stack     at evalmachine.<anonymous>:207:20
+4 verbose stack     at OpenReq.Req.done (/Users/charlili/.nvm/v0.10.33/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:141:5)
+5 verbose cwd /Applications/MAMP/htdocs/MAIV/deelexamen
+6 error Darwin 13.4.0
+7 error argv "node" "/Users/charlili/.nvm/v0.10.33/bin/npm" "install" "bcrypt"
+8 error node v0.10.33
+9 error npm  v2.5.0
+10 error Invalid name: "Komen Kaarten"
+11 error If you need help, you may report this error at:
+11 error     <http://github.com/npm/npm/issues>
+12 verbose exit [ 1, true ]
