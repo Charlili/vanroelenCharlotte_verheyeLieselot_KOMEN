@@ -7,7 +7,7 @@ var HomeView = Backbone.View.extend({
 
 	template: template,
 
-	tagName: div,
+	tagName: 'div',
 
 	className: 'home-container',
 	
