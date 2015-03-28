@@ -96,19 +96,47 @@ body {
   box-sizing: border-box;
 }
 
-/* line 16, ../_scss/screen.scss */
-.home-container {
-  font-family: Aleoregular, sans-serif, Verdana;
+/* line 18, ../_scss/screen.scss */
+a:link {
+  text-decoration: none;
 }
-/* line 20, ../_scss/screen.scss */
+
+/* line 23, ../_scss/screen.scss */
+span {
+  display: none;
+}
+
+/* line 28, ../_scss/screen.scss */
+.default-input {
+  display: block;
+  margin: 10px auto;
+  color: #626262;
+  font-family: inherit;
+  width: 486px;
+  height: 68px;
+  padding: 10px;
+  font-size: 2.8em;
+  border: 3px solid #c2c2c2;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 39, ../_scss/screen.scss */
+.default-input:focus {
+  border-color: #949494;
+  outline: none;
+}
+
+/* line 49, ../_scss/screen.scss */
 .home-container h1 {
   background-image: url("../assets/home_header.png");
+  background-position: top center;
   background-repeat: no-repeat;
   width: 640px;
   height: 507px;
   display: block;
 }
-/* line 28, ../_scss/screen.scss */
+/* line 59, ../_scss/screen.scss */
 .home-container .info {
   background-image: url("../assets/info.png");
   background-repeat: no-repeat;
@@ -117,7 +145,7 @@ body {
   display: block;
   margin: 25px auto;
 }
-/* line 35, ../_scss/screen.scss */
+/* line 66, ../_scss/screen.scss */
 .home-container .info a {
   color: #FFFFFF;
   display: inline-block;
@@ -125,7 +153,7 @@ body {
   margin-top: 12px;
   font-size: 3em;
 }
-/* line 45, ../_scss/screen.scss */
+/* line 76, ../_scss/screen.scss */
 .home-container .register {
   display: block;
   background-image: url("../assets/kant-pattern2.jpg");
@@ -139,35 +167,16 @@ body {
   height: 120px;
   margin: 0px auto;
 }
-/* line 63, ../_scss/screen.scss */
+/* line 95, ../_scss/screen.scss */
+.home-container .email-input, .home-container .password-input {
+  width: 440px;
+}
+/* line 101, ../_scss/screen.scss */
 .home-container .login-p {
-  text-align: center;
-  color: #c2c2c2;
-  font-size: 2em;
   margin-top: 60px;
   margin-bottom: 20px;
 }
-/* line 71, ../_scss/screen.scss */
-.home-container .email-input, .home-container .password-input {
-  display: block;
-  margin: 10px auto;
-  color: #626262;
-  font-family: inherit;
-  width: 440px;
-  height: 68px;
-  padding: 10px;
-  font-size: 2.8em;
-  border: 3px solid #c2c2c2;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-/* line 82, ../_scss/screen.scss */
-.home-container .email-input:focus, .home-container .password-input:focus {
-  border-color: #949494;
-  outline: none;
-}
-/* line 88, ../_scss/screen.scss */
+/* line 106, ../_scss/screen.scss */
 .home-container .login-submit {
   color: #fff;
   font-family: inherit;
@@ -183,17 +192,219 @@ body {
   -webkit-border-radius: 8px;
   border-radius: 8px;
 }
-/* line 100, ../_scss/screen.scss */
+/* line 118, ../_scss/screen.scss */
 .home-container .login-submit:focus {
   outline: none;
 }
 
-/* line 108, ../_scss/screen.scss */
-a:link {
-  text-decoration: none;
+/* line 125, ../_scss/screen.scss */
+.gray-p {
+  text-align: center;
+  color: #c2c2c2;
+  font-size: 2.2em;
 }
 
-/* line 113, ../_scss/screen.scss */
-span {
-  display: none;
+/* line 136, ../_scss/screen.scss */
+.register-container h1 {
+  background-image: url("../assets/register_header.png");
+  background-repeat: no-repeat;
+  width: 640px;
+  height: 182px;
+  display: block;
+}
+/* line 144, ../_scss/screen.scss */
+.register-container .terug {
+  background-color: #6cbca3;
+  font-size: 2.6em;
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 15px 15px 17px 15px;
+  display: block;
+  width: 130px;
+  -moz-border-radius: 0px 4px 4px 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px 4px 4px 0px;
+  -moz-transform: translateY(-100px);
+  -ms-transform: translateY(-100px);
+  -webkit-transform: translateY(-100px);
+  transform: translateY(-100px);
+}
+/* line 154, ../_scss/screen.scss */
+.register-container .terug:before {
+  display: inline-block;
+  -moz-transform: translate(-5px, 5px);
+  -ms-transform: translate(-5px, 5px);
+  -webkit-transform: translate(-5px, 5px);
+  transform: translate(-5px, 5px);
+  width: 20px;
+  content: url("../assets/back-arrow.png");
+}
+/* line 162, ../_scss/screen.scss */
+.register-container .gray-p {
+  -moz-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  -webkit-transform: translateY(-50px);
+  transform: translateY(-50px);
+}
+/* line 167, ../_scss/screen.scss */
+.register-container .fieldset {
+  color: #6cbca3;
+  font-size: 2.8em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* line 172, ../_scss/screen.scss */
+.register-container .fieldset:before {
+  padding-right: 10px;
+  content: url("../assets/small-curl-left.png");
+}
+/* line 176, ../_scss/screen.scss */
+.register-container .fieldset:after {
+  padding-left: 10px;
+  content: url("../assets/small-curl-right.png");
+}
+/* line 183, ../_scss/screen.scss */
+.register-container .fieldset-woonplaats {
+  padding-top: 34px;
+}
+/* line 185, ../_scss/screen.scss */
+.register-container .fieldset-woonplaats:before {
+  padding-right: 10px;
+  content: url("../assets/long-curl-left.png");
+}
+/* line 189, ../_scss/screen.scss */
+.register-container .fieldset-woonplaats:after {
+  padding-left: 10px;
+  content: url("../assets/long-curl-right.png");
+}
+/* line 195, ../_scss/screen.scss */
+.register-container .town-input {
+  width: 138px;
+  margin: 0;
+  display: inline-block;
+}
+/* line 201, ../_scss/screen.scss */
+.register-container .use-location {
+  margin-top: 2px;
+  margin-left: 9px;
+  background-color: #6cbca3;
+  font-family: inherit;
+  color: #FFF;
+  border: none;
+  height: 66px;
+  width: 330px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 2.8em;
+}
+/* line 214, ../_scss/screen.scss */
+.register-container .use-location:before {
+  display: inline-block;
+  -moz-transform: translate(-10px, 5px);
+  -ms-transform: translate(-10px, 5px);
+  -webkit-transform: translate(-10px, 5px);
+  transform: translate(-10px, 5px);
+  height: 28px;
+  content: url("../assets/location.png");
+}
+/* line 222, ../_scss/screen.scss */
+.register-container .group {
+  width: 486px;
+  margin: 0px auto;
+}
+/* line 227, ../_scss/screen.scss */
+.register-container .photo-upload {
+  position: relative;
+  display: inline-block;
+  border: #ebebeb solid 1px;
+  width: 214px;
+  height: 214px;
+  font: normal 14px Myriad Pro, Verdana, Geneva, sans-serif;
+  color: #7f7f7f;
+  margin-top: 120px;
+  margin-left: 20px;
+  background: white;
+  background-size: 214px 214px;
+  background-image: url("../assets/upload-photo.png");
+}
+/* line 243, ../_scss/screen.scss */
+.register-container .photo-input {
+  -moz-appearance: none;
+  -o-appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+  height: 219px;
+  opacity: 0;
+}
+/* line 252, ../_scss/screen.scss */
+.register-container .frame {
+  position: relative;
+  z-index: -1;
+  background-image: url("../assets/frame2.png");
+  width: 289px;
+  height: 327px;
+  -moz-transform: translate(-40px, -73px);
+  -ms-transform: translate(-40px, -73px);
+  -webkit-transform: translate(-40px, -73px);
+  transform: translate(-40px, -73px);
+}
+/* line 262, ../_scss/screen.scss */
+.register-container .register-submit {
+  display: block;
+  margin-top: 100px;
+}
+/* line 267, ../_scss/screen.scss */
+.register-container .group-photo {
+  float: left;
+  margin-left: 84px;
+}
+/* line 272, ../_scss/screen.scss */
+.register-container .center {
+  width: 640px;
+  height: 400px;
+  margin: 0px auto;
+  overflow: hidden;
+}
+/* line 279, ../_scss/screen.scss */
+.register-container .photo-p-div {
+  float: right;
+  font-size: 2.4em;
+  width: 220px;
+  height: 100px;
+  margin-right: 50px;
+  -moz-transform: translateY(-150px);
+  -ms-transform: translateY(-150px);
+  -webkit-transform: translateY(-150px);
+  transform: translateY(-150px);
+}
+/* line 288, ../_scss/screen.scss */
+.register-container .photo-p {
+  display: block;
+  float: left;
+  color: #c2c2c2;
+}
+/* line 294, ../_scss/screen.scss */
+.register-container .register-submit {
+  display: block;
+  box-sizing: border-box;
+  background-image: url("../assets/kant-pattern2.jpg");
+  background-repeat: repeat-x;
+  font-size: 3.6em;
+  color: #FFF;
+  text-align: center;
+  letter-spacing: 1px;
+  padding-top: 14px;
+  border: none;
+  background-color: #6cbca3;
+  width: 440px;
+  height: 120px;
+  margin: 40px auto;
+  -moz-border-radius: 0px 0px 5px 5px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px 0px 5px 5px;
+}
+/* line 310, ../_scss/screen.scss */
+.register-container .register-submit:focus {
+  outline: none;
 }

@@ -13,13 +13,44 @@ body{
 
 *{box-sizing: border-box;}
 
+
+a{
+	&:link{
+		text-decoration: none;
+	}
+}
+
+span{
+	display: none;
+}
+
+
+.default-input{
+		display: block;
+		margin: 10px auto;
+		color: #626262;
+		font-family: inherit;
+		width: 486px;
+		height: 68px;
+		padding: 10px;
+		font-size: 2.8em;
+		border: 3px solid #c2c2c2;
+		@include border-radius(5px);
+		&:focus{
+			border-color: #949494;
+			outline: none;
+		}
+}
+
+
 .home-container{
 
-		font-family: Aleoregular, sans-serif, Verdana;
 
 	h1{
 		background-image: url('../assets/home_header.png');
+		background-position: top center;
 		background-repeat: no-repeat;
+
 		width: 640px;
 		height: 507px;
 		display: block;
@@ -44,7 +75,7 @@ body{
 
 	.register{
 		display: block;
-
+		
 		background-image: url('../assets/kant-pattern2.jpg');
 		background-repeat: repeat-x;
 		font-size: 3.6em;
@@ -60,29 +91,16 @@ body{
 
 	}
 
-	.login-p{
-		text-align: center;
-		color: #c2c2c2;
-		font-size: 2em;
-		margin-top: 60px;
-		margin-bottom: 20px;
+	
+	.email-input, .password-input{
+		
+		width: 440px;
+		
 	}
 
-	.email-input, .password-input{
-		display: block;
-		margin: 10px auto;
-		color: #626262;
-		font-family: inherit;
-		width: 440px;
-		height: 68px;
-		padding: 10px;
-		font-size: 2.8em;
-		border: 3px solid #c2c2c2;
-		@include border-radius(5px);
-		&:focus{
-			border-color: #949494;
-			outline: none;
-		}
+	.login-p{
+				margin-top: 60px;
+		margin-bottom: 20px;
 	}
 
 	.login-submit{
@@ -104,12 +122,193 @@ body{
 	}
 }
 
-a{
-	&:link{
-		text-decoration: none;
-	}
-}
+.gray-p{
+		text-align: center;
+		color: #c2c2c2;
+		font-size: 2.2em;
 
-span{
-	display: none;
+	}
+
+
+
+.register-container{
+
+	h1{
+		background-image: url('../assets/register_header.png');
+		background-repeat: no-repeat;
+		width: 640px;
+		height: 182px;
+		display: block;
+	}
+
+	.terug{
+		background-color: $green;
+		font-size: 2.6em;
+		color: #fff;
+		letter-spacing: 1px;
+		padding: 15px 15px 17px 15px;
+		display: block;
+		width: 130px;
+		@include border-radius(0px 4px 4px 0px);
+		@include transform(translateY(-100px));
+		&:before{
+			display: inline-block;
+			@include transform(translate(-5px, 5px));
+			width: 20px;
+			content: url('../assets/back-arrow.png');
+		}
+	}
+
+	.gray-p{
+				@include transform(translateY(-50px));
+
+	}
+
+	.fieldset{
+		color: $green;
+		font-size: 2.8em;
+		text-align: center;
+		margin-bottom: 20px;
+		&:before{
+			padding-right: 10px;
+			content: url('../assets/small-curl-left.png');
+		}
+		&:after{
+						padding-left: 10px;
+
+			content: url('../assets/small-curl-right.png');
+		}
+	}
+
+	.fieldset-woonplaats{
+		padding-top: 34px;
+		&:before{
+			padding-right: 10px;
+			content: url('../assets/long-curl-left.png');
+		}
+		&:after{
+			padding-left: 10px;
+			content: url('../assets/long-curl-right.png');
+		}
+	}
+
+	.town-input{
+		width: 138px;
+		margin: 0;
+		display: inline-block;
+	}
+
+	.use-location{
+		margin-top: 2px;
+		margin-left: 9px;
+		background-color: $green;
+		font-family: inherit;
+		color: #FFF;
+		border: none;
+		height: 66px;
+		width: 330px;
+		@include border-radius(5px);
+		//@include transform(translateY(-1px));
+		font-size: 2.8em;
+
+		&:before{
+			display: inline-block;
+			@include transform(translate(-10px, 5px));
+			height: 28px;
+			content: url('../assets/location.png')
+		}
+	}
+
+	.group{
+		width: 486px;
+		margin: 0px auto;
+	}
+
+	.photo-upload{
+		 position:relative;
+		    display:inline-block;    
+		    border:#ebebeb solid 1px;
+		    width:214px;
+		    height: 214px; 
+		    //padding: 4px 6px 4px 8px;
+		    font: normal 14px Myriad Pro, Verdana, Geneva, sans-serif;
+		    color: #7f7f7f;
+		    margin-top: 120px;
+		    margin-left: 20px;
+		    background:white;
+		    background-size: 214px 214px;
+		    background-image: url('../assets/upload-photo.png');
+	}
+
+	.photo-input{
+		-moz-appearance: none; 
+		-o-appearance: none; 
+		-webkit-appearance: none; 
+	    position:absolute;
+	    height: 219px;
+	    opacity:0; 
+	}
+
+	.frame{
+		position: relative;
+				z-index: -1;
+
+		background-image: url('../assets/frame2.png');
+		width: 289px;
+		height: 327px;
+		@include transform(translate(-40px, -73px));
+	}
+
+	.register-submit{
+		display: block;
+		margin-top: 100px;
+	}
+
+	.group-photo{
+		float: left;
+		margin-left: 84px;
+	}
+
+	.center{
+		width: 640px;
+		height: 400px;
+		margin: 0px auto;
+		overflow: hidden;
+	}
+
+	.photo-p-div{
+		float:right;
+		font-size: 2.4em;
+		width: 220px;
+		height: 100px;
+		margin-right: 50px;
+		@include transform(translateY(-150px));
+	}
+
+	.photo-p{
+		display: block;
+		float: left;
+		color: #c2c2c2;
+	}
+
+	.register-submit{
+		display: block;
+		box-sizing: border-box;
+		background-image: url('../assets/kant-pattern2.jpg');
+		background-repeat: repeat-x;
+		font-size: 3.6em;
+		color: #FFF;
+		text-align: center;
+		letter-spacing: 1px;
+		padding-top: 14px;
+		border: none;
+		background-color: $green;
+		width: 440px;
+		height: 120px;
+		margin: 40px auto;
+		@include border-radius(0px 0px 5px 5px);
+		&:focus{
+			outline: none;
+		}
+	}
 }
