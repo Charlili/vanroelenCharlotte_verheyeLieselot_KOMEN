@@ -42,6 +42,12 @@ $app->get('/users/:id/?'/*, authorize('user')*/, function($id) use ($usersDAO){
     exit();
 });
 
+$app->get('/week/users/:week_id/?'/*, authorize('user')*/, function($week_id) use ($usersDAO){
+    header("Content-Type: application/json");
+    echo json_encode($usersDAO->selectByWeek($week_id), JSON_NUMERIC_CHECK);
+    exit();
+});
+
 /*$app->get('/users/email/:email/?', function($email) use ($usersDAO){
     header("Content-Type: application/json");
 

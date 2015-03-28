@@ -5,12 +5,25 @@ var UserCollection = Backbone.Collection.extend({
 	model: User,
 	url: '/MAIV/deelexamen/api/users',
 
-	initialize: function(){
+	initialize: function(options){
+		if(options){
+			this.week_id = options.week_id;
+		}
 	},
 
 	//sorteren van users, .sort oproepen voor je je users rendert
-	comparator: function(user) {
+	/*comparator: function(user) {
 		return - user.get("id");
+	},*/
+
+	methodUrl: function(method){
+		//if method === read; = checken als het een GET is! 
+		if(method === "read" && this.week_id){
+			this.url = "/MAIV/deelexamen/api/week/users/" + this.week_id;
+			return;
+		}
+		this.url = '/MAIV/deelexamen/api/users/';
+
 	},
 
 	sync: function(method, model, options) {

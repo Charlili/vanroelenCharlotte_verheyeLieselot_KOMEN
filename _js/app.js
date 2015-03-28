@@ -10,13 +10,11 @@ Handlebars.registerHelper("formatDate", function(date) {
 Handlebars.registerHelper("formatWeek", function(date) {
 
     //return moment(date).format("MMMM, YYYY");
-    var day = date.getDate();
-    var m = date.getMonth();
+    var day = new Date(date).getDate();
+    var m = new Date(date).getMonth();
     var month = "";
 
-    var nextday =  new Date(day);
-    nextday.setDate(nextday.getDate() + 7);
-    nextday.getDate();
+    var nextday =  day + 7;
 
     switch(m){
         case 1: month= 'januari'; break;

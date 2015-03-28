@@ -38,6 +38,20 @@ class UsersDAO extends DAO {
 			return $result;
 		}
 		return [];
+	}
+
+	public function selectByWeek($week_id) {
+		$sql = "SELECT * 
+						FROM `KK_users` 
+						WHERE `week_id` = :week_id";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(':week_id', $week_id);
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		if($result){
+			return $result;
+		}
+		return [];
 	}	
 
 	public function selectByFormat($format) {

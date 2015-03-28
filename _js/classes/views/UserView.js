@@ -8,7 +8,7 @@ var UserView = Backbone.View.extend({
 
 	initialize: function(){
 			//view verwijderen:
-			this.listenTo(this.model, 'destroy', this.remove);
+			//this.listenTo(this.model, 'destroy', this.remove);
 	},
 
 	render: function(){
