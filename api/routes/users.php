@@ -31,7 +31,11 @@ $app->post('/me'/*, authorize('user')*/, function() use ($usersDAO){
 $app->get('/me'/*, authorize('user')*/, function(){
     header("Content-Type: application/json");
     //echo "sESSION";
-    echo json_encode($_SESSION['user']);
+    if(!empty($_SESSION['user'])){
+        echo json_encode($_SESSION['user'], JSON_NUMERIC_CHECK);
+    }else{
+        echo json_encode([]);
+    }
     exit();
 });
 
