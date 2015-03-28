@@ -10,7 +10,6 @@ var Application = Backbone.Router.extend({
 	routes: {
 		//pagina: functie
 		"home": "home",
-		/*"others/:other": "others",*/
 		"register": "register",
 		"waiting": "waiting",
 		"week": "week",
@@ -45,15 +44,6 @@ var Application = Backbone.Router.extend({
 		this.waiting = new WaitingView();
 		$('.container').append(this.waiting.render().el);
 	},
-
-	/*others: function(other){
-		this.empty();
-		this.others = new OtherView({
-			other: other
-		});
-		$('.container').append(this.others.render().el);
-
-	},*/
 
 	default: function(){
 		//trigger om overview functie uit te voeren. eerste argument gaat enkel url wijzigen.

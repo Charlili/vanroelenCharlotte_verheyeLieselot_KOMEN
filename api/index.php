@@ -20,32 +20,6 @@ require_once WWW_ROOT. "api" .DIRECTORY_SEPARATOR. 'routes' .DIRECTORY_SEPARATOR
 
 //unset($_SESSION['user']);
 
-
-// file: api/index.php
- // Add this to the top of the file
-
-/**
- * Quick and dirty login function with hard coded credentials (admin/admin)
- * This is just an example. Do not use this in a production environment
- */
-/*function login() {
-    if(!empty($_POST['email']) && !empty($_POST['password'])) {
-        // normally you would load credentials from a database. 
-        // This is just an example and is certainly not secure
-        if($_POST['email'] == 'admin' && $_POST['password'] == 'admin') {
-            $user = array("email"=>"admin", "name"=>"admin", "role"=>"user");
-            $_SESSION['user'] = $user;
-            echo json_encode($user);
-        }
-        else {
-            echo '{"error":{"text":"You shall not pass..."}}';
-        }
-    }
-    else {
-        echo '{"error":{"text":"Username and Password are required."}}';
-    }
-}*/
-
 $app->run();
 
 function authorize($role = "user") {

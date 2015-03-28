@@ -26,10 +26,6 @@ var User = Backbone.Model.extend({
     Backbone.Collection.prototype.sync.apply(this, arguments);
 	}
 
-	
-
-
-
 });
 
 module.exports = User;
