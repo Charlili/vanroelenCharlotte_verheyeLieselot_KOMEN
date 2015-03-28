@@ -1,12 +1,22 @@
 @import "compass/reset";
+@import "compass/css3";
+
 @import "fonts";
+
+$green: #6cbca3;
 
 body{
 	background: url('../assets/pattern.jpg');
-	font-family: Aleoregular, "Times New Roman", Verdana;
+	font-family: Aleoregular, sans-serif, Verdana;
+	font-size: 62.5%;
 }
 
+*{box-sizing: border-box;}
+
 .home-container{
+
+		font-family: Aleoregular, sans-serif, Verdana;
+
 	h1{
 		background-image: url('../assets/home_header.png');
 		background-repeat: no-repeat;
@@ -15,9 +25,88 @@ body{
 		display: block;
 	}
 
-	p{
+	.info{
 		background-image: url('../assets/info.png');
 		background-repeat: no-repeat;
+		width: 54px;
+		height: 54px;
+		display: block;
+		margin: 25px auto;
+		a{
+			color: #FFFFFF;
+			display: inline-block;
+			margin-left: 23px;
+			margin-top: 12px;
+			font-size: 3em;
+
+		}
+	}
+
+	.register{
+		display: block;
+
+		background-image: url('../assets/kant-pattern2.jpg');
+		background-repeat: repeat-x;
+		font-size: 3.6em;
+		color: #FFF;
+		text-align: center;
+
+		padding-top: 44px;
+
+		background-color: $green;
+		width: 440px;
+		height: 120px;
+		margin: 0px auto;
+
+	}
+
+	.login-p{
+		text-align: center;
+		color: #c2c2c2;
+		font-size: 2em;
+		margin-top: 60px;
+		margin-bottom: 20px;
+	}
+
+	.email-input, .password-input{
+		display: block;
+		margin: 10px auto;
+		color: #626262;
+		font-family: inherit;
+		width: 440px;
+		height: 68px;
+		padding: 10px;
+		font-size: 2.8em;
+		border: 3px solid #c2c2c2;
+		@include border-radius(5px);
+		&:focus{
+			border-color: #949494;
+			outline: none;
+		}
+	}
+
+	.login-submit{
+		color: #fff;
+		font-family: inherit;
+		border: none;
+		background-color: #ed564d;
+		display: block;
+		margin: 10px auto;
+		font-size: 3.6em;
+		width: 230px;
+		height: 85px;
+		text-align: center;
+		@include border-radius(8px);
+		&:focus{
+			outline: none;
+		}
+
+	}
+}
+
+a{
+	&:link{
+		text-decoration: none;
 	}
 }
 
