@@ -253,7 +253,7 @@ span{
 		position: relative;
 				z-index: -1;
 
-		background-image: url('../assets/frame2.png');
+		background-image: url('../assets/frame.png');
 		width: 289px;
 		height: 327px;
 		@include transform(translate(-40px, -73px));
@@ -334,4 +334,92 @@ span{
 		width: 146px;
 		margin: 7px auto;
 	}
+
+	.users{
+		width: 640px;
+		height: 780px;
+		margin: 0px auto;
+		overflow: auto;
+	}
+
+	li{
+		text-align: center;
+				float: left;
+
+				p{
+					font-family: Manustrial, sans-serif;
+					font-size: 3em;
+					color: #352725;
+					letter-spacing: 2px;
+				}
+
+	}
+
+	.frame1{
+		margin-left: 20px;
+		&:before{
+		 position: absolute;
+		 content: url('../assets/frame1.png');
+		}
+
+		.img-usr{
+			margin-top: 40px;
+			margin-left: 3px;
+			width: 260px;
+		}
+	}
+
+	.frame2{
+		margin-top: 40px;
+		margin-left: 30px;
+		&:before{
+		 position: absolute;
+		 content: url('../assets/frame2.png');
+		}
+
+		.img-usr{
+			margin-top: 50px;
+			margin-left: 15px;
+			width: 240px;
+		}
+	}
+
+	.frame3{
+		margin-top: 20px;
+		margin-left: 30px;
+		&:before{
+		 position: absolute;
+		 content: url('../assets/frame3.png');
+		}
+
+		.img-usr{
+			margin-top: 50px;
+			margin-left: 15px;
+			width: 230px;
+		}
+
+		p{
+			margin-top: 20px;
+		}
+	}
+
+	.ga-verder{
+			color: #fff;
+		font-family: inherit;
+		border: none;
+		background-color: #ed564d;
+		display: block;
+		margin: 10px auto;
+		padding-top: 24px;
+		font-size: 3.6em;
+		width: 230px;
+		height: 85px;
+		text-align: center;
+		@include border-radius(5px);
+		&:focus{
+			outline: none;
+		}
+	}
+	
+
 }
