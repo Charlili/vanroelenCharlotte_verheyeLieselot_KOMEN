@@ -66,13 +66,19 @@ var WeekView = Backbone.View.extend({
 	clickLink: function(e){
 		e.preventDefault();
 		Window.Application.navigate('week',{trigger:true});
+		
 	},
 
 	renderUser: function(model){
+		var active = false;
+		if(this.count <= this.week.get('currentDate')){
+			active = true;
+		}
 		var view = new WeekElView({
 			model: model,
 			startDate: this.week.get('startDate'),
-			count: this.count
+			count: this.count,
+			active: active	
 		});
 		this.count++;
 		this.$users.append(view.render().el);

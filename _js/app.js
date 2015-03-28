@@ -45,7 +45,7 @@ Handlebars.registerHelper("endDate", function(date) {
 });
 
 Handlebars.registerHelper("formatDate", function(date) {
-    var day= date.toString();
+    var day= date;
     if(date<10){day = "0"+ day;}
     return day;
 });

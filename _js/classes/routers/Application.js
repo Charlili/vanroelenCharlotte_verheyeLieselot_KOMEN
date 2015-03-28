@@ -1,5 +1,6 @@
 
 var HomeView = require('../views/HomeView.js');
+var DayView = require('../views/DayView.js');
 var WeekView = require('../views/WeekView.js');
 var RegisterView = require('../views/RegisterView.js');
 var WaitingView = require('../views/WaitingView.js');
@@ -13,6 +14,7 @@ var Application = Backbone.Router.extend({
 		"register": "register",
 		"waiting": "waiting",
 		"week": "week",
+		"day/:day": "day",
 		"*actions": "default"
 	},
 
@@ -43,6 +45,15 @@ var Application = Backbone.Router.extend({
 		this.empty();
 		this.waiting = new WaitingView();
 		$('.container').append(this.waiting.render().el);
+	},
+
+	day: function(id){
+		this.empty();
+		this.day = new DayView({
+			id: id
+		});
+		$('.container').append(this.day.render().el);
+
 	},
 
 	default: function(){
