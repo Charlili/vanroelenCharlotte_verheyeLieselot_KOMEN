@@ -22,7 +22,7 @@ var HomeView = Backbone.View.extend({
 		console.log("HomeView: login");
 		var error = false;
 		//validation checks
-		if(!this.errorInput()){
+		if(this.errorInput()){
 			error = true;
 		}		
 		if(!error){
@@ -70,7 +70,7 @@ var HomeView = Backbone.View.extend({
 	},
 
 	errorInput: function(){
-		console.log('error');
+		//console.log('error');
 		var error = false;
 		if(this.$el.find('.email-input').val() === ""){
 			this.$el.find('.email-input').addClass('error');
