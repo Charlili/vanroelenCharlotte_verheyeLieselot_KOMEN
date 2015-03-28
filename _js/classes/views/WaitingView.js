@@ -6,6 +6,9 @@ var WaitingView = Backbone.View.extend({
 
 
 	template: template,
+	tagName: 'div',
+	className: 'waiting-container',
+
 	
 	events: {
 		//'click .tweet': 'addUser',

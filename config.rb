@@ -5,7 +5,7 @@ require 'compass/import-once/activate'
 http_path = "/MAIV/deelexamen/"
 css_dir = "css"
 sass_dir = "_scss"
-images_dir = "assets/img"
+images_dir = "assets"
 javascripts_dir = "js"
 
 # You can select your preferred output style here (can be overridden via the command line):

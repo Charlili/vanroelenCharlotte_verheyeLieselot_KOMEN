@@ -10,6 +10,7 @@ var RegisterView = Backbone.View.extend({
 	template: template,
 	
 	tagName: 'div',
+	className: 'register-container',
 
 	events: {
 		'click .submit': 'addUser',

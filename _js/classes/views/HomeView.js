@@ -6,6 +6,10 @@ var template = require('../../../_hbs/home.hbs');
 var HomeView = Backbone.View.extend({
 
 	template: template,
+
+	tagName: div,
+
+	className: 'home-container',
 	
 	events: {
 		'click .login-submit': 'login'
