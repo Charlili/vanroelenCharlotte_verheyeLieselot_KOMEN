@@ -18,11 +18,11 @@ var HomeView = Backbone.View.extend({
 
 	login: function(e){
 		e.preventDefault();
+		this.hideErrors();
 		console.log("HomeView: login");
 		var error = false;
 		//validation checks
-		if(this.$el.find('input').val() === ""){
-			this.errorInput();
+		if(!this.errorInput()){
 			error = true;
 		}		
 		if(!error){
@@ -67,6 +67,31 @@ var HomeView = Backbone.View.extend({
 			console.log('[HomeView] Saved user to session');
 			Window.Application.navigate('waiting',{trigger:true});
 		});
+	},
+
+	errorInput: function(){
+		console.log('error');
+		var error = false;
+		if(this.$el.find('.email-input').val() === ""){
+			this.$el.find('.email-input').addClass('error');
+			error = true;
+		}
+		if(this.$el.find('.password-input').val() === ""){
+			this.$el.find('.password-input').addClass('error');
+			error = true;
+		}
+		return error;
+
+	},
+
+	hideErrors: function(){
+		console.log('hiding errors');
+		if(this.$el.find('.email-input').val() === ""){
+			this.$el.find('.email-input').removeClass('error');
+		}
+		if(this.$el.find('.password-input').val() === ""){
+			this.$el.find('.password-input').removeClass('error');
+		}
 	},
 
 	render: function(){

@@ -7,6 +7,35 @@ Handlebars.registerHelper("formatDate", function(date) {
 	return moment(date).format("MMMM, YYYY");
 });
 
+Handlebars.registerHelper("formatWeek", function(date) {
+
+    //return moment(date).format("MMMM, YYYY");
+    var day = date.getDate();
+    var m = date.getMonth();
+    var month = "";
+
+    var nextday =  new Date(day);
+    nextday.setDate(nextday.getDate() + 7);
+    nextday.getDate();
+
+    switch(m){
+        case 1: month= 'januari'; break;
+        case 2: month= 'februari'; break;
+        case 3: month= 'maart'; break;
+        case 4: month= 'april'; break;
+        case 5: month= 'mei'; break;
+        case 6: month= 'juni'; break;
+        case 7: month= 'juli'; break;
+        case 8: month= 'augustus'; break;
+        case 9: month= 'september'; break;
+        case 10: month= 'oktober'; break;
+        case 11: month= 'november'; break;
+        case 12: month= 'december'; break;
+    }
+    var string = day + " tot " + nextday + " " + month;
+    return string;
+});
+
 Handlebars.registerHelper("formatText", function(tweet) {
   return tweet.replace(/(\S*)/g,'<a href=\'#formats/$1\'>$1</a>')
 });
