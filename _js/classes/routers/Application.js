@@ -59,7 +59,7 @@ var Application = Backbone.Router.extend({
 		//trigger om overview functie uit te voeren. eerste argument gaat enkel url wijzigen.
 		//tweede moet de functie oproepen
 		this.navigate("home", {trigger: true});
-		console.log("hallo");
+		console.log("defaulting");
 		
 	}
 

@@ -16,10 +16,20 @@ var RegisterView = Backbone.View.extend({
 		'change .photo-input': 'previewImage'
 	},
 
+	initialize: function(){
+			this.week;
+			this.day;
+			this.user;
+	},
+
+	render: function(){
+		this.$el.html(this.template());
+		return this;
+	},
+
 	previewImage: function(e){
 		console.log('changed');
 		var file = this.checkFile();
-		//console.log(file);
 		if(file != false){
 			$('form').append(file);
 		}
@@ -62,6 +72,38 @@ var RegisterView = Backbone.View.extend({
 		return false;
 	},
 
+	addUser: function(e){
+		e.preventDefault();
+		console.log("RegisterView: addUser");
+		var error = false;
+		//validation checks
+		if(this.$el.find('input').val() === ""){
+			this.errorInput();
+			error = true;
+		}		
+		if(!error){
+			//check if photo is valid
+			var file = this.checkFile();
+			if(file != false){
+				//check of user bestaat
+				var exist = new User({email: this.$el.find('.email-input').val()});
+				exist.fetch({
+					success: function(model,response){
+						//console.log(response);
+						if(response.length === 0){
+							console.log('addUser: User doesnt exist. Time to create.!');
+							this.saveUser();
+						}else{
+							console.log('addUser: User exists! Dont create user!');
+						}
+					}.bind(this)
+				});				
+				//password hash via js?
+				//Becrypt opzoeken
+			}
+		}		
+	},
+
 	saveUser: function(){
 		this.user = new User({
 			name: this.$el.find('.name-input').val(),
@@ -71,108 +113,47 @@ var RegisterView = Backbone.View.extend({
      		 town: this.$el.find('.town-input').val()
 		});
 		this.user.save();
-		/*this.listenTo(this.user,'sync',this.getInfo);
-		console.log('User_id is '+this.user.get('id'));*/
-
-		this.listenTo(this.user,'sync',this.createWeek());
-
-		//get last week. If there is no week, create week.
-
-		
-
-
-		
-		/*user.fetch({
-			success: function(model,response){
-				//console.log(model,response);
-				if(response.length === 0){
-					console.log('User doesnt exist. Error!');
-					//this.createWeek();
-				}else{
-					console.log('User exists. No error!');
-					//console.log(user.get('id'));
-					var id = user.get('id');
-					console.log("id: "+id);
-					//check for last week and get id so we can add it to the user's week_id
-					var week_id;
-					var week = new Week({register: true});
-					//console.log(week);
-					//console.log(week[0].day3_id);
-					week.fetch({
-						success: function(model,response){
-							console.log(response);
-							if(response.length === 0){
-								console.log('Week doesnt exist. Error!');
-								//this.createWeek();
-							}else{
-								console.log('Week exists! No Error!');
-								 for(var i = 1; i <= 4; i++) {
-									var day_id = week.get('day'+i+'_id');
-									if(day_id === 0){
-										console.log('day'+i+' is empty. Filling it in.');
-
-										var dateDB =  new Date(week.get('startDate'));
-										dateDB.setDate(dateDB.getDate() + i);
-										dateDB.toDateString();
-
-										var day = new Day({
-											user_id: id,
-											week_id: week.get('id'),
-											date: dateDB
-										});
-										day.save();
-										console.log(day);
-										day.fetch({
-											success: function(model,response){
-												if(response.length === 0){
-													console.log('Day doesnt exist. Error!');
-												}else{
-													console.log('Day exists. No error!');
-													console.log(day.get('id'));
-													week.set('day'+i+'_id',day.get('id'));
-													console.log(week);
-													week.save();
-												}
-											}
-										});
-
-										if(i == 4){
-											//create empty new week
-											var newDateDB =  new Date(week.get('startDate'));
-												newDateDB.setDate(newDateDB.getDate() + 7);
-												newDateDB.toDateString();
-											var newWeek = new Week({
-												startDate: newDateDB
-											});
-											newWeek.save();
-										}
-										break;
-									}
-								}
-							}
-						}.bind(this)
-					});
-					
-				}
-			}
-		});*/
-		//var hash = bcrypt.hashSync(this.$el.find('.password-input').val(), 8);
-		//console.log(hash);
-
-		//goto new view
-		//Window.Application.navigate('overview',{trigger:true});
+		this.listenToOnce(this.user,'sync',this.createWeek);
+		//this.listenTo(this.user,'sync',this.addToSession);
 		
 	},
 
-	updateWeek: function(){
-		console.log("this.usersDay: "+this.usersDay);
-		console.log('day_id is: '+this.day.get('id'));
-		this.week.set('day'+this.usersDay+'_id',this.day.get('id'));
-		this.week.save();
-		Window.Application.navigate('loading',{trigger:true});
+	createWeek: function(){
+		//create new week and return week_id
+		var week = new Week({register: true});
+		week.fetch({
+			success: function(model,response){
+				console.log(response);
+				if(!response){
+					console.log('No week exists. Create new week!');
+					var date =  new Date('Sun Apr 05 2015');
+					date.setDate(date.getDate());
+					date.toDateString();
+					this.week = new Week({startDate: date});
+					console.log('this.week1 = '+ this.week);
+					this.week.save();
+				}else{
+					this.week = week;
+					console.log('this.week2 = '+ this.week);
+					this.week.save();
+				}
+				this.listenToOnce(this.week,'sync',this.updateUser);
+			}.bind(this)
+		});
+		
+	},
+
+	updateUser: function(){
+		console.log("updating user with week_id which is "+this.week.get('id'));
+		this.user.set('week_id',this.week.get('id'));
+		this.user.save();
+		console.log('hello');
+		this.listenToOnce(this.user,'sync',this.createDay);
+		//Window.Application.navigate('loading',{trigger:true});
 	},
 
 	createDay: function(){
+
 		console.log('In createDay function');
 		var id = this.user.get('id');
 		 for(var i = 1; i <= 4; i++) {
@@ -208,73 +189,34 @@ var RegisterView = Backbone.View.extend({
 		}
 	},
 
-	createWeek: function(){
-		//create new week and return week_id
-		var week = new Week({register: true});
-		week.fetch({
-			success: function(model,response){
-				console.log(response);
-				if(!response){
-					console.log('No week exists. Create new week!');
-					var date =  new Date('Sun Apr 05 2015');
-					date.setDate(date.getDate());
-					date.toDateString();
-					this.week = new Week({startDate: date});
-					console.log('this.week1 = '+ this.week);
-					this.week.save();
-				}else{
-					this.week = week;
-					console.log('this.week2 = '+ this.week);
-					this.week.save();
-				}
-				this.listenTo(this.week,'sync',this.createDay);
-			}.bind(this)
-		});
+	updateWeek: function(){
+		console.log("this.usersDay: "+this.usersDay);
+		console.log('day_id is: '+this.day.get('id'));
+		this.week.set('day'+this.usersDay+'_id',this.day.get('id'));
+		this.week.save();
+		//this.listenTo(this.week,'sync',this.addToSession);
+		this.addToSession();
 		
+	},
+
+	addToSession: function(){
+		console.log('RegisterView: addToSession');
+		Window.Application.activeUser = this.user;
+		//$.post('login.php',data);
+		var dataUser = {
+			'id': this.user.get('id')			
+		};
+
+		$.post('api/me',dataUser)
+		.success(function(data){
+			console.log('[RegisterView] Saved user to session');
+			Window.Application.navigate('waiting',{trigger:true});
+			
+		});
 	},
 
 	getInfo: function(model){
-		//console.log(model);
 		return model;
-	},
-
-	addUser: function(e){
-		e.preventDefault();
-		console.log("RegisterView: addUser");
-
-		var error = false;
-
-		if(this.$el.find('input').val() === ""){
-			this.errorInput();
-			error = true;
-		}
-		//console.log(this.$el.find('.photo-input'));
-		
-		if(!error){
-			var file = this.checkFile();
-			if(file != false){
-
-				//check of user bestaat
-				var exist = new User({email: this.$el.find('.email-input').val()});
-				exist.fetch({
-					success: function(model,response){
-						//console.log(response);
-						if(response.length === 0){
-							console.log('addUser: User doesnt exist. Time to create.!');
-							this.saveUser();
-						}else{
-							console.log('addUser: User exists! Dont create user!');
-						}
-					}.bind(this)
-				});
-				
-				//password hash via js?
-				//Becrypt opzoeken
-
-				
-			}
-		}
-		
 	},
 
 	errorInput: function(){
@@ -314,25 +256,7 @@ var RegisterView = Backbone.View.extend({
 		if(this.$el.find('.town-input').val() === ""){
 			this.$el.find('.town-input').removeClass('error');
 		}
-	},
-
-	initialize: function(){
-			//view verwijderen:
-			//this.listenTo(this.model, 'destroy', this.remove);
-			//this.collection = new UserCollection();
-			//this.collection.fetch();
-			this.week;
-			this.day;
-			this.user;
-			
-
-	},
-
-	render: function(){
-		this.$el.html(this.template());
-		return this;
 	}
-
 
 });
 

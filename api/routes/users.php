@@ -18,9 +18,25 @@ $usersDAO = new usersDAO();
     echo json_encode($arr, JSON_NUMERIC_CHECK);
     exit();
 });*/
+//$app->post('/login', 'login');
+$app->post('/me'/*, authorize('user')*/, function() use ($usersDAO){
+    if(!empty($_POST)){
+        $_SESSION['user'] = $usersDAO->selectById($_POST['id']);  
+    }
+    header("Content-Type: application/json");
+    echo json_encode($_SESSION['user']);
+    exit();
+});
+
+$app->get('/me'/*, authorize('user')*/, function(){
+    header("Content-Type: application/json");
+    //echo "sESSION";
+    echo json_encode($_SESSION['user']);
+    exit();
+});
 
 //GET -> /users/:id
-$app->get('/users/:id/?', function($id) use ($usersDAO){
+$app->get('/users/:id/?'/*, authorize('user')*/, function($id) use ($usersDAO){
     header("Content-Type: application/json");
     echo json_encode($usersDAO->selectByEmail($id), JSON_NUMERIC_CHECK);
     exit();
@@ -38,7 +54,7 @@ $app->get('/users/:id/?', function($id) use ($usersDAO){
 });*/
 
 //POST -> /users/
-$app->post('/users/?', function() use ($app, $usersDAO){
+$app->post('/users/?'/*, authorize('user')*/, function() use ($app, $usersDAO){
     header("Content-Type: application/json");
     $post = $app->request->post();
     if(empty($post)){

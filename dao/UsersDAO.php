@@ -4,13 +4,13 @@ require_once WWW_ROOT . 'dao' . DIRECTORY_SEPARATOR . 'DAO.php';
 
 class UsersDAO extends DAO {
     
-  public function selectAll() {
-    $sql = "SELECT * 
-    				FROM `KK_users`";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }    
+	public function selectAll() {
+    	$sql = "SELECT * 
+    					FROM `KK_users`";
+    	$stmt = $this->pdo->prepare($sql);
+    	$stmt->execute();
+    	return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}    
 
 	public function selectById($id) {
 		$sql = "SELECT * 
@@ -62,6 +62,24 @@ class UsersDAO extends DAO {
 		$stmt->bindValue(':id', $id);
 		return $stmt->execute();
 	}
+
+	public function update($id, $data) {
+		$errors = $this->getValidationErrors($data);
+		if(empty($errors)) {
+			$sql = "UPDATE `KK_users` 
+							SET `week_id` = :week_id, 
+								`password` = :password
+							WHERE `id` = :id";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindValue(':week_id', $data['week_id']);
+			$stmt->bindValue(':password', $data['password']);
+			$stmt->bindValue(':id', $id);
+			if($stmt->execute()) {
+				return $this->selectById($id);
+			}
+		}
+		return false;
+	}	
 
 	public function insert($data) {
 		$errors = $this->getValidationErrors($data);
