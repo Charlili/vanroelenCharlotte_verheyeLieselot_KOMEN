@@ -5,6 +5,7 @@ var DayView = Backbone.View.extend({
 	template: template,
 	
 	tagName: 'li',
+	
 
 	initialize: function(){
 			//view verwijderen:

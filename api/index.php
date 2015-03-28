@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 define("WWW_ROOT", dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR);
 require_once WWW_ROOT. "dao" .DIRECTORY_SEPARATOR. 'UsersDAO.php';
 require_once WWW_ROOT. "dao" .DIRECTORY_SEPARATOR. 'DaysDAO.php';
@@ -16,6 +17,8 @@ require_once WWW_ROOT. "api" .DIRECTORY_SEPARATOR. 'routes' .DIRECTORY_SEPARATOR
 require_once WWW_ROOT. "api" .DIRECTORY_SEPARATOR. 'routes' .DIRECTORY_SEPARATOR. 'days.php';
 require_once WWW_ROOT. "api" .DIRECTORY_SEPARATOR. 'routes' .DIRECTORY_SEPARATOR. 'weeks.php';
 require_once WWW_ROOT. "api" .DIRECTORY_SEPARATOR. 'routes' .DIRECTORY_SEPARATOR. 'votes.php';
+
+//unset($_SESSION['user']);
 
 
 // file: api/index.php

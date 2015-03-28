@@ -23,6 +23,7 @@ var WaitingView = Backbone.View.extend({
 		//check if user is logged in
 		var loggedIn = $.get('api/me')
 		.success(function(data){
+			console.log(data);
 			if(data.length === 0){
 				console.log('No user logged in. Redirect to #home');
 				Window.Application.navigate('home',{trigger:true});
