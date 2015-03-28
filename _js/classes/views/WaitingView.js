@@ -10,6 +10,9 @@ var WaitingView = Backbone.View.extend({
 	template: template,
 
 	/*model: this.week,*/
+	tagName: 'div',
+	className: 'waiting-container',
+
 	
 	events: {
 		'click .link': 'clickLink',
