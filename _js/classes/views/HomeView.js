@@ -21,7 +21,7 @@ var HomeView = Backbone.View.extend({
 
 	render: function(){
 		this.$el.html(this.template());
-		this.$users = this.$el.find('.tweets');
+		//this.$users = this.$el.find('.tweets');
 
 		return this;
 

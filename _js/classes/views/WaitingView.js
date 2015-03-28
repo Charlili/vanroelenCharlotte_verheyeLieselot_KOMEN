@@ -1,8 +1,8 @@
 var UserCollection = require('../collections/UserCollection.js');
 var UserView = require('./UserView.js');
-var template = require('../../../_hbs/loading.hbs');
+var template = require('../../../_hbs/waiting.hbs');
 
-var LoadingView = Backbone.View.extend({
+var WaitingView = Backbone.View.extend({
 
 
 	template: template,
@@ -12,8 +12,16 @@ var LoadingView = Backbone.View.extend({
 	},
 
 	initialize: function(){
-		this.collection = new UserCollection();
+
+		//check if user is logged in
+
+		//make user collection: krijg week_id: krijg alle day_ids: krijg user_ids van day_ids
+		/*this.collection = new UserCollection();
 		this.listenTo(this.collection, 'sync', this.renderUsers);
+		this.collection.fetch();*/
+
+		this.collection = new UserCollection();
+		this.listenTo(this.collection, 'sync', this.render);
 		this.collection.fetch();
 	},
 
@@ -28,12 +36,12 @@ var LoadingView = Backbone.View.extend({
 			model: model
 		});
 
-		this.$users.append(view.render().el);
+		//this.$users.append(view.render().el);
 	},
 
 	render: function(){
 		this.$el.html(this.template());
-		this.$users = this.$el.find('.tweets');
+		//this.$users = this.$el.find('.tweets');
 
 		return this;
 
@@ -56,4 +64,4 @@ var LoadingView = Backbone.View.extend({
 
 });
 
-module.exports = LoadingView;
+module.exports = WaitingView;

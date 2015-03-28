@@ -63,16 +63,26 @@ var RegisterView = Backbone.View.extend({
 	},
 
 	saveUser: function(){
-		var user = new User({
+		this.user = new User({
 			name: this.$el.find('.name-input').val(),
      		 email: this.$el.find('.email-input').val(),
      		 password: this.$el.find('.password-input').val(),
      		 street: this.$el.find('.street-input').val(),
      		 town: this.$el.find('.town-input').val()
 		});
-		user.save();
+		this.user.save();
+		/*this.listenTo(this.user,'sync',this.getInfo);
+		console.log('User_id is '+this.user.get('id'));*/
 
-		user.fetch({
+		this.listenTo(this.user,'sync',this.createWeek());
+
+		//get last week. If there is no week, create week.
+
+		
+
+
+		
+		/*user.fetch({
 			success: function(model,response){
 				//console.log(model,response);
 				if(response.length === 0){
@@ -145,7 +155,7 @@ var RegisterView = Backbone.View.extend({
 					
 				}
 			}
-		});
+		});*/
 		//var hash = bcrypt.hashSync(this.$el.find('.password-input').val(), 8);
 		//console.log(hash);
 
@@ -154,8 +164,78 @@ var RegisterView = Backbone.View.extend({
 		
 	},
 
+	updateWeek: function(){
+		console.log("this.usersDay: "+this.usersDay);
+		console.log('day_id is: '+this.day.get('id'));
+		this.week.set('day'+this.usersDay+'_id',this.day.get('id'));
+		this.week.save();
+		Window.Application.navigate('loading',{trigger:true});
+	},
+
+	createDay: function(){
+		console.log('In createDay function');
+		var id = this.user.get('id');
+		 for(var i = 1; i <= 4; i++) {
+			var day_id = this.week.get('day'+i+'_id');
+			if(day_id === 0){
+				console.log('day'+i+' is empty. Filling it in.');
+				this.usersDay = i;
+				var dateDB =  new Date(this.week.get('startDate'));
+				dateDB.setDate(dateDB.getDate() + i);
+				dateDB.toDateString();
+
+				this.day = new Day({
+					user_id: id,
+					week_id: this.week.get('id'),
+					date: dateDB
+				});
+				this.day.save();
+				this.listenTo(this.day,'sync',this.updateWeek);
+				
+
+				if(i == 4){
+					//create empty new week
+					var newDateDB =  new Date(this.week.get('startDate'));
+						newDateDB.setDate(newDateDB.getDate() + 7);
+						newDateDB.toDateString();
+					var newWeek = new Week({
+						startDate: newDateDB
+					});
+					newWeek.save();
+				}
+				break;
+			}
+		}
+	},
+
 	createWeek: function(){
 		//create new week and return week_id
+		var week = new Week({register: true});
+		week.fetch({
+			success: function(model,response){
+				console.log(response);
+				if(!response){
+					console.log('No week exists. Create new week!');
+					var date =  new Date('Sun Apr 05 2015');
+					date.setDate(date.getDate());
+					date.toDateString();
+					this.week = new Week({startDate: date});
+					console.log('this.week1 = '+ this.week);
+					this.week.save();
+				}else{
+					this.week = week;
+					console.log('this.week2 = '+ this.week);
+					this.week.save();
+				}
+				this.listenTo(this.week,'sync',this.createDay);
+			}.bind(this)
+		});
+		
+	},
+
+	getInfo: function(model){
+		//console.log(model);
+		return model;
 	},
 
 	addUser: function(e){
@@ -241,9 +321,9 @@ var RegisterView = Backbone.View.extend({
 			//this.listenTo(this.model, 'destroy', this.remove);
 			//this.collection = new UserCollection();
 			//this.collection.fetch();
-			this.week_id = 0;
-			this.day_id = 0;
-			this.user_id = 0;
+			this.week;
+			this.day;
+			this.user;
 			
 
 	},
