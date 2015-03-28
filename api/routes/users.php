@@ -19,7 +19,7 @@ $usersDAO = new usersDAO();
     exit();
 });*/
 //$app->post('/login', 'login');
-$app->post('/me'/*, authorize('user')*/, function() use ($usersDAO){
+$app->post('/me', function() use ($usersDAO){
     if(!empty($_POST)){
         $_SESSION['user'] = $usersDAO->selectById($_POST['id']);  
     }
@@ -28,11 +28,12 @@ $app->post('/me'/*, authorize('user')*/, function() use ($usersDAO){
     exit();
 });
 
-$app->get('/me'/*, authorize('user')*/, function(){
+$app->get('/me', function(){
     header("Content-Type: application/json");
-    //echo "sESSION";
     if(!empty($_SESSION['user'])){
-        echo json_encode($_SESSION['user'], JSON_NUMERIC_CHECK);
+        $arr = $_SESSION['user'];
+        unset($arr['password']);
+        echo json_encode($arr, JSON_NUMERIC_CHECK);
     }else{
         echo json_encode([]);
     }
@@ -42,13 +43,22 @@ $app->get('/me'/*, authorize('user')*/, function(){
 //GET -> /users/:id
 $app->get('/users/:id/?'/*, authorize('user')*/, function($id) use ($usersDAO){
     header("Content-Type: application/json");
+    //$arr = $usersDAO->selectByEmail($id);
+    //unset($arr['password']);
+    //echo json_encode($arr, JSON_NUMERIC_CHECK);
     echo json_encode($usersDAO->selectByEmail($id), JSON_NUMERIC_CHECK);
     exit();
 });
 
-$app->get('/week/users/:week_id/?'/*, authorize('user')*/, function($week_id) use ($usersDAO){
+$app->get('/week/users/:week_id/?', authorize('user'), function($week_id) use ($usersDAO){
     header("Content-Type: application/json");
-    echo json_encode($usersDAO->selectByWeek($week_id), JSON_NUMERIC_CHECK);
+
+    $arr = $usersDAO->selectByWeek($week_id);
+    
+    foreach($arr as &$user){
+        unset($user['password']);
+    }
+    echo json_encode($arr, JSON_NUMERIC_CHECK);
     exit();
 });
 

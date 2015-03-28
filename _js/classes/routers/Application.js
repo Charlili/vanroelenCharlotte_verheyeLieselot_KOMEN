@@ -1,5 +1,6 @@
 
 var HomeView = require('../views/HomeView.js');
+var DayView = require('../views/DayView.js');
 var WeekView = require('../views/WeekView.js');
 var RegisterView = require('../views/RegisterView.js');
 var WaitingView = require('../views/WaitingView.js');
@@ -10,10 +11,10 @@ var Application = Backbone.Router.extend({
 	routes: {
 		//pagina: functie
 		"home": "home",
-		/*"others/:other": "others",*/
 		"register": "register",
 		"waiting": "waiting",
 		"week": "week",
+		"day/:day": "day",
 		"*actions": "default"
 	},
 
@@ -46,14 +47,14 @@ var Application = Backbone.Router.extend({
 		$('.container').append(this.waiting.render().el);
 	},
 
-	/*others: function(other){
+	day: function(id){
 		this.empty();
-		this.others = new OtherView({
-			other: other
+		this.day = new DayView({
+			id: id
 		});
-		$('.container').append(this.others.render().el);
+		$('.container').append(this.day.render().el);
 
-	},*/
+	},
 
 	default: function(){
 		//trigger om overview functie uit te voeren. eerste argument gaat enkel url wijzigen.

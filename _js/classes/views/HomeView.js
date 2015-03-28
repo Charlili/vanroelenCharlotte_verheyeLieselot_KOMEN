@@ -67,8 +67,7 @@ var HomeView = Backbone.View.extend({
 
 		$.post('api/me',dataUser)
 		.success(function(data){
-			//console.log('flowchartId = ' + flowchartId);
-			console.log('[HomeView] Saved user to session');
+			//console.log('[HomeView] Saved user to session');
 			Window.Application.navigate('waiting',{trigger:true});
 		});
 	},
