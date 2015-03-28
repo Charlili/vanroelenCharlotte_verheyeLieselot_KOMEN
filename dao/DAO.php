@@ -3,8 +3,8 @@ class DAO {
 
 	private static $dbHost = "localhost";
 	private static $dbName = "MAIV_KomenKaarten";
-	private static $dbUser = "root";
-	private static $dbPass = "root";
+	private static $dbUser = "KK_user";
+	private static $dbPass = "KK_pass";
 
 	private static $sharedPDO;
 
