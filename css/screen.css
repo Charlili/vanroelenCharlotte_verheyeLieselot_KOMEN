@@ -408,3 +408,23 @@ span {
 .register-container .register-submit:focus {
   outline: none;
 }
+
+/* line 318, ../_scss/screen.scss */
+.waiting-container h1 {
+  background-image: url("../assets/deelnemers_header.png");
+  width: 640px;
+  height: 172px;
+}
+/* line 324, ../_scss/screen.scss */
+.waiting-container .date-week {
+  margin-top: 18px;
+  color: #6cbca3;
+  font-size: 2.6em;
+  text-align: center;
+}
+/* line 332, ../_scss/screen.scss */
+.waiting-container .img-curl {
+  display: block;
+  width: 146px;
+  margin: 7px auto;
+}

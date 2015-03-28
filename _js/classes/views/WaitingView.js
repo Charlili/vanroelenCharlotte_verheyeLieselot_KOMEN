@@ -76,9 +76,13 @@ var WaitingView = Backbone.View.extend({
 		Window.Application.navigate('week',{trigger:true});
 	},
 
-	renderUser: function(model){
+	renderUser: function(model, key){
+
+		var arr = ["frame1", "frame2", "frame3", "frame4"];
+
 		var view = new UserView({
-			model: model
+			model: model,
+			className: arr[key]
 		});
 
 		this.$users.append(view.render().el);

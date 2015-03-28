@@ -312,3 +312,26 @@ span{
 		}
 	}
 }
+
+
+.waiting-container{
+	h1{
+		background-image: url('../assets/deelnemers_header.png');
+		width: 640px;
+		height: 172px;
+	}
+
+	.date-week{
+		margin-top: 18px;
+		color: $green;
+		font-size: 2.6em;
+		text-align: center;
+		//font-family: Aleoregular;
+	}
+
+	.img-curl{
+		display: block;
+		width: 146px;
+		margin: 7px auto;
+	}
+}
