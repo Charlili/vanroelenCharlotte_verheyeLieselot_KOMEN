@@ -6,6 +6,8 @@ var WeekView = Backbone.View.extend({
 
 
 	template: template,
+	tagName: 'div',
+	className: 'week-container',
 	
 	events: {
 		//'click .tweet': 'addDay',
