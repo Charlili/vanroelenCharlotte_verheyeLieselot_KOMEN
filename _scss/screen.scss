@@ -1,6 +1,26 @@
 @import "compass/reset";
-
+@import "fonts";
 
 body{
 	background: url('../assets/pattern.jpg');
+	font-family: Aleoregular, "Times New Roman", Verdana;
+}
+
+.home-container{
+	h1{
+		background-image: url('../assets/home_header.png');
+		background-repeat: no-repeat;
+		width: 640px;
+		height: 507px;
+		display: block;
+	}
+
+	p{
+		background-image: url('../assets/info.png');
+		background-repeat: no-repeat;
+	}
+}
+
+span{
+	display: none;
 }
