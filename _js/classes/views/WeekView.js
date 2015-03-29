@@ -13,11 +13,6 @@ var WeekView = Backbone.View.extend({
 	tagName: 'div',
 	className: 'week-container',
 
-	
-	events: {
-		'click .link': 'clickLink',
-	},
-
 	initialize: function(){
 
 		//check if user is logged in
@@ -28,6 +23,7 @@ var WeekView = Backbone.View.extend({
 				console.log('No user logged in. Redirect to #home');
 				Window.Application.navigate('home',{trigger:true});
 			}else{
+				this.user_id = data.id;
 				this.week = new Week({
 					id: data.week_id
 				});
@@ -63,19 +59,13 @@ var WeekView = Backbone.View.extend({
 		
 	},
 
-	clickLink: function(e){
-		e.preventDefault();
-		Window.Application.navigate('week',{trigger:true});
-		
-	},
-
 	renderUser: function(model){
 		var active = false;
 		var thisDay = false;
 		if(this.count <= this.week.get('currentDate')){
 			active = true;
 		}
-		if(this.count < this.week.get('currentDate')){
+		if(this.count == this.week.get('currentDate')){
 			thisDay = true;
 		}
 		var view = new WeekElView({

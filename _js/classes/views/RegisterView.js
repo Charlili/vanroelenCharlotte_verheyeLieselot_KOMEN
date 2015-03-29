@@ -1,6 +1,7 @@
 var template = require('../../../_hbs/register.hbs');
 var User = require('../models/User.js');
 var Week = require('../models/Week.js');
+var Vote = require('../models/Vote.js');
 var Day = require('../models/Day.js');
 var UserCollection = require('../collections/UserCollection.js');
 //var bcrypt = require('../../../js/vendor/bcrypt.min.js');
@@ -195,8 +196,22 @@ var RegisterView = Backbone.View.extend({
 		console.log('day_id is: '+this.day.get('id'));
 		this.week.set('day'+this.usersDay+'_id',this.day.get('id'));
 		this.week.save();
-		//this.listenTo(this.week,'sync',this.addToSession);
-		this.addToSession();
+		//this.listenTo(this.week,'sync',this.addVoteForSelf);
+		this.addVoteForSelf();
+		
+	},
+
+	addVoteForSelf: function(){
+		//make vote for self with values 0 so that the vote-logica blijft werken
+		this.vote = new Vote({
+			user_id: this.user.get('id'),
+			day_id: this.day.get('id'),
+			gebak: 0,
+			gelach: 0,
+			geur: 0
+		});
+		this.vote.save();
+		this.listenToOnce(this.vote,'sync',this.addToSession);
 		
 	},
 

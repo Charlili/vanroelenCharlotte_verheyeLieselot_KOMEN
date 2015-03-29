@@ -7,10 +7,6 @@ var UserView = Backbone.View.extend({
 	
 	tagName: 'li',
 
-	events:{
-		'click .link': 'clickLink'
-	},
-
 	initialize: function(options){
 		//view verwijderen:
 		//this.listenTo(this.model, 'destroy', this.remove);
@@ -30,17 +26,11 @@ var UserView = Backbone.View.extend({
 		//this.day.setDate(day);
 	},
 
-	clickLink: function(){
-		e.preventDefault();
-		console.log('clicked link');
-		//make DayView
-		//get day_id
-	},
-
 	changeLink: function(){
 		var string = "#day/" + this.day.get('id');
 		this.$el.find('.active').prop("href", string);
 	},
+
 
 	render: function(){
 		var obj = {
