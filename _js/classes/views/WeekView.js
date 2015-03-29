@@ -3,11 +3,13 @@ var WeekElView = require('./WeekElView.js');
 var User = require('../models/User.js');
 var Week = require('../models/Week.js');
 var template = require('../../../_hbs/week.hbs');
+var cms = require('../../../_hbs/cms.hbs');
 
 var WeekView = Backbone.View.extend({
 
 
 	template: template,
+	cms: cms,
 
 	/*model: this.week,*/
 	tagName: 'div',
@@ -23,6 +25,10 @@ var WeekView = Backbone.View.extend({
 				console.log('No user logged in. Redirect to #home');
 				Window.Application.navigate('home',{trigger:true});
 			}else{
+
+				if(data.role == "admin"){
+					this.renderCMS();
+				}
 				this.user_id = data.id;
 				this.week = new Week({
 					id: data.week_id
@@ -39,6 +45,15 @@ var WeekView = Backbone.View.extend({
 			}
 			
 		}.bind(this));
+	},
+
+	renderCMS: function(){
+		//this.$el.append(this.$el.html(cms).el);
+		//console.log(this.$el.html(cms).el);
+		var cms = document.createElement('div');
+		console.log($(cms).html(this.cms));
+		//this.$el.find('.week-container').prepend($(cms).html(this.cms));
+
 	},
 
 	renderUsers: function(){
