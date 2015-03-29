@@ -35,7 +35,7 @@ var RegisterView = Backbone.View.extend({
 		if(fileB != false){
 			this.$el.find('.photo-preview').remove();
 			//this.$el.find('.photo-input').remove();
-			this.$el.find('.frame').append(fileB);
+			this.$el.find('.preview-cont').append(fileB);
 		}
 	},
 

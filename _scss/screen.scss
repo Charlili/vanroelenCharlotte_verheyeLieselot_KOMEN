@@ -244,14 +244,16 @@ span{
 	.photo-preview{
 		position: relative;
 		z-index: 2;
-		width: 400px;
+		width: 216px;
 	}
 
 	.preview-cont{
 		width: 216px;
-		width: 216px;
-
+		height: 216px;
+		margin-left: 40px;
+		margin-top: 70px;
 		overflow: hidden;
+		position: absolute;
 	}
 
 	.photo-input{
