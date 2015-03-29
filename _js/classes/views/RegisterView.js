@@ -4,7 +4,7 @@ var Week = require('../models/Week.js');
 var Vote = require('../models/Vote.js');
 var Day = require('../models/Day.js');
 var UserCollection = require('../collections/UserCollection.js');
-//var bcrypt = require('../../../js/vendor/bcrypt.min.js');
+var bcrypt = require('../../../js/vendor/bcrypt.min.js');
 
 var RegisterView = Backbone.View.extend({
 
@@ -33,7 +33,9 @@ var RegisterView = Backbone.View.extend({
 		console.log('changed');
 		var fileB = this.checkFile();
 		if(fileB != false){
-			$('form').append(fileB);
+			this.$el.find('.photo-preview').remove();
+			//this.$el.find('.photo-input').remove();
+			this.$el.find('.frame').append(fileB);
 		}
 	},
 
@@ -49,6 +51,7 @@ var RegisterView = Backbone.View.extend({
 			if(file.type.search('image') != -1) {
 				var reader = new FileReader();
 				var img = document.createElement('img');
+				$(img).addClass('photo-preview');
 	        	reader.onload = function(event) {
 		        	var errorString = "no error in errorString";
 			            
@@ -142,6 +145,11 @@ var RegisterView = Backbone.View.extend({
 	},
 
 	saveUser: function(){
+
+		//this.$el.find('.password-input').val(),
+		var hash = bcrypt.hashSync(this.$el.find('.password-input').val(), 8);
+		//bcrypt.compareSync("B4c0/\/", hash);
+		console.log(hash);
 		this.user = new User({
 			name: this.$el.find('.name-input').val(),
      		 email: this.$el.find('.email-input').val(),
