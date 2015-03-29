@@ -353,17 +353,17 @@ span{
 
 	.users{
 		width: 640px;
-		height: 780px;
+		height: 790px;
 		margin: 0px auto;
 		overflow: auto;
 	}
 
 	li{
 		text-align: center;
-				float: left;
+		float: left;
 
 				p{
-					margin-top: 10px;
+					margin-top: 30px;
 					font-family: Manus, sans-serif;
 					font-size: 3em;
 					color: #352725;
@@ -373,6 +373,95 @@ span{
 	}
 
 	.frame1{
+		margin-left: 52px;
+		margin-top: 60px;
+		.square{
+			width: 250px;
+			height: 250px;
+			overflow: hidden;
+		}
+
+		.img-usr{
+			width: 250px;
+		}
+		&:before{
+		margin-left: -139px;
+		margin-top: -50px;
+		 position: absolute;
+		 content: url('../assets/frame1.png');
+		}
+	}
+
+	.frame2{
+		margin-left: 68px;
+		margin-top: 105px;
+		margin-bottom: 40px;
+		.square{
+		width: 224px;
+		height: 224px;
+		overflow: hidden;
+
+		}
+
+		.img-usr{
+			width: 224px;
+		}
+
+		&:before{
+		margin-left: -139px;
+		margin-top: -50px;
+		 position: absolute;
+		 content: url('../assets/frame2.png');
+		}
+	}
+
+	.frame3{
+		margin-left: 60px;
+		margin-top: 63px;
+		.square{
+		width: 225px;
+		height: 225px;
+		overflow: hidden;
+
+		}
+		.img-usr{
+			width: 225px;
+		}
+
+		&:before{
+		margin-left: -139px;
+		margin-top: -50px;
+		 position: absolute;
+		 content: url('../assets/frame3.png');
+		}
+	}
+
+	.frame4{
+
+		margin-left: 36px;
+		margin-top: 40px;
+		.square{
+		width: 223px;
+		height: 223px;
+		overflow: hidden;
+
+		}
+
+		.img-usr{
+			width: 223px;
+		}
+
+
+
+		&:before{
+		margin-left: -139px;
+		margin-top: -50px;
+		 position: absolute;
+		 content: url('../assets/frame4.png');
+		}
+	}
+
+	/*.frame1{
 		margin-left: 20px;
 
 		width: 290px;
@@ -440,7 +529,7 @@ span{
 		width: 290px;
 		height: 290px;
 		overflow: hidden;
-		
+
 		&:before{
 		 position: absolute;
 		 content: url('../assets/frame4.png');
@@ -456,7 +545,7 @@ span{
 			margin-top: 30px;
 			margin-left: 25px;
 		}
-	}
+	}*/
 
 	.ga-verder{
 			color: #fff;

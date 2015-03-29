@@ -425,6 +425,94 @@ span {
   outline: none;
 }
 
+/* line 333, ../_scss/screen.scss */
+.waiting-container {
+  	/*.frame1{
+  		margin-left: 20px;
+  
+  		width: 290px;
+  		height: 290px;
+  		overflow: hidden;
+  
+  		&:before{
+  		 position: absolute;
+  		 content: url('../assets/frame1.png');
+  		}
+  
+  		.img-usr{
+  			margin-top: 40px;
+  			margin-left: 3px;
+  			width: 260px;
+  		}
+  	}
+  
+  	.frame2{
+  		margin-top: 40px;
+  		margin-left: 30px;
+  		width: 280px;
+  		height: 280px;
+  		overflow: hidden;
+  		&:before{
+  		 position: absolute;
+  		 content: url('../assets/frame2.png');
+  		}
+  
+  		.img-usr{
+  			margin-top: 50px;
+  			margin-left: 15px;
+  			width: 240px;
+  		}
+  	}
+  
+  	.frame3{
+  		margin-top: 40px;
+  		margin-left: 35px;
+  
+  		width: 280px;
+  		height: 280px;
+  		overflow: hidden;
+  
+  		&:before{
+  		 position: absolute;
+  		 content: url('../assets/frame3.png');
+  		}
+  
+  		.img-usr{
+  			margin-top: 50px;
+  			margin-left: 15px;
+  			width: 230px;
+  		}
+  
+  		p{
+  			margin-top: 30px;
+  		}
+  	}
+  
+  	.frame4{
+  		margin-top: 10px;
+  		margin-left: 25px;
+  
+  		width: 290px;
+  		height: 290px;
+  		overflow: hidden;
+  
+  		&:before{
+  		 position: absolute;
+  		 content: url('../assets/frame4.png');
+  		}
+  
+  		.img-usr{
+  			margin-top: 50px;
+  			margin-left: 20px;
+  			width: 230px;
+  		}
+  
+  		p{
+  			margin-top: 30px;
+  			margin-left: 25px;
+  		}
+  	}*/
+}
 /* line 334, ../_scss/screen.scss */
 .waiting-container h1 {
   background-image: url("../assets/deelnemers_header.png");
@@ -447,7 +535,7 @@ span {
 /* line 354, ../_scss/screen.scss */
 .waiting-container .users {
   width: 640px;
-  height: 780px;
+  height: 790px;
   margin: 0px auto;
   overflow: auto;
 }
@@ -458,7 +546,7 @@ span {
 }
 /* line 365, ../_scss/screen.scss */
 .waiting-container li p {
-  margin-top: 10px;
+  margin-top: 30px;
   font-family: Manus, sans-serif;
   font-size: 3em;
   color: #352725;
@@ -466,89 +554,94 @@ span {
 }
 /* line 375, ../_scss/screen.scss */
 .waiting-container .frame1 {
-  margin-left: 20px;
-  width: 290px;
-  height: 290px;
+  margin-left: 52px;
+  margin-top: 60px;
+}
+/* line 378, ../_scss/screen.scss */
+.waiting-container .frame1 .square {
+  width: 250px;
+  height: 250px;
   overflow: hidden;
 }
-/* line 382, ../_scss/screen.scss */
+/* line 384, ../_scss/screen.scss */
+.waiting-container .frame1 .img-usr {
+  width: 250px;
+}
+/* line 387, ../_scss/screen.scss */
 .waiting-container .frame1:before {
+  margin-left: -139px;
+  margin-top: -50px;
   position: absolute;
   content: url("../assets/frame1.png");
 }
-/* line 387, ../_scss/screen.scss */
-.waiting-container .frame1 .img-usr {
-  margin-top: 40px;
-  margin-left: 3px;
-  width: 260px;
-}
-/* line 394, ../_scss/screen.scss */
+/* line 395, ../_scss/screen.scss */
 .waiting-container .frame2 {
-  margin-top: 40px;
-  margin-left: 30px;
-  width: 280px;
-  height: 280px;
+  margin-left: 68px;
+  margin-top: 105px;
+  margin-bottom: 40px;
+}
+/* line 399, ../_scss/screen.scss */
+.waiting-container .frame2 .square {
+  width: 224px;
+  height: 224px;
   overflow: hidden;
 }
-/* line 400, ../_scss/screen.scss */
+/* line 406, ../_scss/screen.scss */
+.waiting-container .frame2 .img-usr {
+  width: 224px;
+}
+/* line 410, ../_scss/screen.scss */
 .waiting-container .frame2:before {
+  margin-left: -139px;
+  margin-top: -50px;
   position: absolute;
   content: url("../assets/frame2.png");
 }
-/* line 405, ../_scss/screen.scss */
-.waiting-container .frame2 .img-usr {
-  margin-top: 50px;
-  margin-left: 15px;
-  width: 240px;
-}
-/* line 412, ../_scss/screen.scss */
+/* line 418, ../_scss/screen.scss */
 .waiting-container .frame3 {
-  margin-top: 40px;
-  margin-left: 35px;
-  width: 280px;
-  height: 280px;
+  margin-left: 60px;
+  margin-top: 63px;
+}
+/* line 421, ../_scss/screen.scss */
+.waiting-container .frame3 .square {
+  width: 225px;
+  height: 225px;
   overflow: hidden;
 }
-/* line 420, ../_scss/screen.scss */
+/* line 427, ../_scss/screen.scss */
+.waiting-container .frame3 .img-usr {
+  width: 225px;
+}
+/* line 431, ../_scss/screen.scss */
 .waiting-container .frame3:before {
+  margin-left: -139px;
+  margin-top: -50px;
   position: absolute;
   content: url("../assets/frame3.png");
 }
-/* line 425, ../_scss/screen.scss */
-.waiting-container .frame3 .img-usr {
-  margin-top: 50px;
-  margin-left: 15px;
-  width: 230px;
-}
-/* line 431, ../_scss/screen.scss */
-.waiting-container .frame3 p {
-  margin-top: 30px;
-}
-/* line 436, ../_scss/screen.scss */
+/* line 439, ../_scss/screen.scss */
 .waiting-container .frame4 {
-  margin-top: 10px;
-  margin-left: 25px;
-  width: 290px;
-  height: 290px;
+  margin-left: 36px;
+  margin-top: 40px;
+}
+/* line 443, ../_scss/screen.scss */
+.waiting-container .frame4 .square {
+  width: 223px;
+  height: 223px;
   overflow: hidden;
 }
-/* line 444, ../_scss/screen.scss */
+/* line 450, ../_scss/screen.scss */
+.waiting-container .frame4 .img-usr {
+  width: 223px;
+}
+/* line 456, ../_scss/screen.scss */
 .waiting-container .frame4:before {
+  margin-left: -139px;
+  margin-top: -50px;
   position: absolute;
   content: url("../assets/frame4.png");
 }
-/* line 449, ../_scss/screen.scss */
-.waiting-container .frame4 .img-usr {
-  margin-top: 50px;
-  margin-left: 20px;
-  width: 230px;
-}
-/* line 455, ../_scss/screen.scss */
-.waiting-container .frame4 p {
-  margin-top: 30px;
-  margin-left: 25px;
-}
-/* line 461, ../_scss/screen.scss */
+/* line 550, ../_scss/screen.scss */
 .waiting-container .ga-verder {
   color: #fff;
   font-family: inherit;
@@ -565,65 +658,65 @@ span {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 474, ../_scss/screen.scss */
+/* line 563, ../_scss/screen.scss */
 .waiting-container .ga-verder:focus {
   outline: none;
 }
 
-/* line 483, ../_scss/screen.scss */
+/* line 572, ../_scss/screen.scss */
 .week-container .header-week {
   width: 640px;
   height: 172px;
   background-image: url("../assets/week_header.png");
 }
-/* line 489, ../_scss/screen.scss */
+/* line 578, ../_scss/screen.scss */
 .week-container .gray-p {
   margin-top: 10px;
   margin-bottom: 37px;
 }
-/* line 494, ../_scss/screen.scss */
+/* line 583, ../_scss/screen.scss */
 .week-container ul {
   width: 640px;
   margin: 0px auto;
 }
-/* line 499, ../_scss/screen.scss */
+/* line 588, ../_scss/screen.scss */
 .week-container li {
   height: 200px;
   background-image: url("../assets/pattern-week.jpg");
   margin-top: 20px;
   overflow: auto;
 }
-/* line 506, ../_scss/screen.scss */
+/* line 595, ../_scss/screen.scss */
 .week-container .date-overview {
   float: left;
   width: 220px;
 }
-/* line 510, ../_scss/screen.scss */
+/* line 599, ../_scss/screen.scss */
 .week-container .date-overview p {
   margin-top: 80px;
   text-align: center;
   font-size: 3.8em;
   color: #FFF;
 }
-/* line 518, ../_scss/screen.scss */
+/* line 607, ../_scss/screen.scss */
 .week-container .info-overview {
   float: left;
   color: #413934;
   margin-left: 10px;
   width: 340px;
 }
-/* line 524, ../_scss/screen.scss */
+/* line 613, ../_scss/screen.scss */
 .week-container .info-overview h1 {
   font-family: aleobold, aleoregular, sans-serif;
   font-size: 3em;
   margin-top: 50px;
   margin-bottom: 10px;
 }
-/* line 531, ../_scss/screen.scss */
+/* line 620, ../_scss/screen.scss */
 .week-container .info-overview p {
   font-size: 2.8em;
 }
-/* line 536, ../_scss/screen.scss */
+/* line 625, ../_scss/screen.scss */
 .week-container .date-overview p, .week-container .winner p {
   color: #fff;
   padding-top: 8px;
@@ -636,18 +729,18 @@ span {
   display: block;
   background-image: url("../assets/grey-date.png");
 }
-/* line 551, ../_scss/screen.scss */
+/* line 640, ../_scss/screen.scss */
 .week-container .thisDay .active .date-overview p {
   background-image: url("../assets/red-date.png");
 }
-/* line 556, ../_scss/screen.scss */
+/* line 645, ../_scss/screen.scss */
 .week-container .thisDay .active:after {
   content: url("../assets/red-arrow.png");
   float: right;
   margin-top: 70px;
   margin-right: 20px;
 }
-/* line 564, ../_scss/screen.scss */
+/* line 653, ../_scss/screen.scss */
 .week-container .thisDay .date-overview:before {
   display: block;
   position: absolute;
@@ -657,26 +750,26 @@ span {
   transform: translateY(-10px);
   content: url("../assets/vandaag_label.png");
 }
-/* line 572, ../_scss/screen.scss */
+/* line 661, ../_scss/screen.scss */
 .week-container .active .date-overview p {
   background-image: url("../assets/green-date.png");
 }
-/* line 578, ../_scss/screen.scss */
+/* line 667, ../_scss/screen.scss */
 .week-container .active:after {
   content: url("../assets/green-arrow.png");
   float: right;
   margin-top: 70px;
   margin-right: 20px;
 }
-/* line 586, ../_scss/screen.scss */
+/* line 675, ../_scss/screen.scss */
 .week-container .winner {
   text-align: center;
 }
-/* line 588, ../_scss/screen.scss */
+/* line 677, ../_scss/screen.scss */
 .week-container .winner p {
   font-size: 3.8em;
 }
-/* line 592, ../_scss/screen.scss */
+/* line 681, ../_scss/screen.scss */
 .week-container .winner a {
   display: block;
   margin: 20px 0px;
@@ -685,12 +778,12 @@ span {
   background-color: #636363;
   color: #FFF;
 }
-/* line 599, ../_scss/screen.scss */
+/* line 688, ../_scss/screen.scss */
 .week-container .winner a:before {
   content: url("../assets/leftie.png");
   margin-right: 15px;
 }
-/* line 603, ../_scss/screen.scss */
+/* line 692, ../_scss/screen.scss */
 .week-container .winner a:after {
   content: url("../assets/rightie.png");
   margin-left: 15px;
