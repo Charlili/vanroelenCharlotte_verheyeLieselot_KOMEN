@@ -451,4 +451,127 @@ span{
 		height: 172px;
 		background-image: url('../assets/week_header.png');
 	}
+
+	.gray-p{
+		margin-top: 10px;
+		margin-bottom: 37px;
+	}
+
+	ul{
+		width: 640px;
+		margin: 0px auto;
+	}
+
+	li{
+		height: 200px;
+		background-image: url('../assets/pattern-week.jpg');
+		margin-top: 20px;
+		overflow: auto;
+	}
+
+	.date-overview{
+		float: left;
+		width: 220px;
+
+		p{
+			margin-top: 80px;
+			text-align: center;
+			font-size: 3.8em;
+			color: #FFF;
+		}
+	}
+
+	.info-overview{
+		float: left;
+		color: #413934;
+		margin-left: 10px;
+		width: 340px;
+
+		h1{
+			font-family: aleobold, aleoregular, sans-serif;
+			font-size: 3em;
+			margin-top: 50px;
+			margin-bottom: 10px;
+		}
+
+		p{
+			font-size: 2.8em;
+		}
+	}
+
+	.date-overview p, .winner p{
+		color: #fff;
+			padding-top: 8px;
+			background-repeat: no-repeat;
+			background-position: center;
+			width: 181px;
+			height: 53px;
+			margin: 0px auto;
+			margin-top: 73px;
+			display: block;
+			background-image: url('../assets/grey-date.png');
+
+	}
+
+	.thisDay{
+		.active .date-overview p{
+			
+			background-image: url('../assets/red-date.png');
+
+		}
+		.active:after{
+				content: url('../assets/red-arrow.png');
+				float: right;
+				margin-top: 70px;
+				margin-right: 20px;
+			
+		}
+
+		.date-overview:before{
+				display: block;
+				position: absolute;
+				@include transform(translateY(-10px));
+				content: url('../assets/vandaag_label.png');
+		}
+	}
+
+	.active .date-overview p{
+
+			background-image: url('../assets/green-date.png');
+	}
+
+	.active{
+		&:after{
+			content: url('../assets/green-arrow.png');
+			float: right;
+			margin-top: 70px;
+			margin-right: 20px;
+		}
+	}
+
+	.winner{
+		text-align: center;
+		p{
+			font-size: 3.8em;
+		}
+
+		a{
+			display: block;
+			margin: 20px 0px;
+			font-size: 3.6em;
+			padding: 20px;
+			background-color: #636363;
+			color: #FFF;
+			&:before{
+				content: url('../assets/leftie.png');
+				margin-right: 15px;
+			}
+			&:after{
+				content: url('../assets/rightie.png');
+				margin-left: 15px;
+			}
+		}
+	}
+
+
 }
