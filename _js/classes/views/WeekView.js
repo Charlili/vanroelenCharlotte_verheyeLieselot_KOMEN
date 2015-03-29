@@ -71,14 +71,19 @@ var WeekView = Backbone.View.extend({
 
 	renderUser: function(model){
 		var active = false;
+		var thisDay = false;
 		if(this.count <= this.week.get('currentDate')){
 			active = true;
+		}
+		if(this.count < this.week.get('currentDate')){
+			thisDay = true;
 		}
 		var view = new WeekElView({
 			model: model,
 			startDate: this.week.get('startDate'),
 			count: this.count,
-			active: active	
+			active: active,
+			thisDay: thisDay	
 		});
 		this.count++;
 		this.$users.append(view.render().el);

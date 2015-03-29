@@ -18,6 +18,7 @@ var UserView = Backbone.View.extend({
 		this.startDate = options.startDate;
 		this.count = options.count;
 		this.active = options.active;
+		this.thisDay = options.thisDay;
 		this.model = options.model;
 		//get day
 		this.day = new Day({user_id:this.model.get('id')});
@@ -25,7 +26,7 @@ var UserView = Backbone.View.extend({
 		this.listenTo(this.day, 'sync', this.changeLink);
 		//this.day =  new Date(new Date(this.startDate).getDate() + this.count).getDate();
 		this.d = new Date(this.startDate).getDate() + this.count;
-		this.mon = new Date(this.startDate).getMonth();
+		this.m = new Date(this.startDate).getMonth();
 		//this.day.setDate(day);
 	},
 
@@ -53,6 +54,9 @@ var UserView = Backbone.View.extend({
 		this.$el.html(this.template(obj));
 		//console.log(this.el);
 		if(this.active){
+			if(this.thisDay){
+				this.$el.addClass('thisDay');
+			}
 			this.$el.find('a').addClass('active');
 			this.$el.find('a').prop("disabled", 'false');
 		}
