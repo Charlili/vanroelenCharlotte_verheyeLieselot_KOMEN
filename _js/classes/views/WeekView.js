@@ -75,7 +75,7 @@ var WeekView = Backbone.View.extend({
 		if(this.count <= this.week.get('currentDate')){
 			active = true;
 		}
-		if(this.count < this.week.get('currentDate')){
+		if(this.count == this.week.get('currentDate')){
 			thisDay = true;
 		}
 		var view = new WeekElView({

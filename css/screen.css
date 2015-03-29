@@ -570,19 +570,100 @@ span {
   float: left;
   width: 220px;
 }
-/* line 477, ../_scss/screen.scss */
+/* line 476, ../_scss/screen.scss */
+.week-container .date-overview p {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 3.8em;
+  color: #FFF;
+}
+/* line 484, ../_scss/screen.scss */
 .week-container .info-overview {
   float: left;
   color: #413934;
+  margin-left: 10px;
+  width: 340px;
 }
-/* line 481, ../_scss/screen.scss */
+/* line 490, ../_scss/screen.scss */
 .week-container .info-overview h1 {
   font-family: aleobold, aleoregular, sans-serif;
   font-size: 3em;
   margin-top: 50px;
   margin-bottom: 10px;
 }
-/* line 488, ../_scss/screen.scss */
+/* line 497, ../_scss/screen.scss */
 .week-container .info-overview p {
   font-size: 2.8em;
+}
+/* line 502, ../_scss/screen.scss */
+.week-container .date-overview p, .week-container .winner p {
+  color: #fff;
+  padding-top: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 181px;
+  height: 53px;
+  margin: 0px auto;
+  margin-top: 73px;
+  display: block;
+  background-image: url("../assets/grey-date.png");
+}
+/* line 517, ../_scss/screen.scss */
+.week-container .thisDay .active .date-overview p {
+  background-image: url("../assets/red-date.png");
+}
+/* line 522, ../_scss/screen.scss */
+.week-container .thisDay .active:after {
+  content: url("../assets/red-arrow.png");
+  float: right;
+  margin-top: 70px;
+  margin-right: 20px;
+}
+/* line 530, ../_scss/screen.scss */
+.week-container .thisDay .date-overview:before {
+  display: block;
+  position: absolute;
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  content: url("../assets/vandaag_label.png");
+}
+/* line 538, ../_scss/screen.scss */
+.week-container .active .date-overview p {
+  background-image: url("../assets/green-date.png");
+}
+/* line 544, ../_scss/screen.scss */
+.week-container .active:after {
+  content: url("../assets/green-arrow.png");
+  float: right;
+  margin-top: 70px;
+  margin-right: 20px;
+}
+/* line 552, ../_scss/screen.scss */
+.week-container .winner {
+  text-align: center;
+}
+/* line 554, ../_scss/screen.scss */
+.week-container .winner p {
+  font-size: 3.8em;
+}
+/* line 558, ../_scss/screen.scss */
+.week-container .winner a {
+  display: block;
+  margin: 20px 0px;
+  font-size: 3.6em;
+  padding: 20px;
+  background-color: #636363;
+  color: #FFF;
+}
+/* line 565, ../_scss/screen.scss */
+.week-container .winner a:before {
+  content: url("../assets/leftie.png");
+  margin-right: 15px;
+}
+/* line 569, ../_scss/screen.scss */
+.week-container .winner a:after {
+  content: url("../assets/rightie.png");
+  margin-left: 15px;
 }
