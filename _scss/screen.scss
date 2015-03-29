@@ -233,11 +233,25 @@ span{
 		    //padding: 4px 6px 4px 8px;
 		    font: normal 14px Myriad Pro, Verdana, Geneva, sans-serif;
 		    color: #7f7f7f;
+		    z-index: 1;
 		    margin-top: 120px;
 		    margin-left: 20px;
 		    background:white;
 		    background-size: 214px 214px;
 		    background-image: url('../assets/upload-photo.png');
+	}
+
+	.photo-preview{
+		position: relative;
+		z-index: 2;
+		width: 400px;
+	}
+
+	.preview-cont{
+		width: 216px;
+		width: 216px;
+
+		overflow: hidden;
 	}
 
 	.photo-input{
@@ -251,7 +265,7 @@ span{
 
 	.frame{
 		position: relative;
-				z-index: -1;
+				z-index: -2;
 
 		background-image: url('../assets/frame.png');
 		width: 289px;
@@ -572,6 +586,12 @@ span{
 			}
 		}
 	}
+
+
+}
+
+
+.day-container{
 
 
 }
