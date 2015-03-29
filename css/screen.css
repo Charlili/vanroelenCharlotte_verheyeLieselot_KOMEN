@@ -548,3 +548,41 @@ span {
   height: 172px;
   background-image: url("../assets/week_header.png");
 }
+/* line 455, ../_scss/screen.scss */
+.week-container .gray-p {
+  margin-top: 10px;
+  margin-bottom: 37px;
+}
+/* line 460, ../_scss/screen.scss */
+.week-container ul {
+  width: 640px;
+  margin: 0px auto;
+}
+/* line 465, ../_scss/screen.scss */
+.week-container li {
+  height: 200px;
+  background-image: url("../assets/pattern-week.jpg");
+  margin-top: 20px;
+  overflow: auto;
+}
+/* line 472, ../_scss/screen.scss */
+.week-container .date-overview {
+  float: left;
+  width: 220px;
+}
+/* line 477, ../_scss/screen.scss */
+.week-container .info-overview {
+  float: left;
+  color: #413934;
+}
+/* line 481, ../_scss/screen.scss */
+.week-container .info-overview h1 {
+  font-family: aleobold, aleoregular, sans-serif;
+  font-size: 3em;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+/* line 488, ../_scss/screen.scss */
+.week-container .info-overview p {
+  font-size: 2.8em;
+}
