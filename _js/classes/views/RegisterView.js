@@ -131,7 +131,7 @@ var RegisterView = Backbone.View.extend({
 			            };
 			        }
 			        sourceFile = $($(resp.data).get(0)).val();
-			        console.log(sourceFile);
+			        //console.log(sourceFile);
 			        //var destFile = $($(resp.data).get(1)).val();
 			        //console.log(destFile);
 			    }
@@ -153,7 +153,7 @@ var RegisterView = Backbone.View.extend({
 		this.user = new User({
 			name: this.$el.find('.name-input').val(),
      		 email: this.$el.find('.email-input').val(),
-     		 password: this.$el.find('.password-input').val(),
+     		 password: hash,
      		 street: this.$el.find('.street-input').val(),
      		 town: this.$el.find('.town-input').val()
 		});

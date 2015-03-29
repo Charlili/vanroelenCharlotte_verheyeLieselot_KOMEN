@@ -2,6 +2,7 @@
 //var UserView = require('./UserView.js');
 var User = require('../models/User.js');
 var template = require('../../../_hbs/home.hbs');
+var bcrypt = require('../../../js/vendor/bcrypt.min.js');
 
 var HomeView = Backbone.View.extend({
 
@@ -42,7 +43,7 @@ var HomeView = Backbone.View.extend({
 						
 					}else{
 						console.log('User exists! Check if password matches');
-						if(model.get('password') == this.$el.find('.password-input').val()){
+						if(bcrypt.compareSync(this.$el.find('.password-input').val(), model.get('password'))){
 							console.log('Password matches. Save user in session');
 							this.addToSession();
 							
