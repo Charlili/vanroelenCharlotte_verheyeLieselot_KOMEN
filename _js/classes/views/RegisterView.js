@@ -40,6 +40,11 @@ var RegisterView = Backbone.View.extend({
 	checkFile: function(){
 		//console.log("checkFile");
 		if(this.$el.find('.photo-input')[0].files.length > 0){
+			var filename = $(this.$el.find('.photo-input')[0]).val();
+	        this.extension = filename.replace(/^.*\./, '.');
+	        //console.log(this.extension);
+
+
 			var file = this.$el.find('.photo-input')[0].files[0];
 			if(file.type.search('image') != -1) {
 				var reader = new FileReader();
@@ -130,13 +135,9 @@ var RegisterView = Backbone.View.extend({
 			}.bind(this);
 			request.open('POST', 'api/upload/user');
 			request.send(data);
-
+			
 			Window.Application.navigate('waiting',{trigger:true});
-
-          	/*$.post('api/upload/user',formData)
-			.success(function(data){
-				console.log('[RegisterView] Saved image to db');						
-			});*/
+			//Window.Application.navigate('waiting',{trigger:true});
 		}
 	},
 
@@ -168,12 +169,13 @@ var RegisterView = Backbone.View.extend({
 					this.week = new Week({startDate: date});
 					console.log('this.week1 = '+ this.week);
 					this.week.save();
+					this.listenToOnce(this.week,'sync',this.updateUser);
 				}else{
 					this.week = week;
 					console.log('this.week2 = '+ this.week);
-					this.week.save();
+					this.updateUser();
 				}
-				this.listenToOnce(this.week,'sync',this.updateUser);
+				
 			}.bind(this)
 		});
 		
@@ -182,6 +184,8 @@ var RegisterView = Backbone.View.extend({
 	updateUser: function(){
 		console.log("updating user with week_id which is "+this.week.get('id'));
 		this.user.set('week_id',this.week.get('id'));
+		console.log(this.extension);
+		this.user.set('extension',this.extension);
 		this.user.save();
 		console.log('hello');
 		this.listenToOnce(this.user,'sync',this.createDay);
@@ -248,6 +252,13 @@ var RegisterView = Backbone.View.extend({
 		this.listenToOnce(this.vote,'sync',this.addToSession);
 		
 	},
+
+	/*saveExtension: function(){
+		console.log(this.extension);
+		this.user.set('extension',this.extension);
+		this.user.save();
+		this.listenToOnce(this.user, 'sync',this.addToSession);
+	},*/
 
 	addToSession: function(){
 		console.log('RegisterView: addToSession');

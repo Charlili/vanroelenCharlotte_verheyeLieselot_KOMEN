@@ -32,7 +32,8 @@ $app->post('/upload/user', function(){
     $y2 = $centreY + 200; // 130 / 2
 
     // center cropping to 200x130
-    $newImage = $manipulator->resample(200,200,true);
+    $newImage = $manipulator->resample(400,400,true);
+    //$manipulator2 = new ImageManipulator($newImage);
     //$newImage2 = $manipulator->crop($x1, $y1, $x2, $y2);
     // saving file to uploads folder
     $manipulator->save(WWW_ROOT . DS . 'uploads' . DS . 'users'.  DS . $newName . "." . $extension);

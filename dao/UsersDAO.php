@@ -81,12 +81,12 @@ class UsersDAO extends DAO {
 		$errors = $this->getValidationErrors($data);
 		if(empty($errors)) {
 			$sql = "UPDATE `KK_users` 
-							SET `week_id` = :week_id, 
-								`password` = :password
+							SET `week_id` = :week_id,
+								`extension` = :extension
 							WHERE `id` = :id";
 			$stmt = $this->pdo->prepare($sql);
 			$stmt->bindValue(':week_id', $data['week_id']);
-			$stmt->bindValue(':password', $data['password']);
+			$stmt->bindValue(':extension', $data['extension']);
 			$stmt->bindValue(':id', $id);
 			if($stmt->execute()) {
 				return $this->selectById($id);

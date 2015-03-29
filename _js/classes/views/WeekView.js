@@ -19,7 +19,7 @@ var WeekView = Backbone.View.extend({
 		var loggedIn = $.get('api/me')
 		.success(function(data){
 			console.log(data);
-			if(data.length === 0){
+			if(data.length === 0 || data.week_id === 0){
 				console.log('No user logged in. Redirect to #home');
 				Window.Application.navigate('home',{trigger:true});
 			}else{
