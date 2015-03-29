@@ -31,9 +31,9 @@ var RegisterView = Backbone.View.extend({
 
 	previewImage: function(e){
 		console.log('changed');
-		var file = this.checkFile();
-		if(file != false){
-			$('form').append(file);
+		var fileB = this.checkFile();
+		if(fileB != false){
+			$('form').append(fileB);
 		}
 	},
 
@@ -48,17 +48,15 @@ var RegisterView = Backbone.View.extend({
 		        	var errorString = "no error in errorString";
 			            
 		        	img.onload = function() {
-			          	if(img.width > 800 || img.height > 800) {
-			              errorString = 'De afbeelding moet kleiner zijn dan 800x800';
-			              return;
-			              
-			            }if(img.width != img.height){
-			              errorString = 'De afbeelding moet vierkant zijn';
+			          	if(img.width > 2592 || img.height > 2592) {
+			              errorString = 'De afbeelding moet kleiner zijn dan 2593x1936';
 			              return;
 			            }
 			            //console.log(errorString);
 		          	}
 		          	img.setAttribute('src', reader.result);
+
+
 		        };
 		        reader.readAsDataURL(file);
 		        return img;
@@ -85,25 +83,61 @@ var RegisterView = Backbone.View.extend({
 		}		
 		if(!error){
 			//check if photo is valid
-			var file = this.checkFile();
-			if(file != false){
 				//check of user bestaat
-				var exist = new User({email: this.$el.find('.email-input').val()});
-				exist.fetch({
-					success: function(model,response){
-						//console.log(response);
-						if(response.length === 0){
-							console.log('addUser: User doesnt exist. Time to create.!');
-							this.saveUser();
-						}else{
-							console.log('addUser: User exists! Dont create user!');
-						}
-					}.bind(this)
-				});				
-				//password hash via js?
-				//Becrypt opzoeken
-			}
+			var exist = new User({email: this.$el.find('.email-input').val()});
+			exist.fetch({
+				success: function(model,response){
+					//console.log(response);
+					if(response.length === 0){
+						console.log('addUser: User doesnt exist. Time to create.!');
+						this.saveUser();
+					}else{
+						console.log('addUser: User exists! Dont create user!');
+					}
+				}.bind(this)
+			});				
+			//password hash via js?
+			//Becrypt opzoeken
 		}		
+	},
+
+	saveImage: function(){
+		var fileB = this.checkFile();
+		if(fileB != false){
+
+			var data = new FormData();
+		    data.append('SelectedFile', this.$el.find('.photo-input')[0].files[0]);
+
+		    //data.append('user_id', this.user.get['id']);
+
+		    var request = new XMLHttpRequest();
+
+			request.onreadystatechange = function(){
+			    if(request.readyState == 4){
+			        try {
+			            var resp = JSON.parse(request.response);
+			        } catch (e){
+			            var resp = {
+			                status: 'error',
+			                data: request.responseText
+			            };
+			        }
+			        sourceFile = $($(resp.data).get(0)).val();
+			        console.log(sourceFile);
+			        //var destFile = $($(resp.data).get(1)).val();
+			        //console.log(destFile);
+			    }
+			}.bind(this);
+			request.open('POST', 'api/upload/user');
+			request.send(data);
+
+			Window.Application.navigate('waiting',{trigger:true});
+
+          	/*$.post('api/upload/user',formData)
+			.success(function(data){
+				console.log('[RegisterView] Saved image to db');						
+			});*/
+		}
 	},
 
 	saveUser: function(){
@@ -217,8 +251,9 @@ var RegisterView = Backbone.View.extend({
 
 	addToSession: function(){
 		console.log('RegisterView: addToSession');
-		Window.Application.activeUser = this.user;
+		//Window.Application.activeUser = this.user;
 		//$.post('login.php',data);
+		
 		var dataUser = {
 			'id': this.user.get('id')			
 		};
@@ -226,9 +261,10 @@ var RegisterView = Backbone.View.extend({
 		$.post('api/me',dataUser)
 		.success(function(data){
 			console.log('[RegisterView] Saved user to session');
-			Window.Application.navigate('waiting',{trigger:true});
+			this.saveImage();
 			
-		});
+			
+		}.bind(this));
 	},
 
 	getInfo: function(model){

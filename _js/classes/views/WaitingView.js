@@ -28,18 +28,6 @@ var WaitingView = Backbone.View.extend({
 				console.log('No user logged in. Redirect to #home');
 				Window.Application.navigate('home',{trigger:true});
 			}else{
-				//add user as this.user
-				/*this.user = new User({
-					id: data.id,
-					email: data.email,
-					street: data.street,
-					town: data.town,
-					week_id: data.week_id,
-					role: data.role
-				});
-				console.log(this.user);
-				//add week as this.week
-				*/
 				this.week = new Week({
 					id: data.week_id
 				});
@@ -73,7 +61,10 @@ var WaitingView = Backbone.View.extend({
 
 	clickLink: function(e){
 		e.preventDefault();
-		Window.Application.navigate('week',{trigger:true});
+		if(this.userCollection.length == 4){
+			Window.Application.navigate('week',{trigger:true});	
+		}
+		
 	},
 
 	renderUser: function(model, key){

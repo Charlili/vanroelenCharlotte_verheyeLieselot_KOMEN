@@ -5,13 +5,15 @@
 $usersDAO = new usersDAO();
 
 //GET -> /users/
-/*$app->get('/users/?',function() use ($usersDAO){
+/*$app->get('/users/?', authorize('user'),function() use ($usersDAO){
     header("Content-Type: application/json");
 
     $arr = $usersDAO->selectAll();
     
     foreach($arr as &$user){
         unset($user['password']);
+        unset($user['street']);
+        unset($user['town']);
         //$user['password'] = 'derpderp';
     }
     //echo json_encode($arr);
@@ -74,7 +76,7 @@ $app->get('/week/users/:week_id/?', authorize('user'), function($week_id) use ($
 });*/
 
 //POST -> /users/
-$app->post('/users/?'/*, authorize('user')*/, function() use ($app, $usersDAO){
+$app->post('/users/?', function() use ($app, $usersDAO){
     header("Content-Type: application/json");
     $post = $app->request->post();
     if(empty($post)){
