@@ -347,7 +347,8 @@ span{
 				float: left;
 
 				p{
-					font-family: Manustrial, sans-serif;
+					margin-top: 10px;
+					font-family: Manus, sans-serif;
 					font-size: 3em;
 					color: #352725;
 					letter-spacing: 2px;
@@ -385,8 +386,8 @@ span{
 	}
 
 	.frame3{
-		margin-top: 20px;
-		margin-left: 30px;
+		margin-top: 40px;
+		margin-left: 35px;
 		&:before{
 		 position: absolute;
 		 content: url('../assets/frame3.png');
@@ -399,7 +400,27 @@ span{
 		}
 
 		p{
-			margin-top: 20px;
+			margin-top: 30px;
+		}
+	}
+
+	.frame4{
+		margin-top: 10px;
+		margin-left: 25px;
+		&:before{
+		 position: absolute;
+		 content: url('../assets/frame4.png');
+		}
+
+		.img-usr{
+			margin-top: 50px;
+			margin-left: 20px;
+			width: 230px;
+		}
+
+		p{
+			margin-top: 30px;
+			margin-left: 25px;
 		}
 	}
 
@@ -422,4 +443,12 @@ span{
 	}
 	
 
+}
+
+.week-container{
+	.header-week{
+		width: 640px;
+		height: 172px;
+		background-image: url('../assets/week_header.png');
+	}
 }

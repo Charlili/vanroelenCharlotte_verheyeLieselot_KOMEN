@@ -442,63 +442,85 @@ span {
 }
 /* line 349, ../_scss/screen.scss */
 .waiting-container li p {
-  font-family: Manustrial, sans-serif;
+  margin-top: 10px;
+  font-family: Manus, sans-serif;
   font-size: 3em;
   color: #352725;
   letter-spacing: 2px;
 }
-/* line 358, ../_scss/screen.scss */
+/* line 359, ../_scss/screen.scss */
 .waiting-container .frame1 {
   margin-left: 20px;
 }
-/* line 360, ../_scss/screen.scss */
+/* line 361, ../_scss/screen.scss */
 .waiting-container .frame1:before {
   position: absolute;
   content: url("../assets/frame1.png");
 }
-/* line 365, ../_scss/screen.scss */
+/* line 366, ../_scss/screen.scss */
 .waiting-container .frame1 .img-usr {
   margin-top: 40px;
   margin-left: 3px;
   width: 260px;
 }
-/* line 372, ../_scss/screen.scss */
+/* line 373, ../_scss/screen.scss */
 .waiting-container .frame2 {
   margin-top: 40px;
   margin-left: 30px;
 }
-/* line 375, ../_scss/screen.scss */
+/* line 376, ../_scss/screen.scss */
 .waiting-container .frame2:before {
   position: absolute;
   content: url("../assets/frame2.png");
 }
-/* line 380, ../_scss/screen.scss */
+/* line 381, ../_scss/screen.scss */
 .waiting-container .frame2 .img-usr {
   margin-top: 50px;
   margin-left: 15px;
   width: 240px;
 }
-/* line 387, ../_scss/screen.scss */
+/* line 388, ../_scss/screen.scss */
 .waiting-container .frame3 {
-  margin-top: 20px;
-  margin-left: 30px;
+  margin-top: 40px;
+  margin-left: 35px;
 }
-/* line 390, ../_scss/screen.scss */
+/* line 391, ../_scss/screen.scss */
 .waiting-container .frame3:before {
   position: absolute;
   content: url("../assets/frame3.png");
 }
-/* line 395, ../_scss/screen.scss */
+/* line 396, ../_scss/screen.scss */
 .waiting-container .frame3 .img-usr {
   margin-top: 50px;
   margin-left: 15px;
   width: 230px;
 }
-/* line 401, ../_scss/screen.scss */
+/* line 402, ../_scss/screen.scss */
 .waiting-container .frame3 p {
-  margin-top: 20px;
+  margin-top: 30px;
 }
-/* line 406, ../_scss/screen.scss */
+/* line 407, ../_scss/screen.scss */
+.waiting-container .frame4 {
+  margin-top: 10px;
+  margin-left: 25px;
+}
+/* line 410, ../_scss/screen.scss */
+.waiting-container .frame4:before {
+  position: absolute;
+  content: url("../assets/frame4.png");
+}
+/* line 415, ../_scss/screen.scss */
+.waiting-container .frame4 .img-usr {
+  margin-top: 50px;
+  margin-left: 20px;
+  width: 230px;
+}
+/* line 421, ../_scss/screen.scss */
+.waiting-container .frame4 p {
+  margin-top: 30px;
+  margin-left: 25px;
+}
+/* line 427, ../_scss/screen.scss */
 .waiting-container .ga-verder {
   color: #fff;
   font-family: inherit;
@@ -515,7 +537,14 @@ span {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 419, ../_scss/screen.scss */
+/* line 440, ../_scss/screen.scss */
 .waiting-container .ga-verder:focus {
   outline: none;
+}
+
+/* line 449, ../_scss/screen.scss */
+.week-container .header-week {
+  width: 640px;
+  height: 172px;
+  background-image: url("../assets/week_header.png");
 }
