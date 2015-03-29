@@ -374,6 +374,11 @@ span{
 
 	.frame1{
 		margin-left: 20px;
+
+		width: 290px;
+		height: 290px;
+		overflow: hidden;
+
 		&:before{
 		 position: absolute;
 		 content: url('../assets/frame1.png');
@@ -389,6 +394,9 @@ span{
 	.frame2{
 		margin-top: 40px;
 		margin-left: 30px;
+		width: 280px;
+		height: 280px;
+		overflow: hidden;
 		&:before{
 		 position: absolute;
 		 content: url('../assets/frame2.png');
@@ -404,6 +412,11 @@ span{
 	.frame3{
 		margin-top: 40px;
 		margin-left: 35px;
+
+		width: 280px;
+		height: 280px;
+		overflow: hidden;
+
 		&:before{
 		 position: absolute;
 		 content: url('../assets/frame3.png');
@@ -423,6 +436,11 @@ span{
 	.frame4{
 		margin-top: 10px;
 		margin-left: 25px;
+
+		width: 290px;
+		height: 290px;
+		overflow: hidden;
+		
 		&:before{
 		 position: absolute;
 		 content: url('../assets/frame4.png');

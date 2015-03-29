@@ -467,76 +467,88 @@ span {
 /* line 375, ../_scss/screen.scss */
 .waiting-container .frame1 {
   margin-left: 20px;
+  width: 290px;
+  height: 290px;
+  overflow: hidden;
 }
-/* line 377, ../_scss/screen.scss */
+/* line 382, ../_scss/screen.scss */
 .waiting-container .frame1:before {
   position: absolute;
   content: url("../assets/frame1.png");
 }
-/* line 382, ../_scss/screen.scss */
+/* line 387, ../_scss/screen.scss */
 .waiting-container .frame1 .img-usr {
   margin-top: 40px;
   margin-left: 3px;
   width: 260px;
 }
-/* line 389, ../_scss/screen.scss */
+/* line 394, ../_scss/screen.scss */
 .waiting-container .frame2 {
   margin-top: 40px;
   margin-left: 30px;
+  width: 280px;
+  height: 280px;
+  overflow: hidden;
 }
-/* line 392, ../_scss/screen.scss */
+/* line 400, ../_scss/screen.scss */
 .waiting-container .frame2:before {
   position: absolute;
   content: url("../assets/frame2.png");
 }
-/* line 397, ../_scss/screen.scss */
+/* line 405, ../_scss/screen.scss */
 .waiting-container .frame2 .img-usr {
   margin-top: 50px;
   margin-left: 15px;
   width: 240px;
 }
-/* line 404, ../_scss/screen.scss */
+/* line 412, ../_scss/screen.scss */
 .waiting-container .frame3 {
   margin-top: 40px;
   margin-left: 35px;
+  width: 280px;
+  height: 280px;
+  overflow: hidden;
 }
-/* line 407, ../_scss/screen.scss */
+/* line 420, ../_scss/screen.scss */
 .waiting-container .frame3:before {
   position: absolute;
   content: url("../assets/frame3.png");
 }
-/* line 412, ../_scss/screen.scss */
+/* line 425, ../_scss/screen.scss */
 .waiting-container .frame3 .img-usr {
   margin-top: 50px;
   margin-left: 15px;
   width: 230px;
 }
-/* line 418, ../_scss/screen.scss */
+/* line 431, ../_scss/screen.scss */
 .waiting-container .frame3 p {
   margin-top: 30px;
 }
-/* line 423, ../_scss/screen.scss */
+/* line 436, ../_scss/screen.scss */
 .waiting-container .frame4 {
   margin-top: 10px;
   margin-left: 25px;
+  width: 290px;
+  height: 290px;
+  overflow: hidden;
 }
-/* line 426, ../_scss/screen.scss */
+/* line 444, ../_scss/screen.scss */
 .waiting-container .frame4:before {
   position: absolute;
   content: url("../assets/frame4.png");
 }
-/* line 431, ../_scss/screen.scss */
+/* line 449, ../_scss/screen.scss */
 .waiting-container .frame4 .img-usr {
   margin-top: 50px;
   margin-left: 20px;
   width: 230px;
 }
-/* line 437, ../_scss/screen.scss */
+/* line 455, ../_scss/screen.scss */
 .waiting-container .frame4 p {
   margin-top: 30px;
   margin-left: 25px;
 }
-/* line 443, ../_scss/screen.scss */
+/* line 461, ../_scss/screen.scss */
 .waiting-container .ga-verder {
   color: #fff;
   font-family: inherit;
@@ -553,65 +565,65 @@ span {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 456, ../_scss/screen.scss */
+/* line 474, ../_scss/screen.scss */
 .waiting-container .ga-verder:focus {
   outline: none;
 }
 
-/* line 465, ../_scss/screen.scss */
+/* line 483, ../_scss/screen.scss */
 .week-container .header-week {
   width: 640px;
   height: 172px;
   background-image: url("../assets/week_header.png");
 }
-/* line 471, ../_scss/screen.scss */
+/* line 489, ../_scss/screen.scss */
 .week-container .gray-p {
   margin-top: 10px;
   margin-bottom: 37px;
 }
-/* line 476, ../_scss/screen.scss */
+/* line 494, ../_scss/screen.scss */
 .week-container ul {
   width: 640px;
   margin: 0px auto;
 }
-/* line 481, ../_scss/screen.scss */
+/* line 499, ../_scss/screen.scss */
 .week-container li {
   height: 200px;
   background-image: url("../assets/pattern-week.jpg");
   margin-top: 20px;
   overflow: auto;
 }
-/* line 488, ../_scss/screen.scss */
+/* line 506, ../_scss/screen.scss */
 .week-container .date-overview {
   float: left;
   width: 220px;
 }
-/* line 492, ../_scss/screen.scss */
+/* line 510, ../_scss/screen.scss */
 .week-container .date-overview p {
   margin-top: 80px;
   text-align: center;
   font-size: 3.8em;
   color: #FFF;
 }
-/* line 500, ../_scss/screen.scss */
+/* line 518, ../_scss/screen.scss */
 .week-container .info-overview {
   float: left;
   color: #413934;
   margin-left: 10px;
   width: 340px;
 }
-/* line 506, ../_scss/screen.scss */
+/* line 524, ../_scss/screen.scss */
 .week-container .info-overview h1 {
   font-family: aleobold, aleoregular, sans-serif;
   font-size: 3em;
   margin-top: 50px;
   margin-bottom: 10px;
 }
-/* line 513, ../_scss/screen.scss */
+/* line 531, ../_scss/screen.scss */
 .week-container .info-overview p {
   font-size: 2.8em;
 }
-/* line 518, ../_scss/screen.scss */
+/* line 536, ../_scss/screen.scss */
 .week-container .date-overview p, .week-container .winner p {
   color: #fff;
   padding-top: 8px;
@@ -624,18 +636,18 @@ span {
   display: block;
   background-image: url("../assets/grey-date.png");
 }
-/* line 533, ../_scss/screen.scss */
+/* line 551, ../_scss/screen.scss */
 .week-container .thisDay .active .date-overview p {
   background-image: url("../assets/red-date.png");
 }
-/* line 538, ../_scss/screen.scss */
+/* line 556, ../_scss/screen.scss */
 .week-container .thisDay .active:after {
   content: url("../assets/red-arrow.png");
   float: right;
   margin-top: 70px;
   margin-right: 20px;
 }
-/* line 546, ../_scss/screen.scss */
+/* line 564, ../_scss/screen.scss */
 .week-container .thisDay .date-overview:before {
   display: block;
   position: absolute;
@@ -645,26 +657,26 @@ span {
   transform: translateY(-10px);
   content: url("../assets/vandaag_label.png");
 }
-/* line 554, ../_scss/screen.scss */
+/* line 572, ../_scss/screen.scss */
 .week-container .active .date-overview p {
   background-image: url("../assets/green-date.png");
 }
-/* line 560, ../_scss/screen.scss */
+/* line 578, ../_scss/screen.scss */
 .week-container .active:after {
   content: url("../assets/green-arrow.png");
   float: right;
   margin-top: 70px;
   margin-right: 20px;
 }
-/* line 568, ../_scss/screen.scss */
+/* line 586, ../_scss/screen.scss */
 .week-container .winner {
   text-align: center;
 }
-/* line 570, ../_scss/screen.scss */
+/* line 588, ../_scss/screen.scss */
 .week-container .winner p {
   font-size: 3.8em;
 }
-/* line 574, ../_scss/screen.scss */
+/* line 592, ../_scss/screen.scss */
 .week-container .winner a {
   display: block;
   margin: 20px 0px;
@@ -673,12 +685,12 @@ span {
   background-color: #636363;
   color: #FFF;
 }
-/* line 581, ../_scss/screen.scss */
+/* line 599, ../_scss/screen.scss */
 .week-container .winner a:before {
   content: url("../assets/leftie.png");
   margin-right: 15px;
 }
-/* line 585, ../_scss/screen.scss */
+/* line 603, ../_scss/screen.scss */
 .week-container .winner a:after {
   content: url("../assets/rightie.png");
   margin-left: 15px;
