@@ -5,13 +5,21 @@ var DayCollection = Backbone.Collection.extend({
 	model: Day,
 	url: '/MAIV/deelexamen/api/days',
 
-	initialize: function(){
-		
+	initialize: function(options){
+		if(options){
+			this.week_id = options.week_id;
+		}
 	},
 
-	//sorteren van days, .sort oproepen voor je je days rendert
-	comparator: function(day) {
-		return - day.get("id");
+	methodUrl: function(method){
+		//if method === read; = checken als het een GET is! 
+		if(method === "read" && this.week_id){
+			this.url = "/MAIV/deelexamen/api/days/week/" + this.week_id;
+			return;
+		}
+		
+		this.url = '/MAIV/deelexamen/api/days/';
+
 	},
 
 	sync: function(method, model, options) {

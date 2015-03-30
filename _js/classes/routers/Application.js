@@ -4,6 +4,7 @@ var DayView = require('../views/DayView.js');
 var WeekView = require('../views/WeekView.js');
 var RegisterView = require('../views/RegisterView.js');
 var WaitingView = require('../views/WaitingView.js');
+var WinnersView = require('../views/WinnersView.js');
 //var OtherView = require('../views/OtherView.js');
 
 var Application = Backbone.Router.extend({
@@ -15,6 +16,7 @@ var Application = Backbone.Router.extend({
 		"waiting": "waiting",
 		"week": "week",
 		"day/:day": "day",
+		"winners": "winners",
 		"*actions": "default"
 	},
 
@@ -47,11 +49,18 @@ var Application = Backbone.Router.extend({
 		$('.container').append(this.waiting.render().el);
 	},
 
-	day: function(id){
+	day: function(day){
 		this.empty();
 		this.day = new DayView({
-			id: id
+			id: day
 		});
+		$('.container').append(this.day.render().el);
+
+	},
+
+	winners: function(){
+		this.empty();
+		this.day = new WinnersView();
 		$('.container').append(this.day.render().el);
 
 	},

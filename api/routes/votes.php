@@ -18,6 +18,12 @@ $app->get('/votes/:id/?', function($id) use ($votesDAO){
     exit();
 });
 
+$app->get('/votes/day/:week_id/?', function($week_id) use ($votesDAO){
+    header("Content-Type: application/json");
+    echo json_encode($votesDAO->selectByWeekId($week_id), JSON_NUMERIC_CHECK);
+    exit();
+});
+
 $app->get('/votes/:day_id/:user_id?', function($day_id,$user_id) use ($votesDAO){
     header("Content-Type: application/json");
     echo json_encode($votesDAO->selectByDayAndUser($day_id,$user_id), JSON_NUMERIC_CHECK);

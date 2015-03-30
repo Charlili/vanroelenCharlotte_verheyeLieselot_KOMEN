@@ -85,7 +85,7 @@ var WeekView = Backbone.View.extend({
 			this.$a.prop("disabled", "disabled");
 			//this.$a.prop("href", '#waiting');
 		}else{
-			this.$a.prop("href","#winner");
+			this.$a.prop("href","#winners");
 		}
 		this.count = 1;
 		this.userCollection.forEach(this.renderUser, this);

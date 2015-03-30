@@ -28,31 +28,32 @@ var DayView = Backbone.View.extend({
 		}
 		var loggedIn = $.get('api/me')
 		.success(function(data){
-			//console.log(data);
+			console.log('1');
 			if(data.length === 0){
 				console.log('No user logged in. Redirect to #home');
 				Window.Application.navigate('home',{trigger:true});
 			}else{
+				console.log('2');
+				console.log(data);
 				this.me = data.id;
 				this.day.fetch({
 					success: function(model,response){
-						//console.log(response);
+						console.log('3');
+						console.log('in success '+response);
 						if(response.length === 0){
 							console.log('Day doesnt exist!');
 							Window.Application.navigate('week',{trigger:true});	
 						}else{
-							console.log(this.day.get('user_id'));
+							console.log('4');
+							console.log(model.get('user_id'));
 							
-							
-							//alleen voten op dagen die niet van jou zijn
-							
-
 							var user = new User({
-								id: this.day.get('user_id')
+								id: model.get('user_id')
 							});
 							user.fetch();
 							this.listenToOnce(user,'sync',function(){
 								this.name = user.get('name');
+								this.day.set('name',this.name);
 								this.render();
 							}.bind(this));
 						}
@@ -73,7 +74,7 @@ var DayView = Backbone.View.extend({
 			day_id: this.day.get('id'),
 			user_id: this.day.get('user_id'),
 			week_id: this.day.get('week_id'),
-			me: this.me.id
+			me: this.me
 		});
 		this.listenTo(this.voteView.model,'sync',this.renderVote);
 	},

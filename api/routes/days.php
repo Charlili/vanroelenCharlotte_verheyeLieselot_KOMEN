@@ -3,16 +3,28 @@
 $daysDAO = new daysDAO();
 
 //GET -> /days/
-$app->get('/days/?',function() use ($daysDAO){
+/*$app->get('/days/?',function() use ($daysDAO){
     header("Content-Type: application/json");
     echo json_encode($daysDAO->selectAll(), JSON_NUMERIC_CHECK);
     exit();
-});
+});*/
 
 //GET -> /days/:id
-$app->get('/days/:user_id/?', function($user_id) use ($daysDAO){
+$app->get('/days/user/:user_id/?', function($user_id) use ($daysDAO){
     header("Content-Type: application/json");
     echo json_encode($daysDAO->selectByUserId($user_id), JSON_NUMERIC_CHECK);
+    exit();
+});
+
+$app->get('/days/:id/?', function($id) use ($daysDAO){
+    header("Content-Type: application/json");
+    echo json_encode($daysDAO->selectById($id), JSON_NUMERIC_CHECK);
+    exit();
+});
+
+$app->get('/days/week/:week_id/?', function($week_id) use ($daysDAO){
+    header("Content-Type: application/json");
+    echo json_encode($daysDAO->selectByWeekId($week_id), JSON_NUMERIC_CHECK);
     exit();
 });
 

@@ -5,12 +5,21 @@ var VoteCollection = Backbone.Collection.extend({
 	model: Vote,
 	url: '/MAIV/deelexamen/api/votes',
 
-	initialize: function(){
+	initialize: function(options){
+		if(options){
+			this.day_id = options.day_id;
+		}
 	},
 
-	//sorteren van votes, .sort oproepen voor je je votes rendert
-	comparator: function(vote) {
-		return - vote.get("id");
+	methodUrl: function(method){
+		//if method === read; = checken als het een GET is! 
+		if(method === "read" && this.day_id){
+			this.url = "/MAIV/deelexamen/api/votes/day/" + this.day_id;
+			return;
+		}
+		
+		this.url = '/MAIV/deelexamen/api/votes/';
+
 	},
 
 	sync: function(method, model, options) {

@@ -38,6 +38,20 @@ class DaysDAO extends DAO {
 			return $result;
 		}
 		return [];
+	}
+
+	public function selectByWeekId($id) {
+		$sql = "SELECT * 
+						FROM `KK_days` 
+						WHERE `week_id` = :id";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(':id', $id);
+		$stmt->execute();
+		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+		if($result){
+			return $result;
+		}
+		return [];
 	}	
 
 	public function selectByFormat($format) {

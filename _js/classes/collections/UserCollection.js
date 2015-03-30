@@ -12,9 +12,11 @@ var UserCollection = Backbone.Collection.extend({
 	},
 
 	//sorteren van users, .sort oproepen voor je je users rendert
-	/*comparator: function(user) {
-		return - user.get("id");
-	},*/
+	comparator: function(user) {
+		if(user.get('total')){
+			return - user.get("total");
+		}
+	},
 
 	methodUrl: function(method){
 		//if method === read; = checken als het een GET is! 

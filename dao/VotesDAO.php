@@ -26,6 +26,20 @@ class VotesDAO extends DAO {
 		return [];
 	}
 
+	public function selectByDayId($id) {
+		$sql = "SELECT * 
+						FROM `KK_votes` 
+						WHERE `day_id` = :id";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(':id', $id);
+		$stmt->execute();
+		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+		if($result){
+			return $result;
+		}
+		return [];
+	}
+
 	public function selectByDayAndUser($day_id,$user_id) {
 		$sql = "SELECT * 
 						FROM `KK_votes` 
