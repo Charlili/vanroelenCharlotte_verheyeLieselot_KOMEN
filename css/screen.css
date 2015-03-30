@@ -834,61 +834,81 @@ span {
   display: inline-block;
   background-repeat: no-repeat;
   margin-right: 20px;
+  text-align: left;
 }
-/* line 753, ../_scss/screen.scss */
+/* line 746, ../_scss/screen.scss */
+.votes ul li p {
+  margin-top: 130px;
+  background-image: url("../assets/green-dot.png");
+  background-repeat: no-repeat;
+  width: 46px;
+  height: 46px;
+  color: #fff;
+  padding-left: 17px;
+  padding-top: 11px;
+}
+/* line 759, ../_scss/screen.scss */
+.votes ul li .voted {
+  background-image: url("../assets/red-dot.png");
+}
+/* line 768, ../_scss/screen.scss */
 .votes .gebak li {
   width: 183px;
   height: 189px;
 }
-/* line 758, ../_scss/screen.scss */
+/* line 773, ../_scss/screen.scss */
 .votes .gelach li {
   width: 164px;
-  height: 136px;
+  height: 156px;
   margin-right: 35px;
 }
-/* line 764, ../_scss/screen.scss */
+/* line 777, ../_scss/screen.scss */
+.votes .gelach li p {
+  margin-top: 105px;
+}
+/* line 782, ../_scss/screen.scss */
 .votes .geur li {
   margin-right: 0px;
 }
-/* line 770, ../_scss/screen.scss */
+/* line 788, ../_scss/screen.scss */
 .votes .one-gebak {
   background-image: url("../assets/gebak-een.png");
 }
-/* line 775, ../_scss/screen.scss */
+/* line 793, ../_scss/screen.scss */
 .votes .two-gebak {
   background-image: url("../assets/gebak-twee.png");
 }
-/* line 779, ../_scss/screen.scss */
+/* line 797, ../_scss/screen.scss */
 .votes .three-gebak {
   margin-right: 0px;
   background-image: url("../assets/gebak-twee.png");
 }
-/* line 784, ../_scss/screen.scss */
+/* line 802, ../_scss/screen.scss */
 .votes .one-lach {
   background-image: url("../assets/lach-een.png");
 }
-/* line 789, ../_scss/screen.scss */
+/* line 807, ../_scss/screen.scss */
 .votes .two-lach {
   background-image: url("../assets/lach-twee.png");
 }
-/* line 793, ../_scss/screen.scss */
+/* line 811, ../_scss/screen.scss */
 .votes .three-lach {
   margin-right: 0px;
   background-image: url("../assets/lach-twee.png");
 }
-/* line 798, ../_scss/screen.scss */
+/* line 816, ../_scss/screen.scss */
 .votes .one-geur {
   width: 204px;
   height: 195px;
   background-image: url("../assets/geur-een.png");
 }
-/* line 805, ../_scss/screen.scss */
+/* line 823, ../_scss/screen.scss */
 .votes .two-geur {
   width: 188px;
   height: 189px;
   background-image: url("../assets/geur-twee.png");
 }
-/* line 811, ../_scss/screen.scss */
+/* line 829, ../_scss/screen.scss */
 .votes .three-geur {
   width: 167px;
   height: 192px;

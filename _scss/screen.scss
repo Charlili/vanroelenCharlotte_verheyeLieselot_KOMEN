@@ -737,13 +737,28 @@ span{
 		}
 
 		li{
-							margin-top: 40px;
-
+			margin-top: 40px;
 			float: left;
 			display: inline-block;
-			
 			background-repeat: no-repeat;
 			margin-right: 20px;
+			text-align: left;
+			p{
+				margin-top: 130px;
+				background-image: url('../assets/green-dot.png');
+				background-repeat: no-repeat;
+				width: 46px;
+				height: 46px;
+				color: #fff;
+				padding-left: 17px;
+				padding-top: 11px;
+
+
+			}
+
+			.voted{
+				background-image: url('../assets/red-dot.png');
+			}
 		}
 
 	
@@ -757,8 +772,11 @@ span{
 
 		.gelach li{
 			width: 164px;
-			height: 136px;
+			height: 156px;
 			margin-right: 35px;
+			p{
+					margin-top: 105px;
+			}
 		}
 
 		.geur li{
