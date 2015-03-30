@@ -9,7 +9,7 @@ var GalleryView = Backbone.View.extend({
 	tagName: 'section',
 	className: 'gallery',
 	events:{
-		'click .photo-upload': 'addImage'
+		'change .photo-upload': 'addImage'
 	},
 
 	initialize: function(options){
@@ -23,7 +23,7 @@ var GalleryView = Backbone.View.extend({
 		this.collection = new ImageCollection({
 			day_id: this.day_id
 		});
-		this.listenTo(this.collection, 'sync', this.renderImages);
+		//this.listenTo(this.collection, 'sync', this.renderImages);
 		this.collection.fetch({success:function(model,response){
 			if(response.length === 0){
 				console.log('empty collection');
@@ -45,8 +45,8 @@ var GalleryView = Backbone.View.extend({
 
 		var $img = $(document.createElement('img'));
 		$img.addClass('image');
-		var href = 'uploads/' + model.get('name') + model.get('extension');
-		$img.attr('href',href);
+		var href = 'uploads/' + model.get('name');
+		$img.attr('src',href);
 		$img.attr('alt','image');
 		$img.attr('title','Klik om te zien.');
 
@@ -59,9 +59,6 @@ var GalleryView = Backbone.View.extend({
 
 			var data = new FormData();
 		    data.append('SelectedFile', this.$el.find('.photo-input')[0].files[0]);
-
-		    //data.append('user_id', this.user.get['id']);
-
 		    var request = new XMLHttpRequest();
 
 			request.onreadystatechange = function(){
@@ -80,21 +77,20 @@ var GalleryView = Backbone.View.extend({
 			        //console.log(destFile);
 			    }
 			}.bind(this);
-			request.open('POST', 'api/upload/user');
+			request.open('POST', 'api/upload/');
 			request.send(data);
-			
-			Window.Application.navigate('waiting',{trigger:true});
+
 			//Window.Application.navigate('waiting',{trigger:true});
 		}
 	},
 
 	checkFile: function(){
-		console.log(this.$el.find('.photo-input'));
+		//console.log(this.$el.find('.photo-input')[0].files);
 		if(this.$el.find('.photo-input')[0].files.length > 0){
 			var file = this.$el.find('.photo-input')[0].files[0];
-			var filename = file.val();
+			var filename = file.name;
 	        this.extension = filename.replace(/^.*\./, '.');
-	        this.name = filename.replace(/^.\.*/, '');
+	        this.name = filename.replace(/^\.*/, '');
 	        console.log(this.name);
 			
 			if(file.type.search('image') != -1) {
@@ -127,15 +123,16 @@ var GalleryView = Backbone.View.extend({
 	addImage: function(e){
 		console.log('changed');
 		var fileB = this.checkFile();
-		console.log(fileB);
+		//console.log(fileB);
 		if(fileB != false){
-			this.collection.create({
-				day_id: this.day_id,
-				name: this.name,
-				extension: this.extension
-			});
-			//this.$el.find('.photo-input').remove();
-			this.$el.find('.preview-cont').append(fileB);
+		this.collection.create({
+			day_id: this.day_id,
+			name: this.name,
+			extension: this.extension
+		});
+		this.saveImage();
+		//this.$el.find('.photo-input').remove();
+		//this.$el.find('.preview-cont').append(fileB);
 
 			//make 
 		}
@@ -144,6 +141,7 @@ var GalleryView = Backbone.View.extend({
 	render: function(){
 		console.log('hullo');
 		this.$el.html(this.template());
+		this.renderImages();
 		console.log(this.$el);
 		return this;
 	}
