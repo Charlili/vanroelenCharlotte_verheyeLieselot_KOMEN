@@ -740,22 +740,32 @@ span{
 							margin-top: 40px;
 
 			float: left;
+			display: inline-block;
 			
 			background-repeat: no-repeat;
 			margin-right: 20px;
 		}
+
+	
+	}
+
 
 		.gebak li{
 			width: 183px;
 			height: 189px;
 		}
 
-		.lach li{
+		.gelach li{
 			width: 164px;
 			height: 136px;
+			margin-right: 35px;
 		}
-		
-	}
+
+		.geur li{
+			margin-right: 0px;
+
+		}
+
 
 	.one-gebak{
 
@@ -772,7 +782,7 @@ span{
 	}
 
 	.one-lach{
-
+	
 		background-image: url('../assets/lach-een.png');
 	}
 
@@ -784,4 +794,25 @@ span{
 		margin-right: 0px;
 		background-image: url('../assets/lach-twee.png');
 	}
+
+	.one-geur{
+		width: 204px;
+		height: 195px;
+
+		background-image: url('../assets/geur-een.png');
+	}
+
+	.two-geur{
+		width: 188px;
+		height: 189px;
+		background-image: url('../assets/geur-twee.png');
+	}
+
+	.three-geur{
+		width: 167px;
+		height: 192px;
+		margin-left: 15px;
+		background-image: url('../assets/geur-drie.png');
+	}
+
 }

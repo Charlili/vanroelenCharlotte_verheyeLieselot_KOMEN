@@ -831,42 +831,67 @@ span {
 .votes ul li {
   margin-top: 40px;
   float: left;
+  display: inline-block;
   background-repeat: no-repeat;
   margin-right: 20px;
 }
-/* line 748, ../_scss/screen.scss */
-.votes ul .gebak li {
+/* line 753, ../_scss/screen.scss */
+.votes .gebak li {
   width: 183px;
   height: 189px;
 }
-/* line 753, ../_scss/screen.scss */
-.votes ul .lach li {
+/* line 758, ../_scss/screen.scss */
+.votes .gelach li {
   width: 164px;
   height: 136px;
+  margin-right: 35px;
 }
-/* line 760, ../_scss/screen.scss */
+/* line 764, ../_scss/screen.scss */
+.votes .geur li {
+  margin-right: 0px;
+}
+/* line 770, ../_scss/screen.scss */
 .votes .one-gebak {
   background-image: url("../assets/gebak-een.png");
 }
-/* line 765, ../_scss/screen.scss */
+/* line 775, ../_scss/screen.scss */
 .votes .two-gebak {
   background-image: url("../assets/gebak-twee.png");
 }
-/* line 769, ../_scss/screen.scss */
+/* line 779, ../_scss/screen.scss */
 .votes .three-gebak {
   margin-right: 0px;
   background-image: url("../assets/gebak-twee.png");
 }
-/* line 774, ../_scss/screen.scss */
+/* line 784, ../_scss/screen.scss */
 .votes .one-lach {
   background-image: url("../assets/lach-een.png");
 }
-/* line 779, ../_scss/screen.scss */
+/* line 789, ../_scss/screen.scss */
 .votes .two-lach {
   background-image: url("../assets/lach-twee.png");
 }
-/* line 783, ../_scss/screen.scss */
+/* line 793, ../_scss/screen.scss */
 .votes .three-lach {
   margin-right: 0px;
   background-image: url("../assets/lach-twee.png");
+}
+/* line 798, ../_scss/screen.scss */
+.votes .one-geur {
+  width: 204px;
+  height: 195px;
+  background-image: url("../assets/geur-een.png");
+}
+/* line 805, ../_scss/screen.scss */
+.votes .two-geur {
+  width: 188px;
+  height: 189px;
+  background-image: url("../assets/geur-twee.png");
+}
+/* line 811, ../_scss/screen.scss */
+.votes .three-geur {
+  width: 167px;
+  height: 192px;
+  margin-left: 15px;
+  background-image: url("../assets/geur-drie.png");
 }
