@@ -788,3 +788,85 @@ span {
   content: url("../assets/rightie.png");
   margin-left: 15px;
 }
+
+/* line 703, ../_scss/screen.scss */
+.votes {
+  text-align: center;
+}
+/* line 705, ../_scss/screen.scss */
+.votes header h1 {
+  display: block;
+  background-color: #6cbca3;
+  font-size: 3.4em;
+  color: #fff;
+  padding: 10px 0px;
+}
+/* line 712, ../_scss/screen.scss */
+.votes header h1:before {
+  content: url("../assets/stitches.png");
+  position: absolute;
+  margin-left: -80px;
+  margin-top: -4px;
+}
+/* line 720, ../_scss/screen.scss */
+.votes header h1:after {
+  content: url("../assets/stitches.png");
+  position: absolute;
+  margin-left: 10px;
+  margin-top: -4px;
+}
+/* line 729, ../_scss/screen.scss */
+.votes ul {
+  width: 600px;
+  margin: 0px auto;
+  overflow: auto;
+}
+/* line 733, ../_scss/screen.scss */
+.votes ul p {
+  margin-top: 30px;
+  font-size: 2.5em;
+  color: #3b3b3b;
+}
+/* line 739, ../_scss/screen.scss */
+.votes ul li {
+  margin-top: 40px;
+  float: left;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+}
+/* line 748, ../_scss/screen.scss */
+.votes ul .gebak li {
+  width: 183px;
+  height: 189px;
+}
+/* line 753, ../_scss/screen.scss */
+.votes ul .lach li {
+  width: 164px;
+  height: 136px;
+}
+/* line 760, ../_scss/screen.scss */
+.votes .one-gebak {
+  background-image: url("../assets/gebak-een.png");
+}
+/* line 765, ../_scss/screen.scss */
+.votes .two-gebak {
+  background-image: url("../assets/gebak-twee.png");
+}
+/* line 769, ../_scss/screen.scss */
+.votes .three-gebak {
+  margin-right: 0px;
+  background-image: url("../assets/gebak-twee.png");
+}
+/* line 774, ../_scss/screen.scss */
+.votes .one-lach {
+  background-image: url("../assets/lach-een.png");
+}
+/* line 779, ../_scss/screen.scss */
+.votes .two-lach {
+  background-image: url("../assets/lach-twee.png");
+}
+/* line 783, ../_scss/screen.scss */
+.votes .three-lach {
+  margin-right: 0px;
+  background-image: url("../assets/lach-twee.png");
+}
