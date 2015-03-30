@@ -71,10 +71,12 @@ var RegisterView = Backbone.View.extend({
 		        return img;
 
 			}else{
+				this.hideErrors();
 				this.errorInput();
 				return false;
 			}
 		}else{
+			this.hideErrors();
 			this.errorInput();
 			return false;
 		}
@@ -86,10 +88,10 @@ var RegisterView = Backbone.View.extend({
 		console.log("RegisterView: addUser");
 		var error = false;
 		//validation checks
-		if(this.$el.find('input').val() === ""){
-			this.errorInput();
-			error = true;
-		}		
+		this.hideErrors();
+		this.errorInput();
+
+		
 		if(!error){
 			//check if photo is valid
 				//check of user bestaat
@@ -294,39 +296,71 @@ var RegisterView = Backbone.View.extend({
 	errorInput: function(){
 		console.log('error');
 		if(this.$el.find('.name-input').val() === ""){
+
+			this.$el.find('.error-name').html('Vul a.u.b. je voor- en achternaam in');
+			this.$el.find('.error-name').addClass('error');
 			this.$el.find('.name-input').addClass('error');
+			error = true;
 		}
 		if(this.$el.find('.email-input').val() === ""){
+			this.$el.find('.error-email').html('Vul a.u.b. je e-mailadres in');
+			this.$el.find('.error-email').addClass('error');
 			this.$el.find('.email-input').addClass('error');
+			error = true;
 		}
 		if(this.$el.find('.password-input').val() === ""){
+			this.$el.find('.error-pass').html('Vul a.u.b. een wachtwoord in');
+			this.$el.find('.error-pass').addClass('error');
 			this.$el.find('.password-input').addClass('error');
+			error = true;
 		}
+
 		if(this.$el.find('.street-input').val() === ""){
+			this.$el.find('.error-street').html('Vul a.u.b. een straat en huisnummer in');
+			this.$el.find('.error-street').addClass('error');
 			this.$el.find('.street-input').addClass('error');
+			error = true;
+
 		}
 		if(this.$el.find('.town-input').val() === ""){
+			this.$el.find('.error-town').html('Vul a.u.b. een postcode in');
+			this.$el.find('.error-town').addClass('error');
 			this.$el.find('.town-input').addClass('error');
+			error = true;
 		}
 
 	},
 
 	hideErrors: function(){
 		console.log('hiding errors');
-		if(this.$el.find('.name-input').val() === ""){
+		if(this.$el.find('.name-input').val() !== ""){
+			this.$el.find('.error-name').removeClass('error');
 			this.$el.find('.name-input').removeClass('error');
+			error = false;
 		}
-		if(this.$el.find('.email-input').val() === ""){
+		if(this.$el.find('.email-input').val() !== ""){
+			this.$el.find('.error-email').removeClass('error');
 			this.$el.find('.email-input').removeClass('error');
+			error = false;
+
 		}
-		if(this.$el.find('.password-input').val() === ""){
+		if(this.$el.find('.password-input').val() !== ""){
+			this.$el.find('.error-pass').removeClass('error');
 			this.$el.find('.password-input').removeClass('error');
+			error = false;
+
 		}
-		if(this.$el.find('.street-input').val() === ""){
+		if(this.$el.find('.street-input').val() !== ""){
+			this.$el.find('.error-street').removeClass('error');
 			this.$el.find('.street-input').removeClass('error');
+			error = false;
+
 		}
-		if(this.$el.find('.town-input').val() === ""){
+		if(this.$el.find('.town-input').val() !== ""){
+			this.$el.find('.error-town').removeClass('error');
 			this.$el.find('.town-input').removeClass('error');
+			error = false;
+
 		}
 	}
 

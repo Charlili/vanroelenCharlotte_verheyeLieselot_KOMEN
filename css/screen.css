@@ -846,6 +846,7 @@ span {
 .empty {
   color: #ed564d;
   font-size: 2.2em;
+  margin-bottom: 4px;
   font-family: aleobold, aleoregular, sans-serif;
   text-align: center;
 }
