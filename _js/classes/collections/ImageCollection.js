@@ -1,17 +1,26 @@
-var Vote = require('../models/Vote.js');
+var Image = require('../models/Image.js');
 
-var VoteCollection = Backbone.Collection.extend({
+var ImageCollection = Backbone.Collection.extend({
 
-	model: Vote,
-	url: '/MAIV/deelexamen/api/votes',
+	model: Image,
+	url: '/MAIV/deelexamen/api/images',
 
-	initialize: function(){
+	initialize: function(options){
+        if(options){
+            this.day_id = options.day_id;
+        }
+    },
+
+	methodUrl: function(method){
+		//if method === read; = checken als het een GET is! 
+		if(method === "read" && this.day_id){
+			this.url = "/MAIV/deelexamen/api/images/" + this.day_id;
+			return;
+		}
+		this.url = '/MAIV/deelexamen/api/users/';
+
 	},
 
-	//sorteren van votes, .sort oproepen voor je je votes rendert
-	comparator: function(vote) {
-		return - vote.get("id");
-	},
 
 	sync: function(method, model, options) {
 		if(model.methodUrl && model.methodUrl(method.toLowerCase())) {
@@ -19,19 +28,8 @@ var VoteCollection = Backbone.Collection.extend({
 			options.url = model.methodUrl(method.toLowerCase());
 		}
     Backbone.Collection.prototype.sync.apply(this, arguments);
-	}/*,
-
-	methodUrl: function(method){
-		//if method === read; = checken als het een GET is! 
-		if(method === "read" && this.other){
-			//other ophalen van 1 specifieke vote:
-			this.url = "/MAIV/deelexamen/api/votes/others/" + this.other
-			return;
-		}
-		this.url = '/MAIV/deelexamen/api/votes';
-
-	}*/
+	}
 
 });
 
-module.exports = VoteCollection;
+module.exports = ImageCollection;

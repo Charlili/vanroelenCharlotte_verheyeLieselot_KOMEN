@@ -1,8 +1,25 @@
 <?php
 
 define('DS', DIRECTORY_SEPARATOR);
+$imagesDAO = new imagesDAO();
 
 //define('WWW_ROOT', __DIR__ . DS);
+
+$app->get('/images/:day_id/?',function($day_id) use ($imagesDAO){
+    header("Content-Type: application/json");
+    echo json_encode($imagesDAO->selectByDayId($day_id), JSON_NUMERIC_CHECK);
+    exit();
+});
+
+$app->post('/images/?', function() use ($app, $imagesDAO){
+    header("Content-Type: application/json");
+    $post = $app->request->post();
+    if(empty($post)){
+        $post = (array) json_decode($app->request()->getBody());
+    }
+    echo json_encode($imagesDAO->insert($post), JSON_NUMERIC_CHECK);
+    exit();
+});
 
 $app->post('/upload/user', function(){
     //echo json_encode($_FILES);
@@ -41,34 +58,43 @@ $app->post('/upload/user', function(){
     } else {
     //echo 'You must upload an image...';
     }
-    
 
-
-
-
-        /*$destFile = WWW_ROOT . 'uploads' . DS . $_FILES["SelectedFile"]['name'];
-        move_uploaded_file($sourceFile, $destFile);
-        $dest = 'uploads' . DS . $_FILES["SelectedFile"]['name'];
-        
-        $dotPos = strrpos($_FILES["SelectedFile"]['name'],'.');
-        $name = substr($_FILES["SelectedFile"]['name'],0,$dotPos);
-        $extension = substr($_FILES["SelectedFile"]['name'],$dotPos+1);
-        $dest = 'uploads' . DS . 'users' . DS . $name . "." . $extension;
-
-        echo "<input type='hidden' id='sourceFile' value= '{$dest}' />";*/
 });
 
 $app->post('/upload', function(){
-    $sourceFile = $_FILES["SelectedFile"]['tmp_name'];
-        $destFile = WWW_ROOT . 'uploads' . DS . $_FILES["SelectedFile"]['name'];
-        move_uploaded_file($sourceFile, $destFile);
-        $dest = 'uploads' . DS . $_FILES["SelectedFile"]['name'];
-        
-        $dotPos = strrpos($_FILES["SelectedFile"]['name'],'.');
-        $name = substr($_FILES["SelectedFile"]['name'],0,$dotPos);
-        $extension = substr($_FILES["SelectedFile"]['name'],$dotPos+1);
-        $dest = 'uploads' . DS . $name . "." . $extension;
+    //echo json_encode($_FILES);
+    $file = $_FILES["SelectedFile"];
 
-        echo "<input type='hidden' id='sourceFile' value= '{$dest}' />";
+    // array of valid extensions
+    $validExtensions = array('.jpg', '.jpeg', '.gif', '.png');
+    // get extension of the uploaded file
+    $fileExtension = strrchr($file['name'], ".");
+    // check if file Extension is on the list of allowed ones
+        
+    if (in_array($fileExtension, $validExtensions)) {
+    $newName = $file['name'];
+    $dotPos = strrpos($file['name'],'.');
+    $extension = substr($file['name'],$dotPos+1);
+    $manipulator = new ImageManipulator($file['tmp_name']);
+    $width  = $manipulator->getWidth();
+    $height = $manipulator->getHeight();
+    $centreX = round($width / 2);
+    $centreY = round($height / 2);
+    // our dimensions will be 200x130
+    $x1 = $centreX - 200; // 200 / 2
+    $y1 = $centreY - 200; // 130 / 2
+
+    $x2 = $centreX + 200; // 200 / 2
+    $y2 = $centreY + 200; // 130 / 2
+
+    // center cropping to 200x130
+    $newImage = $manipulator->resample(400,400,true);
+    // saving file to uploads folder
+    $manipulator->save(WWW_ROOT . DS . 'uploads' .  DS . $file['name']);
+    //echo 'Done ...';
+    } else {
+    //echo 'You must upload an image...';
+    }
 });
+
 

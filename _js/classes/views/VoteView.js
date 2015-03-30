@@ -5,7 +5,8 @@ var VoteView = Backbone.View.extend({
 
 	template: template,
 	
-	/*tagName: 'li',*/
+	tagName: 'section',
+	className: 'votes',
 	events:{
 		'click .vote': 'addVote'
 	},
