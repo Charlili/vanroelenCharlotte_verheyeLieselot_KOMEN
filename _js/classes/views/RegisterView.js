@@ -92,7 +92,7 @@ var RegisterView = Backbone.View.extend({
 
 	validateTown: function(town){
 
-    var re =  /d{4}/;
+    var re =  /^(\d{4})?$/;
     return re.test(town);
 
 	},
@@ -100,7 +100,6 @@ var RegisterView = Backbone.View.extend({
 
 
 	addUser: function(e){
-
 
 
 		e.preventDefault();
@@ -114,21 +113,46 @@ var RegisterView = Backbone.View.extend({
 		if(!error){
 			//check if photo is valid
 				//check of user bestaat
+			var email = false;
+			var town = false;
 			var exist = new User({email: this.$el.find('.email-input').val()});
 			exist.fetch({
 				success: function(model,response){
 					//console.log(response);
 					if(response.length === 0){
 						console.log('addUser: User doesnt exist. Time to create.!');
-							console.log("checking town: ", this.validateTown(this.$el.find('.town-input').val()));
 
-						if(this.validateEmail(this.$el.find('.email-input').val()) && this.validateTown(this.$el.find('.town-input').val())){
-								//this.saveUser();
+						if(this.validateEmail(this.$el.find('.email-input').val())){
+							email = true;
+							this.$el.find('.error-email').removeClass('error');
+							this.$el.find('.email-input').removeClass('error');
+						}else{
+							email = false;
+							this.$el.find('.error-email').html('Vul a.u.b. een geldig e-mailadres in');
+							this.$el.find('.error-email').addClass('error');
+							this.$el.find('.email-input').addClass('error');
+						}
+
+						if(this.validateTown(this.$el.find('.town-input').val())){
+							town = true;
+							this.$el.find('.error-town').removeClass('error');
+							this.$el.find('.town-input').removeClass('error');
+						}else{
+							town = false;
+							this.$el.find('.error-town').html('Vul a.u.b. een geldige postcode in');
+							this.$el.find('.error-town').addClass('error');
+							this.$el.find('.town-input').addClass('error');
+						}
+
+						if(email && town){
+							this.saveUser();
 						}
 
 					}else{
 						console.log('addUser: User exists! Dont create user!');
-
+						this.$el.find('.error-email').html('Dit e-mailadres is al in gebruik.');
+						this.$el.find('.error-email').addClass('error');
+						this.$el.find('.email-input').addClass('error');
 					}
 				}.bind(this)
 			});				
