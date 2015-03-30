@@ -3,17 +3,19 @@ var WeekElView = require('./WeekElView.js');
 var User = require('../models/User.js');
 var Week = require('../models/Week.js');
 var template = require('../../../_hbs/week.hbs');
-var cms = require('../../../_hbs/cms.hbs');
 
 var WeekView = Backbone.View.extend({
 
 
 	template: template,
-	cms: cms,
 
 	/*model: this.week,*/
 	tagName: 'div',
 	className: 'week-container',
+
+	events: {
+		'change .cms': 'changeCMS'
+	},
 
 	initialize: function(){
 
@@ -26,9 +28,7 @@ var WeekView = Backbone.View.extend({
 				Window.Application.navigate('home',{trigger:true});
 			}else{
 
-				if(data.role == "admin"){
-					this.renderCMS();
-				}
+				this.role = data.role;
 				this.user_id = data.id;
 				this.week = new Week({
 					id: data.week_id
@@ -47,12 +47,30 @@ var WeekView = Backbone.View.extend({
 		}.bind(this));
 	},
 
+	changeCMS: function(){
+		console.log('changing the day to '+this.$el.find('.cms').val());
+		this.week.set('currentDate',this.$el.find('.cms').val());
+		this.week.save();
+		this.initialize();
+
+	},
+
 	renderCMS: function(){
-		//this.$el.append(this.$el.html(cms).el);
-		//console.log(this.$el.html(cms).el);
-		var cms = document.createElement('div');
-		console.log($(cms).html(this.cms));
-		//this.$el.find('.week-container').prepend($(cms).html(this.cms));
+		var select = document.createElement('select');
+		$(select).addClass('cms');
+		for (var i = 0; i <= 5; i++) {
+			var option = document.createElement('option');
+			$(option).attr('value',i);
+			if(i == this.week.get('currentDate')){
+				$(option).attr('selected','true');
+			}
+			$(option).text("Dag "+i);
+			if(i == 0){$(option).text("Dag "+i+": Week is nog niet begonnen.");}
+			if(i == 5){$(option).text("Dag "+i+": Einde week.");}
+			$(select).append(option);
+		}
+		console.log(select);
+		this.$el.prepend(select);
 
 	},
 
@@ -97,6 +115,9 @@ var WeekView = Backbone.View.extend({
 	render: function(){
 
 		this.$el.html(this.template(this.week));
+		if(this.role == "admin"){
+			this.renderCMS();
+		}
 		this.$users = this.$el.find('.days');
 		this.$a = this.$el.find('.link');
 		return this;

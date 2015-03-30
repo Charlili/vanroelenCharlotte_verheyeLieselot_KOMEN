@@ -43,13 +43,15 @@ class WeeksDAO extends DAO {
 							SET `day1_id` = :day1_id, 
 								`day2_id` = :day2_id,
 								`day3_id` = :day3_id,
-								`day4_id` = :day4_id
+								`day4_id` = :day4_id,
+								`currentDate` = :currentDate
 							WHERE `id` = :id";
 			$stmt = $this->pdo->prepare($sql);
 			$stmt->bindValue(':day1_id', $data['day1_id']);
 			$stmt->bindValue(':day2_id', $data['day2_id']);
 			$stmt->bindValue(':day3_id', $data['day3_id']);
 			$stmt->bindValue(':day4_id', $data['day4_id']);
+			$stmt->bindValue(':currentDate', $data['currentDate']);
 			$stmt->bindValue(':id', $id);
 			if($stmt->execute()) {
 				return $this->selectById($id);
