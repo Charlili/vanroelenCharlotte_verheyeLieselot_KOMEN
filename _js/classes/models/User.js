@@ -5,13 +5,14 @@ var User = Backbone.Model.extend({
 	initialize: function(options){
 		if(options){
 			this.email = options.email;
+			this.id = options.id;
 		}
 	},
 
 	methodUrl: function(method){
 		//if method === read; = checken als het een GET is! 
 		if(method === "read" && this.email){
-			this.urlRoot = "/MAIV/deelexamen/api/users/" + this.email;
+			this.urlRoot = "/MAIV/deelexamen/api/users/email/" + this.email;
 			return;
 		}
 		this.urlRoot = '/MAIV/deelexamen/api/users/';

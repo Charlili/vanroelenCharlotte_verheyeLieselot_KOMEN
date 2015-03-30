@@ -43,7 +43,16 @@ $app->get('/me', function(){
 });
 
 //GET -> /users/:id
-$app->get('/users/:id/?'/*, authorize('user')*/, function($id) use ($usersDAO){
+$app->get('/users/:id/?', function($id) use ($usersDAO){
+    header("Content-Type: application/json");
+    //$arr = $usersDAO->selectByEmail($id);
+    //unset($arr['password']);
+    //echo json_encode($arr, JSON_NUMERIC_CHECK);
+    echo json_encode($usersDAO->selectById($id), JSON_NUMERIC_CHECK);
+    exit();
+});
+
+$app->get('/users/email/:id/?'/*, authorize('user')*/, function($id) use ($usersDAO){
     header("Content-Type: application/json");
     //$arr = $usersDAO->selectByEmail($id);
     //unset($arr['password']);
