@@ -47,7 +47,7 @@ class DaysDAO extends DAO {
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':id', $id);
 		$stmt->execute();
-		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		if($result){
 			return $result;
 		}

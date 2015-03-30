@@ -36,7 +36,7 @@ var GalleryView = Backbone.View.extend({
 	renderImages: function(){
 		//this.$users.empty();
 		//this.collection.sort();
-		console.log(this.collection);
+		//console.log(this.collection);
 		this.collection.forEach(this.renderImage, this);
 		
 	},
@@ -91,7 +91,7 @@ var GalleryView = Backbone.View.extend({
 			var filename = file.name;
 	        this.extension = filename.replace(/^.*\./, '.');
 	        this.name = filename.replace(/^\.*/, '');
-	        console.log(this.name);
+	        //console.log(this.name);
 			
 			if(file.type.search('image') != -1) {
 				var reader = new FileReader();

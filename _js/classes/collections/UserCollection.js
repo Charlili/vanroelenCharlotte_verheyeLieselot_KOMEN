@@ -8,6 +8,7 @@ var UserCollection = Backbone.Collection.extend({
 	initialize: function(options){
 		if(options){
 			this.week_id = options.week_id;
+			this.id = options.id;
 		}
 	},
 
@@ -24,7 +25,11 @@ var UserCollection = Backbone.Collection.extend({
 			this.url = "/MAIV/deelexamen/api/week/users/" + this.week_id;
 			return;
 		}
-		this.url = '/MAIV/deelexamen/api/users/';
+		if(method === "read" && this.id){
+			this.url = "/MAIV/deelexamen/api/users/" + this.id;
+			return;
+		}
+		this.url = '/MAIV/deelexamen/api/users';
 
 	},
 

@@ -18,7 +18,7 @@ var VoteCollection = Backbone.Collection.extend({
 			return;
 		}
 		
-		this.url = '/MAIV/deelexamen/api/votes/';
+		this.url = '/MAIV/deelexamen/api/votes';
 
 	},
 

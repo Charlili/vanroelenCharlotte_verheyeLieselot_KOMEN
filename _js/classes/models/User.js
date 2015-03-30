@@ -1,6 +1,6 @@
 var User = Backbone.Model.extend({
 	//wat doet dit??
-	urlRoot: '/MAIV/deelexamen/api/users/',
+	urlRoot: '/MAIV/deelexamen/api/users',
 
 	initialize: function(options){
 		if(options){
@@ -15,7 +15,11 @@ var User = Backbone.Model.extend({
 			this.urlRoot = "/MAIV/deelexamen/api/users/email/" + this.email;
 			return;
 		}
-		this.urlRoot = '/MAIV/deelexamen/api/users/';
+		if(method === "read" && this.id){
+			this.url = "/MAIV/deelexamen/api/users/" + this.id;
+			return;
+		}
+		this.urlRoot = '/MAIV/deelexamen/api/users';
 
 	},
 

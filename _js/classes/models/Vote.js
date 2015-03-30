@@ -16,6 +16,11 @@ var Vote = Backbone.Model.extend({
 			return;
 		}
 
+		if(method === "read" && this.day_id){
+			this.urlRoot = "/MAIV/deelexamen/api/votes/day/" + this.day_id;
+			return;
+		}
+
 		this.urlRoot = '/MAIV/deelexamen/api/votes';
 
 	},
