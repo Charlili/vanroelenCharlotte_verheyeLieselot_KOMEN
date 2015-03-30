@@ -16,6 +16,7 @@ var WinnerView = Backbone.View.extend({
 	},
 
 	initialize: function(options){
+		//this.parent = options.parent;
 		this.user_id = options.user_id;
 		this.day_id = options.day_id;
 		this.gebakTotaal = 0;
@@ -46,7 +47,7 @@ var WinnerView = Backbone.View.extend({
 			id: this.user_id 
 		});
 		this.user.fetch();
-		this.listenTo(this.user, 'sync', this.render);
+		this.listenTo(this.user, 'sync', this.triggerParent);
 
 	},
 
@@ -77,7 +78,11 @@ var WinnerView = Backbone.View.extend({
 		this.total += t;
 	},
 
-	render: function(){
+	triggerParent: function(){
+		Backbone.trigger('getInfo',this);
+	},
+
+	getInfo: function(){
 		var obj = {
 			id: this.user.get('id'),
 			extension: this.user.get('extension'),
@@ -87,6 +92,25 @@ var WinnerView = Backbone.View.extend({
 			gelach: this.gelachTotaal,
 			total: this.total
 		};
+		return obj;
+	},
+
+	/*render: function(){
+		var obj = {
+			id: this.user.get('id'),
+			extension: this.user.get('extension'),
+			name: this.user.get('name'),
+			geur: this.geurTotaal,
+			gebak: this.gebakTotaal,
+			gelach: this.gelachTotaal,
+			total: this.total
+		};
+		console.log(obj);
+		$('.winners').append(this.template(obj));
+		return this;
+	},*/
+
+	render: function(obj){
 		console.log(obj);
 		$('.winners').append(this.template(obj));
 		return this;

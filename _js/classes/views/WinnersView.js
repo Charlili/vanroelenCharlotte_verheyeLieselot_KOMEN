@@ -13,13 +13,12 @@ var WinnersView = Backbone.View.extend({
 	template: template,
 	
 	tagName: 'div',
-	className: 'winner-container',
+	className: 'winners-container',
 	events:{
 		'click .vote': 'addVote'
 	},
 
 	initialize: function(){
-
 		var loggedIn = $.get('api/me')
 		.success(function(data){
 			console.log(data);
@@ -36,26 +35,64 @@ var WinnersView = Backbone.View.extend({
 			}
 		}.bind(this)
 		);
-		//checken of de punten al ingevuld zijn zodat je de juiste classes kan meegeven
+		
+		Backbone.on('getInfo',this.getInfo);
+		
+		
 	},
 
 	createEl: function(collection){
 		console.log('createEl');
-		this.render();
+		//this.render();
 		//console.log(collection);
+
 		this.dayCollection.each(function(model){
 			console.log(model.attributes);
 
-			this.winnerView = new WinnerView({
+			var winnerView = new WinnerView({
 				user_id: model.attributes.user_id,
-				day_id: model.attributes.id	
+				day_id: model.attributes.id	,
+				parent: this
 			});
+			winnerView.on('getInfo',this.getInfo);
+			
 
 			//this.$winners.append(this.winnerView.render().el);
 		
 		});
+		
 	},
 
+	getInfo: function(view){
+		if(this.elementsArray === undefined){
+			this.elementsArray = [];
+		}
+		console.log('should get info now');
+		//console.log(view);
+		var obj = view.getInfo();
+
+		//var user = new User({view});
+
+		this.elementsArray.push(obj);
+		//console.log(this.elementsArray.length);
+
+		if(this.elementsArray.length == 4){
+			//console.log('lalala');
+			//this.elementsArray.sort();
+			this.elementsArray.sort(function(a,b) { return parseFloat(b.total) - parseFloat(a.total) } );
+			var i = 1;
+			this.elementsArray.forEach(function(obj){
+				obj['placed']=i;
+				$('.winners').append(view.render(obj).el);
+				i++;
+				//this.$winners.append(view.render().el);
+			}, this);
+		}
+	},
+
+	renderUser: function(model){
+		this.$winners.append(view.render().el);
+	},
 
 	render: function(){
 		this.$el.html(this.template());
