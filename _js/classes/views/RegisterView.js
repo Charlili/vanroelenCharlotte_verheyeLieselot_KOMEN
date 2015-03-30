@@ -83,7 +83,26 @@ var RegisterView = Backbone.View.extend({
 		return false;
 	},
 
+	validateEmail: function(email){
+
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+
+	},
+
+	validateTown: function(town){
+
+    var re =  /d{4}/;
+    return re.test(town);
+
+	},
+
+
+
 	addUser: function(e){
+
+
+
 		e.preventDefault();
 		console.log("RegisterView: addUser");
 		var error = false;
@@ -101,14 +120,20 @@ var RegisterView = Backbone.View.extend({
 					//console.log(response);
 					if(response.length === 0){
 						console.log('addUser: User doesnt exist. Time to create.!');
-						this.saveUser();
+							console.log("checking town: ", this.validateTown(this.$el.find('.town-input').val()));
+
+						if(this.validateEmail(this.$el.find('.email-input').val()) && this.validateTown(this.$el.find('.town-input').val())){
+								//this.saveUser();
+						}
+
 					}else{
 						console.log('addUser: User exists! Dont create user!');
+
 					}
 				}.bind(this)
 			});				
-			//password hash via js?
-			//Becrypt opzoeken
+			
+
 		}		
 	},
 

@@ -120,19 +120,7 @@ span{
 		font-size: 2.2em;
 	}
 
-
-
-.register-container{
-
-	h1{
-		background-image: url('../assets/register_header.png');
-		background-repeat: no-repeat;
-		width: 640px;
-		height: 182px;
-		display: block;
-	}
-
-	.terug{
+.terug{
 		background-color: $green;
 		font-size: 2.6em;
 		color: #fff;
@@ -150,6 +138,17 @@ span{
 		}
 	}
 
+.register-container{
+
+	h1{
+		background-image: url('../assets/register_header.png');
+		background-repeat: no-repeat;
+		width: 640px;
+		height: 182px;
+		display: block;
+	}
+
+	
 	.gray-p{
 		@include transform(translateY(-50px));
 	}
@@ -743,6 +742,10 @@ span{
 .error{
 	display: block;
 	border-color: #ed564d;
+}
+
+.error-town{
+	margin-top: 5px;
 }
 
 .empty{
