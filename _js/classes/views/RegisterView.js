@@ -71,42 +71,93 @@ var RegisterView = Backbone.View.extend({
 		        return img;
 
 			}else{
+				this.hideErrors();
 				this.errorInput();
 				return false;
 			}
 		}else{
+			this.hideErrors();
 			this.errorInput();
 			return false;
 		}
 		return false;
 	},
 
+	validateEmail: function(email){
+
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+
+	},
+
+	validateTown: function(town){
+
+    var re =  /^(\d{4})?$/;
+    return re.test(town);
+
+	},
+
+
+
 	addUser: function(e){
+
+
 		e.preventDefault();
 		console.log("RegisterView: addUser");
 		var error = false;
 		//validation checks
-		if(this.$el.find('input').val() === ""){
-			this.errorInput();
-			error = true;
-		}		
+		this.hideErrors();
+		this.errorInput();
+
+		
 		if(!error){
 			//check if photo is valid
 				//check of user bestaat
+			var email = false;
+			var town = false;
 			var exist = new User({email: this.$el.find('.email-input').val()});
 			exist.fetch({
 				success: function(model,response){
 					//console.log(response);
 					if(response.length === 0){
 						console.log('addUser: User doesnt exist. Time to create.!');
-						this.saveUser();
+
+						if(this.validateEmail(this.$el.find('.email-input').val())){
+							email = true;
+							this.$el.find('.error-email').removeClass('error');
+							this.$el.find('.email-input').removeClass('error');
+						}else{
+							email = false;
+							this.$el.find('.error-email').html('Vul a.u.b. een geldig e-mailadres in');
+							this.$el.find('.error-email').addClass('error');
+							this.$el.find('.email-input').addClass('error');
+						}
+
+						if(this.validateTown(this.$el.find('.town-input').val())){
+							town = true;
+							this.$el.find('.error-town').removeClass('error');
+							this.$el.find('.town-input').removeClass('error');
+						}else{
+							town = false;
+							this.$el.find('.error-town').html('Vul a.u.b. een geldige postcode in');
+							this.$el.find('.error-town').addClass('error');
+							this.$el.find('.town-input').addClass('error');
+						}
+
+						if(email && town){
+							this.saveUser();
+						}
+
 					}else{
 						console.log('addUser: User exists! Dont create user!');
+						this.$el.find('.error-email').html('Dit e-mailadres is al in gebruik.');
+						this.$el.find('.error-email').addClass('error');
+						this.$el.find('.email-input').addClass('error');
 					}
 				}.bind(this)
 			});				
-			//password hash via js?
-			//Becrypt opzoeken
+			
+
 		}		
 	},
 
@@ -294,39 +345,71 @@ var RegisterView = Backbone.View.extend({
 	errorInput: function(){
 		console.log('error');
 		if(this.$el.find('.name-input').val() === ""){
+
+			this.$el.find('.error-name').html('Vul a.u.b. je voor- en achternaam in');
+			this.$el.find('.error-name').addClass('error');
 			this.$el.find('.name-input').addClass('error');
+			error = true;
 		}
 		if(this.$el.find('.email-input').val() === ""){
+			this.$el.find('.error-email').html('Vul a.u.b. je e-mailadres in');
+			this.$el.find('.error-email').addClass('error');
 			this.$el.find('.email-input').addClass('error');
+			error = true;
 		}
 		if(this.$el.find('.password-input').val() === ""){
+			this.$el.find('.error-pass').html('Vul a.u.b. een wachtwoord in');
+			this.$el.find('.error-pass').addClass('error');
 			this.$el.find('.password-input').addClass('error');
+			error = true;
 		}
+
 		if(this.$el.find('.street-input').val() === ""){
+			this.$el.find('.error-street').html('Vul a.u.b. een straat en huisnummer in');
+			this.$el.find('.error-street').addClass('error');
 			this.$el.find('.street-input').addClass('error');
+			error = true;
+
 		}
 		if(this.$el.find('.town-input').val() === ""){
+			this.$el.find('.error-town').html('Vul a.u.b. een postcode in');
+			this.$el.find('.error-town').addClass('error');
 			this.$el.find('.town-input').addClass('error');
+			error = true;
 		}
 
 	},
 
 	hideErrors: function(){
 		console.log('hiding errors');
-		if(this.$el.find('.name-input').val() === ""){
+		if(this.$el.find('.name-input').val() !== ""){
+			this.$el.find('.error-name').removeClass('error');
 			this.$el.find('.name-input').removeClass('error');
+			error = false;
 		}
-		if(this.$el.find('.email-input').val() === ""){
+		if(this.$el.find('.email-input').val() !== ""){
+			this.$el.find('.error-email').removeClass('error');
 			this.$el.find('.email-input').removeClass('error');
+			error = false;
+
 		}
-		if(this.$el.find('.password-input').val() === ""){
+		if(this.$el.find('.password-input').val() !== ""){
+			this.$el.find('.error-pass').removeClass('error');
 			this.$el.find('.password-input').removeClass('error');
+			error = false;
+
 		}
-		if(this.$el.find('.street-input').val() === ""){
+		if(this.$el.find('.street-input').val() !== ""){
+			this.$el.find('.error-street').removeClass('error');
 			this.$el.find('.street-input').removeClass('error');
+			error = false;
+
 		}
-		if(this.$el.find('.town-input').val() === ""){
+		if(this.$el.find('.town-input').val() !== ""){
+			this.$el.find('.error-town').removeClass('error');
 			this.$el.find('.town-input').removeClass('error');
+			error = false;
+
 		}
 	}
 

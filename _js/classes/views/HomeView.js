@@ -23,14 +23,23 @@ var HomeView = Backbone.View.extend({
 
 	login: function(e){
 		e.preventDefault();
-		this.hideErrors();
+		//this.hideErrors();
+		this.errorInput();
+
 		console.log("HomeView: login");
 		var error = false;
 		//validation checks
 		if(this.errorInput()){
+			console.log("errorinput");
 			error = true;
 		}		
 		if(!error){
+
+			this.$el.find('.error-email').removeClass('error');
+			this.$el.find('.error-pass').removeClass('error');
+			this.$el.find('.email-input').removeClass('error');
+			this.$el.find('.password-input').removeClass('error');
+
 			//check if photo is valid
 			
 			//check of user bestaat
@@ -39,6 +48,9 @@ var HomeView = Backbone.View.extend({
 				success: function(model,response){
 					//console.log(response);
 					if(response.length === 0){
+						this.$el.find('.error-email').addClass('error');
+						this.$el.find('.error-email').html('U heeft een verkeerd e-mailadres ingegeven.');
+						this.$el.find('.email-input').addClass('error');
 						console.log('User doesnt exist! Error: wrong emailadress');
 						
 					}else{
@@ -48,6 +60,9 @@ var HomeView = Backbone.View.extend({
 							this.addToSession();
 							
 						}else{
+							this.$el.find('.error-pass').addClass('error');
+							this.$el.find('.error-pass').html('U heeft een verkeerd wachtwoord ingegeven.');
+							this.$el.find('.password-input').addClass('error');
 							console.log('User doesnt exist! Error: wrong emailadress');
 						}
 					}
@@ -77,10 +92,14 @@ var HomeView = Backbone.View.extend({
 		//console.log('error');
 		var error = false;
 		if(this.$el.find('.email-input').val() === ""){
+			this.$el.find('.error-email').addClass('error');
+			this.$el.find('.error-email').html('Vul a.u.b. een e-mailadres in');
 			this.$el.find('.email-input').addClass('error');
 			error = true;
 		}
 		if(this.$el.find('.password-input').val() === ""){
+			this.$el.find('.error-pass').addClass('error');
+			this.$el.find('.error-pass').html('Vul a.u.b. een wachtwoord in');
 			this.$el.find('.password-input').addClass('error');
 			error = true;
 		}
