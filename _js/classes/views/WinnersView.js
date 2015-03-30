@@ -1,9 +1,12 @@
-var template = require('../../../_hbs/winner.hbs');
-var Week = require('../models/Week.js');
+var template = require('../../../_hbs/winners.hbs');
+//var Week = require('../models/Week.js');
 var User = require('../models/User.js');
+var Day = require('../models/Day.js');
+var WinnerView = require('./WinnerView.js');
 var UserCollection = require('../collections/UserCollection.js');
-var VoteCollection = require('../collections/VoteCollection.js');
+//var VoteCollection = require('../collections/VoteCollection.js');
 var DayCollection = require('../collections/DayCollection.js');
+
 
 var WinnersView = Backbone.View.extend({
 
@@ -24,80 +27,40 @@ var WinnersView = Backbone.View.extend({
 				console.log('No user logged in. Redirect to #home');
 				Window.Application.navigate('home',{trigger:true});
 			}else{
-				this.userCollection = new UserCollection();
 				this.week_id = data.week_id;
-				this.createDayCollection();
+				this.dayCollection = new DayCollection({
+					week_id: this.week_id
+				});
+				this.dayCollection.fetch();
+				this.listenTo(this.dayCollection, 'sync', this.createEl);
 			}
 		}.bind(this)
 		);
 		//checken of de punten al ingevuld zijn zodat je de juiste classes kan meegeven
 	},
 
-	createDayCollection: function(){
-		this.dayCollection = new DayCollection({
-			week_id:this.week_id
-		});
-		this.listenTo(this.dayCollection, 'sync', function(){
-			this.dayCollection.forEach(this.getVotes, this);
-		});
-		this.dayCollection.fetch();
-	},
+	createEl: function(collection){
+		console.log('createEl');
+		this.render();
+		//console.log(collection);
+		this.dayCollection.each(function(model){
+			console.log(model.attributes);
 
+			this.winnerView = new WinnerView({
+				user_id: model.attributes.user_id,
+				day_id: model.attributes.id	
+			});
 
-	getVotes: function(model){
-		var total = 0;
-		this.day = model;
-		//console.log(id);
-		this.voteCollection = new VoteCollection({
-			day_id:model.get('id')
-		});
-		var total = 0;
-		this.listenTo(this.voteCollection, 'sync', this.getTotal);
-		this.voteCollection.fetch();
-		//console.log(total);
+			//this.$winners.append(this.winnerView.render().el);
 		
-		console.log(this.voteCollection);
-	},
-
-	getTotal: function(collection){
-		//console.log(collection.models[0].attributes);
-		var total = this.addTotal(collection.models[0].attributes);
-		console.log(total);
-		collection.models[0].set('total',total);
-		this.day.set('total',total);
-
-		var user = new User({
-			id: this.day.get('user_id'),
-			total: total
 		});
-		this.listenTo(user, 'sync', this.sortUsers);
-		user.fetch();
-
 	},
 
-	sortUsers: function(model){
-		console.log(model);
-		this.userCollection.add(model);
-		this.listenTo(this.userCollection, 'add', this.sortUsers);
-
-		if(this.userCollection.length >= 4){
-			this.userCollection.sort();
-		}
-
-		console.log(this.userCollection);
-
-	},
-
-
-	addTotal: function(model){
-		//console.log(model);
-		var total = model.gebak + model.gelach + model.geur;
-		
-		return total;
-	},
 
 	render: function(){
 		this.$el.html(this.template());
+		this.$winners = this.$el.find('.winners');
+		
 		return this;
 	}
 

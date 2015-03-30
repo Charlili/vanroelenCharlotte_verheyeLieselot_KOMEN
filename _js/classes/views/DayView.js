@@ -67,7 +67,7 @@ var DayView = Backbone.View.extend({
 	createVoteView: function(){
 		var vote = new Vote({
 			day_id: this.day.get('id'),
-			user_id: this.day.get('user_id')
+			user_id: this.me
 		});
 		//make Voteview
 		this.voteView = new VoteView({
