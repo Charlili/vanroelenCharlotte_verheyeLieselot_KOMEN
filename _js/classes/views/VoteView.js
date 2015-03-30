@@ -87,8 +87,8 @@ var VoteView = Backbone.View.extend({
 
 			this.model.set(votedFor,point);
 			this.model.save();
-			$(e.currentTarget).find('img').removeClass('voted');
-			$(e.currentTarget).find('img[alt='+point+']').addClass('voted');
+			$(e.currentTarget).find('p').removeClass('voted');
+			$(e.currentTarget).find('p[value='+point+']').addClass('voted');
 
 			//this.addClasses()
 		}
@@ -101,19 +101,19 @@ var VoteView = Backbone.View.extend({
 			case 1: this.$el.find('.gebak .one').addClass('voted');break;
 			case 2: this.$el.find('.gebak .two').addClass('voted');break;
 			case 3: this.$el.find('.gebak .three').addClass('voted');break;
-			default: this.$el.find('.gebak img').removeClass('voted');break;
+			default: this.$el.find('.gebak p').removeClass('voted');break;
 		}
 		switch(model.gelach){
 			case 1: this.$el.find('.gelach .one').addClass('voted');break;
 			case 2: this.$el.find('.gelach .two').addClass('voted');break;
 			case 3: this.$el.find('.gelach .three').addClass('voted');break;
-			default: this.$el.find('.gelach img').removeClass('voted');break;
+			default: this.$el.find('.gelach p').removeClass('voted');break;
 		}
 		switch(model.geur){
 			case 1: this.$el.find('.geur .one').addClass('voted');break;
 			case 2: this.$el.find('.geur .two').addClass('voted');break;
 			case 3: this.$el.find('.geur .three').addClass('voted');break;
-			default: this.$el.find('.geur img').removeClass('voted');break;
+			default: this.$el.find('.geur p').removeClass('voted');break;
 		}
 	},
 

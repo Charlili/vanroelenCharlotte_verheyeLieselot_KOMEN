@@ -61,7 +61,7 @@ $app->post('/upload/user', function(){
 
 });
 
-$app->post('/upload', function(){
+$app->post('/upload/?', function(){
     //echo json_encode($_FILES);
     $file = $_FILES["SelectedFile"];
 
