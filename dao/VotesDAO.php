@@ -102,14 +102,11 @@ class VotesDAO extends DAO {
 	public function insert($data) {
 		$errors = $this->getValidationErrors($data);
 		if(empty($errors)) {
-			$sql = "INSERT INTO `KK_votes` (`day_id`, `user_id`, `gebak`, `gelach`, `geur`) 
-							VALUES (:day_id, :user_id, :gebak, :gelach, :geur)";
+			$sql = "INSERT INTO `KK_votes` (`day_id`, `user_id`) 
+							VALUES (:day_id, :user_id)";
 			$stmt = $this->pdo->prepare($sql);
 			$stmt->bindValue(':day_id', $data['day_id']);
 			$stmt->bindValue(':user_id', $data['user_id']);
-			$stmt->bindValue(':gebak', $data['gebak']);
-			$stmt->bindValue(':gelach', $data['gelach']);
-			$stmt->bindValue(':geur', $data['geur']);
 			if($stmt->execute()) {
 				$insertedId = $this->pdo->lastInsertId();
 				return $this->selectById($insertedId);
