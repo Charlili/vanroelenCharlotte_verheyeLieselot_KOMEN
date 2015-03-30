@@ -176,8 +176,9 @@ span {
   margin-top: 60px;
   margin-bottom: 20px;
 }
-/* line 99, ../_scss/screen.scss */
-.home-container .login-submit {
+
+/* line 100, ../_scss/screen.scss */
+.login-submit, .terug-week {
   color: #fff;
   font-family: inherit;
   border: none;
@@ -192,8 +193,8 @@ span {
   -webkit-border-radius: 8px;
   border-radius: 8px;
 }
-/* line 111, ../_scss/screen.scss */
-.home-container .login-submit:focus {
+/* line 112, ../_scss/screen.scss */
+.login-submit:focus, .terug-week:focus {
   outline: none;
 }
 
@@ -860,4 +861,92 @@ span {
   margin-bottom: 4px;
   font-family: aleobold, aleoregular, sans-serif;
   text-align: center;
+}
+
+/* line 764, ../_scss/screen.scss */
+.winner-container .winners {
+  width: 640px;
+  margin: 0px auto;
+  overflow: auto;
+}
+/* line 769, ../_scss/screen.scss */
+.winner-container header h1 {
+  width: 640px;
+  height: 220px;
+  margin: 0px auto;
+  background-image: url("../assets/winnaar-header.png");
+  background-repeat: no-repeat;
+}
+/* line 777, ../_scss/screen.scss */
+.winner-container li {
+  overflow: auto;
+  margin-bottom: 40px;
+  margin-left: 50px;
+}
+/* line 784, ../_scss/screen.scss */
+.winner-container .square {
+  float: left;
+  width: 183px;
+  height: 183px;
+  overflow: hidden;
+}
+/* line 789, ../_scss/screen.scss */
+.winner-container .square img {
+  width: 183px;
+}
+/* line 792, ../_scss/screen.scss */
+.winner-container .square:before {
+  position: absolute;
+  margin-left: -10px;
+  margin-top: -8px;
+  content: url("../assets/seam.png");
+}
+/* line 800, ../_scss/screen.scss */
+.winner-container li h1 {
+  font-size: 2.6em;
+  color: #373737;
+  margin-bottom: 14px;
+  font-family: aleobold, aleoregular, sans-serif;
+}
+/* line 807, ../_scss/screen.scss */
+.winner-container .reg {
+  display: inline;
+  font-family: aleoregular, sans-serif;
+}
+/* line 812, ../_scss/screen.scss */
+.winner-container .label {
+  display: inline-block;
+  padding-left: 50px;
+  width: 270px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: #ebebeb;
+  font-size: 2.3em;
+}
+/* line 823, ../_scss/screen.scss */
+.winner-container .label-el {
+  box-sizing: border-box;
+  margin-top: 24px;
+  display: block;
+}
+/* line 829, ../_scss/screen.scss */
+.winner-container .score {
+  position: absolute;
+  margin-left: -19px;
+  margin-top: -7px;
+  color: #fff;
+  font-size: 2.8em;
+  font-family: aleobold, aleoregular, sans-serif;
+  display: inline-block;
+  width: 42px;
+  padding-top: 11px;
+  padding-left: 7px;
+  height: 55px;
+  background-image: url("../assets/ruit.png");
+  background-repeat: no-repeat;
+}
+/* line 846, ../_scss/screen.scss */
+.winner-container .terug-week {
+  padding-top: 22px;
+  width: 390px;
 }

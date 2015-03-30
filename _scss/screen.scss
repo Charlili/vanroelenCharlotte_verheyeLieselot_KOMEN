@@ -95,8 +95,9 @@ span{
 		margin-top: 60px;
 		margin-bottom: 20px;
 	}
+}
 
-	.login-submit{
+.login-submit, .terug-week{
 		color: #fff;
 		font-family: inherit;
 		border: none;
@@ -112,7 +113,6 @@ span{
 			outline: none;
 		}
 	}
-}
 
 .gray-p{
 		text-align: center;
@@ -758,4 +758,95 @@ span{
 	margin-bottom: 4px;
 	font-family: aleobold, aleoregular, sans-serif;
 	text-align: center;
+}
+
+.winner-container{
+	.winners{
+		width: 640px;
+		margin: 0px auto;
+		overflow: auto;
+	}
+	header h1{
+		width: 640px;
+		height: 220px;
+		margin: 0px auto;
+		background-image: url('../assets/winnaar-header.png');
+		background-repeat: no-repeat;
+	}
+
+	li{
+		overflow: auto;
+		margin-bottom: 40px;
+				margin-left: 50px;
+
+	}
+
+	.square{
+		float: left;
+		width: 183px;
+		height: 183px;
+		overflow: hidden;
+		img{
+			width: 183px;
+		}
+		&:before{
+		 position: absolute;
+		 margin-left: -10px;
+		 margin-top: -8px;
+			content: url('../assets/seam.png');
+		}
+	}
+
+	li h1{
+		font-size: 2.6em;
+		color: #373737;
+		margin-bottom: 14px;
+		font-family: aleobold, aleoregular, sans-serif;
+	}
+
+	.reg{
+		display: inline;
+		font-family: aleoregular, sans-serif;
+	}
+
+	.label{
+		display: inline-block;
+		padding-left: 50px;
+		width: 270px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		background-color: #ebebeb;
+		font-size: 2.3em;
+
+	}
+
+	.label-el{
+		box-sizing: border-box;
+		margin-top: 24px;
+		display: block;
+	}
+
+	.score{
+		position: absolute;
+		margin-left: -19px;
+				margin-top: -7px;
+
+		color: #fff;
+		font-size: 2.8em;
+		font-family: aleobold, aleoregular, sans-serif;
+		display: inline-block;
+		width: 42px;
+		padding-top: 11px;
+		padding-left: 7px;
+		height: 55px;
+		background-image: url('../assets/ruit.png');
+		background-repeat: no-repeat;
+	}
+
+	.terug-week{
+
+		padding-top: 22px;
+		width: 390px;
+		
+	}
 }
