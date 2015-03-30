@@ -737,25 +737,53 @@ span{
 		}
 
 		li{
-							margin-top: 40px;
-
+			margin-top: 40px;
 			float: left;
-			
+			display: inline-block;
 			background-repeat: no-repeat;
 			margin-right: 20px;
+			text-align: left;
+			p{
+				margin-top: 130px;
+				background-image: url('../assets/green-dot.png');
+				background-repeat: no-repeat;
+				width: 46px;
+				height: 46px;
+				color: #fff;
+				padding-left: 17px;
+				padding-top: 11px;
+
+
+			}
+
+			.voted{
+				background-image: url('../assets/red-dot.png');
+			}
 		}
+
+	
+	}
+
 
 		.gebak li{
 			width: 183px;
 			height: 189px;
 		}
 
-		.lach li{
+		.gelach li{
 			width: 164px;
-			height: 136px;
+			height: 156px;
+			margin-right: 35px;
+			p{
+					margin-top: 105px;
+			}
 		}
-		
-	}
+
+		.geur li{
+			margin-right: 0px;
+
+		}
+
 
 	.one-gebak{
 
@@ -772,7 +800,7 @@ span{
 	}
 
 	.one-lach{
-
+	
 		background-image: url('../assets/lach-een.png');
 	}
 
@@ -784,4 +812,25 @@ span{
 		margin-right: 0px;
 		background-image: url('../assets/lach-twee.png');
 	}
+
+	.one-geur{
+		width: 204px;
+		height: 195px;
+
+		background-image: url('../assets/geur-een.png');
+	}
+
+	.two-geur{
+		width: 188px;
+		height: 189px;
+		background-image: url('../assets/geur-twee.png');
+	}
+
+	.three-geur{
+		width: 167px;
+		height: 192px;
+		margin-left: 15px;
+		background-image: url('../assets/geur-drie.png');
+	}
+
 }
