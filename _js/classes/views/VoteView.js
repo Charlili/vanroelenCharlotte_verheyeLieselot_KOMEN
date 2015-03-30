@@ -24,7 +24,7 @@ var VoteView = Backbone.View.extend({
 
 		this.model.fetch({
 			success: function(model,response){
-				console.log(response);
+				//console.log(response);
 				if(response.length === 0){
 					//vote model bestaat nog niet ergo saven
 					this.model.save();
@@ -82,34 +82,29 @@ var VoteView = Backbone.View.extend({
 			console.log('Changing vote');
 			//
 			var votedFor = $(e.currentTarget).parent().attr('class');
-			var point = parseInt($(e.currentTarget).find('img').attr('alt'));
-			console.log("votedFor " + votedFor + " and gave " + point + "points");
+			var point = parseInt($(e.currentTarget).find('p').text());
+			console.log("votedFor " + votedFor + " and gave " + point + " points");
 
 			this.model.set(votedFor,point);
 			this.model.save();
-			$(e.currentTarget).find('p').removeClass('voted');
-			$(e.currentTarget).find('p[value='+point+']').addClass('voted');
-
-			//this.addClasses()
 		}
-
 	},
 
 	addClasses: function(model){
-		console.log(model);
-		switch(model.gebak){
+		//console.log(model);
+		switch(model.get('gebak')){
 			case 1: this.$el.find('.gebak .one').addClass('voted');break;
 			case 2: this.$el.find('.gebak .two').addClass('voted');break;
 			case 3: this.$el.find('.gebak .three').addClass('voted');break;
 			default: this.$el.find('.gebak p').removeClass('voted');break;
 		}
-		switch(model.gelach){
+		switch(model.get('gelach')){
 			case 1: this.$el.find('.gelach .one').addClass('voted');break;
 			case 2: this.$el.find('.gelach .two').addClass('voted');break;
 			case 3: this.$el.find('.gelach .three').addClass('voted');break;
 			default: this.$el.find('.gelach p').removeClass('voted');break;
 		}
-		switch(model.geur){
+		switch(model.get('geur')){
 			case 1: this.$el.find('.geur .one').addClass('voted');break;
 			case 2: this.$el.find('.geur .two').addClass('voted');break;
 			case 3: this.$el.find('.geur .three').addClass('voted');break;
@@ -118,9 +113,8 @@ var VoteView = Backbone.View.extend({
 	},
 
 	render: function(){
-		console.log('hullo');
 		this.$el.html(this.template());
-		this.addClasses(this.model.attributes);
+		this.addClasses(this.model);
 		return this;
 	}
 

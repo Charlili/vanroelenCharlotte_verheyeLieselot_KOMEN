@@ -139,10 +139,9 @@ var GalleryView = Backbone.View.extend({
 	},
 
 	render: function(){
-		console.log('hullo');
 		this.$el.html(this.template());
 		this.renderImages();
-		console.log(this.$el);
+		//console.log(this.$el);
 		return this;
 	}
 

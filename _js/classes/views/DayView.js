@@ -28,24 +28,20 @@ var DayView = Backbone.View.extend({
 		}
 		var loggedIn = $.get('api/me')
 		.success(function(data){
-			console.log('1');
 			if(data.length === 0){
 				console.log('No user logged in. Redirect to #home');
 				Window.Application.navigate('home',{trigger:true});
 			}else{
-				console.log('2');
-				console.log(data);
+				//console.log(data);
 				this.me = data.id;
 				this.day.fetch({
 					success: function(model,response){
-						console.log('3');
-						console.log('in success '+response);
+						//console.log('in success '+response);
 						if(response.length === 0){
 							console.log('Day doesnt exist!');
 							Window.Application.navigate('week',{trigger:true});	
 						}else{
-							console.log('4');
-							console.log(model.get('user_id'));
+							//console.log(model.get('user_id'));
 							
 							var user = new User({
 								id: model.get('user_id')
@@ -54,7 +50,12 @@ var DayView = Backbone.View.extend({
 							this.listenToOnce(user,'sync',function(){
 								this.name = user.get('name');
 								this.day.set('name',this.name);
-								this.render();
+								if(this.day.get('user_id') != this.me){
+									this.createVoteView();
+								}else{
+									console.log('Cant vote for yourself dearie.');
+								}
+								//this.render();
 							}.bind(this));
 						}
 					}.bind(this)
@@ -90,17 +91,7 @@ var DayView = Backbone.View.extend({
 
 	render: function(){
 
-
-		this.day.set('name',this.name);
-		console.log(this.day);
 		this.$el.html(this.template(this.day.attributes));
-		//this.$votes = this.$el.find('.votes');
-
-		if(this.day.get('user_id') != this.me){
-			this.createVoteView();
-		}else{
-			console.log('Cant vote for yourself dearie.')
-		}
 		this.galleryView = new GalleryView({
 				day_id: this.day.get('id')								
 			});

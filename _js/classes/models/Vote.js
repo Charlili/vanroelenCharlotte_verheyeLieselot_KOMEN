@@ -1,6 +1,6 @@
 var Vote = Backbone.Model.extend({
 	
-	urlRoot: '/MAIV/deelexamen/api/votes/',
+	urlRoot: '/MAIV/deelexamen/api/votes',
 
 	initialize: function(options){
 		if(options){
@@ -15,6 +15,8 @@ var Vote = Backbone.Model.extend({
 			this.urlRoot = "/MAIV/deelexamen/api/votes/" + this.day_id + "/" + this.user_id;
 			return;
 		}
+
+		this.urlRoot = '/MAIV/deelexamen/api/votes';
 
 	},
 
