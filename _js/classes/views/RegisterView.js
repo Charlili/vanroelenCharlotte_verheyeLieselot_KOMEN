@@ -378,6 +378,11 @@ var RegisterView = Backbone.View.extend({
 			error = true;
 		}
 
+		if(this.$el.find('.photo-input')[0].files.length === 0){
+			this.$el.find('.photo-p').addClass('red');
+			this.$el.find('.photo-p').html("Je afbeelding mag niet groter zijn dan 5MB. Gelieve een foto up te loaden.")
+		}
+
 	},
 
 	hideErrors: function(){

@@ -844,11 +844,16 @@ span {
 }
 
 /* line 747, ../_scss/screen.scss */
+.register-container .red {
+  color: #ed564d;
+}
+
+/* line 751, ../_scss/screen.scss */
 .error-town {
   margin-top: 5px;
 }
 
-/* line 751, ../_scss/screen.scss */
+/* line 755, ../_scss/screen.scss */
 .empty {
   color: #ed564d;
   font-size: 2.2em;
