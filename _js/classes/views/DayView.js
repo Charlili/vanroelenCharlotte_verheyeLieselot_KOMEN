@@ -4,6 +4,7 @@ var Day = require('../models/Day.js');
 var User = require('../models/User.js');
 var Vote = require('../models/Vote.js');
 var VoteView = require('../views/VoteView.js');
+var GalleryView = require('../views/GalleryView.js');
 var template = require('../../../_hbs/day.hbs');
 
 var DayView = Backbone.View.extend({
@@ -42,7 +43,7 @@ var DayView = Backbone.View.extend({
 						}else{
 							console.log(this.day.get('user_id'));
 							
-
+							
 							//alleen voten op dagen die niet van jou zijn
 							
 
@@ -78,7 +79,12 @@ var DayView = Backbone.View.extend({
 	},
 
 	renderVote: function(){
-		this.$votes.append(this.voteView.render().el);
+		this.$el.append(this.voteView.render().el);
+	},
+
+	renderGallery: function(){
+		console.log('renderGallery');
+		this.$el.append(this.galleryView.render().el);
 	},
 
 	render: function(){
@@ -87,13 +93,17 @@ var DayView = Backbone.View.extend({
 		this.day.set('name',this.name);
 		console.log(this.day);
 		this.$el.html(this.template(this.day.attributes));
-		this.$votes = this.$el.find('.votes');
+		//this.$votes = this.$el.find('.votes');
 
 		if(this.day.get('user_id') != this.me){
 			this.createVoteView();
 		}else{
 			console.log('Cant vote for yourself dearie.')
 		}
+		this.galleryView = new GalleryView({
+				day_id: this.day.get('id')								
+			});
+		this.listenTo(this.galleryView.collection,'sync',this.renderGallery);
 
 		return this;
 

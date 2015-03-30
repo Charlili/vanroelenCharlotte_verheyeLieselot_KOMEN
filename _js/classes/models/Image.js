@@ -1,17 +1,23 @@
-var Image = Backbone.Model.extend({
+var User = Backbone.Model.extend({
+    //wat doet dit??
+    urlRoot: '/MAIV/deelexamen/api/images/',
 
-    readFile: function(file) {
-        var reader = new FileReader();
-        // closure to capture the file information.
-        reader.onload = (function(theFile,that) {
-            return function(e) {
-                //set model
-                that.set({filename: theFile.name, data: e.target.result});
+    /*initialize: function(options){
+        if(options){
+            this.day_id = options.day_id;
+            this.name = options.name;
+            this.extension = options.extension;
+        }
+    },*/
 
-            };
-        })(file,this);
+    sync: function(method, model, options) {
+        if(model.methodUrl && model.methodUrl(method.toLowerCase())) {
+            options = options || {};
+            options.urlRoot = model.methodUrl(method.toLowerCase());
+        }
+    Backbone.Collection.prototype.sync.apply(this, arguments);
+    }
 
-        // Read in the image file as a data URL.
-        reader.readAsDataURL(file);
-    }   
 });
+
+module.exports = User;
