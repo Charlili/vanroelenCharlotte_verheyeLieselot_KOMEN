@@ -43,14 +43,16 @@ var GalleryView = Backbone.View.extend({
 
 	renderImage: function(model, key){
 
+		var $div = $(document.createElement('div'));
 		var $img = $(document.createElement('img'));
 		$img.addClass('image');
+		$div.addClass('img-gallery');
 		var href = 'uploads/' + model.get('name');
 		$img.attr('src',href);
 		$img.attr('alt','image');
 		$img.attr('title','Klik om te zien.');
-
-		this.$el.append($img);
+		$div.append($img);
+		this.$el.append($div);
 	},
 
 	saveImage: function(){
