@@ -766,19 +766,14 @@ span {
   font-family: aleobold, sans-serif;
   font-size: 2.5em;
   width: 400px;
-  margin-top: 60px;
+  margin-top: 70px;
 }
 /* line 675, ../_scss/screen.scss */
 .day-container .info-user p {
+  margin-top: 10px;
   font-size: 2.5em;
 }
-/* line 679, ../_scss/screen.scss */
-.day-container .info-user .street-p {
-  margin-top: 20px;
-  width: 490px;
-  overflow: hidden;
-}
-/* line 687, ../_scss/screen.scss */
+/* line 683, ../_scss/screen.scss */
 .day-container header h1 {
   text-align: center;
   display: block;
@@ -787,14 +782,14 @@ span {
   color: #fff;
   padding: 10px 0px;
 }
-/* line 696, ../_scss/screen.scss */
+/* line 692, ../_scss/screen.scss */
 .day-container header h1:before {
   content: url("../assets/stitches.png");
   position: absolute;
   margin-left: -80px;
   margin-top: -4px;
 }
-/* line 704, ../_scss/screen.scss */
+/* line 700, ../_scss/screen.scss */
 .day-container header h1:after {
   content: url("../assets/stitches.png");
   position: absolute;
@@ -802,23 +797,23 @@ span {
   margin-top: -4px;
 }
 
-/* line 714, ../_scss/screen.scss */
+/* line 710, ../_scss/screen.scss */
 .votes {
   text-align: center;
 }
-/* line 718, ../_scss/screen.scss */
+/* line 714, ../_scss/screen.scss */
 .votes ul {
   width: 600px;
   margin: 0px auto;
   overflow: auto;
 }
-/* line 722, ../_scss/screen.scss */
+/* line 718, ../_scss/screen.scss */
 .votes ul p {
   margin-top: 30px;
   font-size: 2.5em;
   color: #3b3b3b;
 }
-/* line 728, ../_scss/screen.scss */
+/* line 724, ../_scss/screen.scss */
 .votes ul li {
   margin-top: 40px;
   float: left;
@@ -827,7 +822,7 @@ span {
   margin-right: 20px;
   text-align: left;
 }
-/* line 736, ../_scss/screen.scss */
+/* line 732, ../_scss/screen.scss */
 .votes ul li p {
   margin-top: 130px;
   background-image: url("../assets/green-dot.png");
@@ -838,68 +833,68 @@ span {
   padding-left: 17px;
   padding-top: 11px;
 }
-/* line 747, ../_scss/screen.scss */
+/* line 743, ../_scss/screen.scss */
 .votes ul li .voted {
   background-image: url("../assets/red-dot.png");
 }
-/* line 753, ../_scss/screen.scss */
+/* line 749, ../_scss/screen.scss */
 .votes .gebak li {
   width: 183px;
   height: 189px;
 }
-/* line 758, ../_scss/screen.scss */
+/* line 754, ../_scss/screen.scss */
 .votes .gelach li {
   width: 164px;
   height: 156px;
   margin-right: 35px;
 }
-/* line 763, ../_scss/screen.scss */
+/* line 759, ../_scss/screen.scss */
 .votes .gelach li p {
   margin-top: 105px;
 }
-/* line 768, ../_scss/screen.scss */
+/* line 764, ../_scss/screen.scss */
 .votes .geur li {
   margin-right: 0px;
 }
-/* line 773, ../_scss/screen.scss */
+/* line 769, ../_scss/screen.scss */
 .votes .one-gebak {
   background-image: url("../assets/gebak-een.png");
 }
-/* line 777, ../_scss/screen.scss */
+/* line 773, ../_scss/screen.scss */
 .votes .two-gebak {
   background-image: url("../assets/gebak-twee.png");
 }
-/* line 781, ../_scss/screen.scss */
+/* line 777, ../_scss/screen.scss */
 .votes .three-gebak {
   margin-right: 0px;
   background-image: url("../assets/gebak-drie.png");
 }
-/* line 786, ../_scss/screen.scss */
+/* line 782, ../_scss/screen.scss */
 .votes .one-lach {
   background-image: url("../assets/lach-een.png");
 }
-/* line 790, ../_scss/screen.scss */
+/* line 786, ../_scss/screen.scss */
 .votes .two-lach {
   background-image: url("../assets/lach-twee.png");
 }
-/* line 794, ../_scss/screen.scss */
+/* line 790, ../_scss/screen.scss */
 .votes .three-lach {
   margin-right: 0px;
   background-image: url("../assets/lach-twee.png");
 }
-/* line 799, ../_scss/screen.scss */
+/* line 795, ../_scss/screen.scss */
 .votes .one-geur {
   width: 204px;
   height: 195px;
   background-image: url("../assets/geur-een.png");
 }
-/* line 805, ../_scss/screen.scss */
+/* line 801, ../_scss/screen.scss */
 .votes .two-geur {
   width: 188px;
   height: 189px;
   background-image: url("../assets/geur-twee.png");
 }
-/* line 811, ../_scss/screen.scss */
+/* line 807, ../_scss/screen.scss */
 .votes .three-geur {
   width: 167px;
   height: 192px;
@@ -907,23 +902,23 @@ span {
   background-image: url("../assets/geur-drie.png");
 }
 
-/* line 820, ../_scss/screen.scss */
+/* line 816, ../_scss/screen.scss */
 .error {
   display: block;
   border-color: #ed564d;
 }
 
-/* line 825, ../_scss/screen.scss */
+/* line 821, ../_scss/screen.scss */
 .register-container .red {
   color: #ed564d;
 }
 
-/* line 829, ../_scss/screen.scss */
+/* line 825, ../_scss/screen.scss */
 .error-town {
   margin-top: 5px;
 }
 
-/* line 833, ../_scss/screen.scss */
+/* line 829, ../_scss/screen.scss */
 .empty {
   color: #ed564d;
   font-size: 2.2em;
@@ -932,13 +927,13 @@ span {
   text-align: center;
 }
 
-/* line 842, ../_scss/screen.scss */
+/* line 838, ../_scss/screen.scss */
 .winners-container .winners {
   width: 640px;
   margin: 0px auto;
   overflow: auto;
 }
-/* line 847, ../_scss/screen.scss */
+/* line 843, ../_scss/screen.scss */
 .winners-container header h1 {
   width: 640px;
   height: 220px;
@@ -946,51 +941,51 @@ span {
   background-image: url("../assets/winnaar-header.png");
   background-repeat: no-repeat;
 }
-/* line 855, ../_scss/screen.scss */
+/* line 851, ../_scss/screen.scss */
 .winners-container li {
   overflow: auto;
   margin-top: 20px;
   margin-bottom: 40px;
   margin-left: 50px;
 }
-/* line 860, ../_scss/screen.scss */
+/* line 856, ../_scss/screen.scss */
 .winners-container li:after {
   overflow: hidden;
   display: block;
   content: url("../assets/stripe.png");
   margin-top: 50px;
 }
-/* line 869, ../_scss/screen.scss */
+/* line 865, ../_scss/screen.scss */
 .winners-container .square {
   float: left;
   width: 183px;
   height: 183px;
   overflow: hidden;
 }
-/* line 874, ../_scss/screen.scss */
+/* line 870, ../_scss/screen.scss */
 .winners-container .square img {
   width: 183px;
 }
-/* line 877, ../_scss/screen.scss */
+/* line 873, ../_scss/screen.scss */
 .winners-container .square:before {
   position: absolute;
   margin-left: -10px;
   margin-top: -8px;
   content: url("../assets/seam.png");
 }
-/* line 885, ../_scss/screen.scss */
+/* line 881, ../_scss/screen.scss */
 .winners-container li h1 {
   font-size: 2.6em;
   color: #373737;
   margin-bottom: 14px;
   font-family: aleobold, aleoregular, sans-serif;
 }
-/* line 892, ../_scss/screen.scss */
+/* line 888, ../_scss/screen.scss */
 .winners-container .reg {
   display: inline;
   font-family: aleoregular, sans-serif;
 }
-/* line 897, ../_scss/screen.scss */
+/* line 893, ../_scss/screen.scss */
 .winners-container .label {
   display: inline-block;
   padding-left: 50px;
@@ -1000,13 +995,13 @@ span {
   background-color: #ebebeb;
   font-size: 2.3em;
 }
-/* line 908, ../_scss/screen.scss */
+/* line 904, ../_scss/screen.scss */
 .winners-container .label-el {
   box-sizing: border-box;
   margin-top: 24px;
   display: block;
 }
-/* line 914, ../_scss/screen.scss */
+/* line 910, ../_scss/screen.scss */
 .winners-container .score {
   position: absolute;
   margin-left: -20px;
@@ -1022,37 +1017,37 @@ span {
   background-image: url("../assets/ruit.png");
   background-repeat: no-repeat;
 }
-/* line 931, ../_scss/screen.scss */
+/* line 927, ../_scss/screen.scss */
 .winners-container .terug-week {
   padding-top: 22px;
   width: 390px;
   margin-bottom: 30px;
 }
-/* line 938, ../_scss/screen.scss */
+/* line 934, ../_scss/screen.scss */
 .winners-container .number1 {
   margin-top: 0px;
   margin-bottom: 60px;
 }
-/* line 942, ../_scss/screen.scss */
+/* line 938, ../_scss/screen.scss */
 .winners-container .number1:after {
   margin-top: 80px;
 }
-/* line 945, ../_scss/screen.scss */
+/* line 941, ../_scss/screen.scss */
 .winners-container .number1 .square {
   width: 233px;
   height: 233px;
 }
-/* line 949, ../_scss/screen.scss */
+/* line 945, ../_scss/screen.scss */
 .winners-container .number1 .square img {
   width: 233px;
 }
-/* line 953, ../_scss/screen.scss */
+/* line 949, ../_scss/screen.scss */
 .winners-container .number1 .square:before {
   margin-left: -37px;
   margin-top: -58px;
   content: url("../assets/winner-frame.png");
 }
-/* line 960, ../_scss/screen.scss */
+/* line 956, ../_scss/screen.scss */
 .winners-container .number1 h1 {
   font-family: manus, sans-serif;
   font-size: 3.4em;
@@ -1063,16 +1058,16 @@ span {
   -webkit-transform: translateY(60px);
   transform: translateY(60px);
 }
-/* line 967, ../_scss/screen.scss */
+/* line 963, ../_scss/screen.scss */
 .winners-container .number1 h1 .reg {
   display: none;
 }
-/* line 972, ../_scss/screen.scss */
+/* line 968, ../_scss/screen.scss */
 .winners-container .number1 .top-label {
   margin-top: 70px;
 }
 
-/* line 978, ../_scss/screen.scss */
+/* line 974, ../_scss/screen.scss */
 .cms {
   display: block;
   margin: 0px auto;
@@ -1084,7 +1079,7 @@ span {
   height: 46px;
 }
 
-/* line 990, ../_scss/screen.scss */
+/* line 986, ../_scss/screen.scss */
 .outer {
   position: fixed;
   top: 0;
@@ -1099,13 +1094,13 @@ span {
   width: 100%;
 }
 
-/* line 1004, ../_scss/screen.scss */
+/* line 1000, ../_scss/screen.scss */
 .mid {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 1009, ../_scss/screen.scss */
+/* line 1005, ../_scss/screen.scss */
 .inner {
   margin-left: auto;
   margin-right: auto;
@@ -1119,20 +1114,20 @@ span {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 1020, ../_scss/screen.scss */
+/* line 1016, ../_scss/screen.scss */
 .inner h1 {
   color: #6cbca3;
   padding-top: 40px;
   font-size: 1.9em;
   margin-bottom: 50px;
 }
-/* line 1027, ../_scss/screen.scss */
+/* line 1023, ../_scss/screen.scss */
 .inner p {
   width: 490px;
   margin-left: 20px;
   line-height: 34px;
 }
-/* line 1033, ../_scss/screen.scss */
+/* line 1029, ../_scss/screen.scss */
 .inner .back {
   background-color: #6cbca3;
   font-size: 1.4em;
@@ -1141,13 +1136,13 @@ span {
   margin-bottom: 30px;
 }
 
-/* line 1042, ../_scss/screen.scss */
+/* line 1038, ../_scss/screen.scss */
 .gallery {
   /*:first-child + div{
   	width: 100px;
   } */
 }
-/* line 1045, ../_scss/screen.scss */
+/* line 1041, ../_scss/screen.scss */
 .gallery .photo-gal-upload {
   position: absolute;
   display: inline-block;
@@ -1159,7 +1154,7 @@ span {
   background: white;
   background-image: url("../assets/plus.jpg");
 }
-/* line 1058, ../_scss/screen.scss */
+/* line 1054, ../_scss/screen.scss */
 .gallery .img-gallery {
   width: 197px;
   overflow: hidden;
@@ -1169,7 +1164,7 @@ span {
   margin-right: 15px;
   margin-top: 15px;
 }
-/* line 1065, ../_scss/screen.scss */
+/* line 1061, ../_scss/screen.scss */
 .gallery .img-gallery img {
   width: 197px;
 }
