@@ -13,7 +13,9 @@ var HomeView = Backbone.View.extend({
 	className: 'home-container',
 	
 	events: {
-		'click .login-submit': 'login'
+		'click .login-submit': 'login',
+		'click .info': 'showInfo',
+		'click .terug': 'removeInfo'
 	},
 
 	initialize: function(){
@@ -123,22 +125,35 @@ var HomeView = Backbone.View.extend({
 
 		return this;
 
+	},
+
+	showInfo: function(){
+		var $outerdiv = $(document.createElement('div'));
+		$outerdiv.addClass('outer');
+		var $middiv = $(document.createElement('div'));
+		$middiv.addClass('mid');
+		var $innerdiv = $(document.createElement('div'));
+		$innerdiv.addClass('inner');
+		var h1 = document.createElement('h1');
+		var $p = $(document.createElement('p'));
+		$p.text("Komen kaarten is een variant op Komen Eten. Vier dagen lang ga je met dezelfde mensen kaarten, elke dag bij iemand anders thuis. De winnaar ontvangt een zak kattenkorrels. Zet dus de koffie maar al klaar en vergeet niet je oven te voorverwarmen!");
+		var $a = $(document.createElement('a'));
+		$a.addClass('terug');
+		$a.text('Terug');
+		$innerdiv.append(h1);
+		$innerdiv.append($p);
+		$innerdiv.append($a);
+
+		$middiv.append($innerdiv);
+		$outerdiv.append($middiv);
+
+		this.$el.append($outerdiv);
+	},
+
+	removeInfo: function(){
+		$('.outer').remove();
 	}
 
-	/*addUser: function(e){
-		e.preventDefault();
-
-		if(this.$el.find('.textarea').val() === ""){
-			return;
-		}
-
-		this.collection.create({
-     		 text: this.$el.find('.textarea').val()
-		});
-
-		this.$el.find('.textarea').val("");
-	
-	}*/
 
 });
 
