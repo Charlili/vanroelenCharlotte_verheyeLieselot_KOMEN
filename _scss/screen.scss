@@ -138,6 +138,15 @@ span{
 		}
 	}
 
+.photo-input{
+	-moz-appearance: none; 
+	-o-appearance: none; 
+	-webkit-appearance: none; 
+	   position:absolute;
+	   height: 219px;
+	   opacity:0; 
+}
+
 .register-container{
 
 	h1{
@@ -244,14 +253,6 @@ span{
 		position: absolute;
 	}
 
-	.photo-input{
-		-moz-appearance: none; 
-		-o-appearance: none; 
-		-webkit-appearance: none; 
-	    position:absolute;
-	    height: 219px;
-	    opacity:0; 
-	}
 
 	.frame{
 		position: relative;
@@ -718,7 +719,7 @@ span{
 
 	.three-gebak{
 		margin-right: 0px;
-		background-image: url('../assets/gebak-twee.png');
+		background-image: url('../assets/gebak-drie.png');
 	}
 
 	.one-lach{
@@ -975,8 +976,36 @@ inner DIV: margin-left: auto; margin-right: auto; width: [whatever width you wan
 	.back{
 		background-color: $green;
 		font-size: 1.4em;
-		padding-top: 19px;
+		padding-top: 21px;
 		margin-top: 50px;
 		margin-bottom: 30px;
 	}
+}
+
+.gallery{
+
+
+	.photo-gal-upload{
+		 	position:absolute;
+		    display:inline-block;
+		    border:#ebebeb solid 1px;
+		    width:197px;
+		    height: 197px; 
+		    z-index: 1;
+		    margin-top: 15px;
+		    margin-left: 430px;
+		   
+		    background:white;
+		    background-image: url('../assets/plus.jpg');
+	}
+
+	.img-gallery{
+		img{
+			width: 200px;
+			height: 200px;
+			display: block;
+		}
+	}
+
+
 }

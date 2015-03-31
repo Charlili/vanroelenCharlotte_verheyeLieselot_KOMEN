@@ -83,6 +83,7 @@ var WeekView = Backbone.View.extend({
 		}
 		if(this.week.get('currentDay') < 5){
 			this.$a.prop("disabled", "disabled");
+
 			//this.$a.prop("href", '#waiting');
 		}else{
 			this.$el.find('.winner').addClass('lastDay');
