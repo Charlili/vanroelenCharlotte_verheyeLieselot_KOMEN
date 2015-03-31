@@ -704,8 +704,16 @@ span {
   content: url("../assets/rightie.png");
   margin-left: 15px;
 }
+/* line 598, ../_scss/screen.scss */
+.week-container .lastDay a {
+  background-color: #ed564d;
+}
+/* line 602, ../_scss/screen.scss */
+.week-container .lastDay p {
+  background-image: url("../assets/red-date.png");
+}
 
-/* line 600, ../_scss/screen.scss */
+/* line 611, ../_scss/screen.scss */
 .day-container .header-name {
   background-image: url("../assets/empty-header.png");
   background-repeat: no-repeat;
@@ -713,11 +721,11 @@ span {
   height: 172px;
 }
 
-/* line 609, ../_scss/screen.scss */
+/* line 620, ../_scss/screen.scss */
 .votes {
   text-align: center;
 }
-/* line 611, ../_scss/screen.scss */
+/* line 622, ../_scss/screen.scss */
 .votes header h1 {
   display: block;
   background-color: #6cbca3;
@@ -725,33 +733,33 @@ span {
   color: #fff;
   padding: 10px 0px;
 }
-/* line 618, ../_scss/screen.scss */
+/* line 629, ../_scss/screen.scss */
 .votes header h1:before {
   content: url("../assets/stitches.png");
   position: absolute;
   margin-left: -80px;
   margin-top: -4px;
 }
-/* line 626, ../_scss/screen.scss */
+/* line 637, ../_scss/screen.scss */
 .votes header h1:after {
   content: url("../assets/stitches.png");
   position: absolute;
   margin-left: 10px;
   margin-top: -4px;
 }
-/* line 635, ../_scss/screen.scss */
+/* line 646, ../_scss/screen.scss */
 .votes ul {
   width: 600px;
   margin: 0px auto;
   overflow: auto;
 }
-/* line 639, ../_scss/screen.scss */
+/* line 650, ../_scss/screen.scss */
 .votes ul p {
   margin-top: 30px;
   font-size: 2.5em;
   color: #3b3b3b;
 }
-/* line 645, ../_scss/screen.scss */
+/* line 656, ../_scss/screen.scss */
 .votes ul li {
   margin-top: 40px;
   float: left;
@@ -760,7 +768,7 @@ span {
   margin-right: 20px;
   text-align: left;
 }
-/* line 652, ../_scss/screen.scss */
+/* line 663, ../_scss/screen.scss */
 .votes ul li p {
   margin-top: 130px;
   background-image: url("../assets/green-dot.png");
@@ -771,68 +779,68 @@ span {
   padding-left: 17px;
   padding-top: 11px;
 }
-/* line 665, ../_scss/screen.scss */
+/* line 676, ../_scss/screen.scss */
 .votes ul li .voted {
   background-image: url("../assets/red-dot.png");
 }
-/* line 674, ../_scss/screen.scss */
+/* line 685, ../_scss/screen.scss */
 .votes .gebak li {
   width: 183px;
   height: 189px;
 }
-/* line 679, ../_scss/screen.scss */
+/* line 690, ../_scss/screen.scss */
 .votes .gelach li {
   width: 164px;
   height: 156px;
   margin-right: 35px;
 }
-/* line 683, ../_scss/screen.scss */
+/* line 694, ../_scss/screen.scss */
 .votes .gelach li p {
   margin-top: 105px;
 }
-/* line 688, ../_scss/screen.scss */
+/* line 699, ../_scss/screen.scss */
 .votes .geur li {
   margin-right: 0px;
 }
-/* line 694, ../_scss/screen.scss */
+/* line 705, ../_scss/screen.scss */
 .votes .one-gebak {
   background-image: url("../assets/gebak-een.png");
 }
-/* line 699, ../_scss/screen.scss */
+/* line 710, ../_scss/screen.scss */
 .votes .two-gebak {
   background-image: url("../assets/gebak-twee.png");
 }
-/* line 703, ../_scss/screen.scss */
+/* line 714, ../_scss/screen.scss */
 .votes .three-gebak {
   margin-right: 0px;
   background-image: url("../assets/gebak-twee.png");
 }
-/* line 708, ../_scss/screen.scss */
+/* line 719, ../_scss/screen.scss */
 .votes .one-lach {
   background-image: url("../assets/lach-een.png");
 }
-/* line 713, ../_scss/screen.scss */
+/* line 724, ../_scss/screen.scss */
 .votes .two-lach {
   background-image: url("../assets/lach-twee.png");
 }
-/* line 717, ../_scss/screen.scss */
+/* line 728, ../_scss/screen.scss */
 .votes .three-lach {
   margin-right: 0px;
   background-image: url("../assets/lach-twee.png");
 }
-/* line 722, ../_scss/screen.scss */
+/* line 733, ../_scss/screen.scss */
 .votes .one-geur {
   width: 204px;
   height: 195px;
   background-image: url("../assets/geur-een.png");
 }
-/* line 729, ../_scss/screen.scss */
+/* line 740, ../_scss/screen.scss */
 .votes .two-geur {
   width: 188px;
   height: 189px;
   background-image: url("../assets/geur-twee.png");
 }
-/* line 735, ../_scss/screen.scss */
+/* line 746, ../_scss/screen.scss */
 .votes .three-geur {
   width: 167px;
   height: 192px;
@@ -840,23 +848,23 @@ span {
   background-image: url("../assets/geur-drie.png");
 }
 
-/* line 744, ../_scss/screen.scss */
+/* line 755, ../_scss/screen.scss */
 .error {
   display: block;
   border-color: #ed564d;
 }
 
-/* line 749, ../_scss/screen.scss */
+/* line 760, ../_scss/screen.scss */
 .register-container .red {
   color: #ed564d;
 }
 
-/* line 753, ../_scss/screen.scss */
+/* line 764, ../_scss/screen.scss */
 .error-town {
   margin-top: 5px;
 }
 
-/* line 757, ../_scss/screen.scss */
+/* line 768, ../_scss/screen.scss */
 .empty {
   color: #ed564d;
   font-size: 2.2em;
@@ -865,13 +873,13 @@ span {
   text-align: center;
 }
 
-/* line 766, ../_scss/screen.scss */
+/* line 777, ../_scss/screen.scss */
 .winners-container .winners {
   width: 640px;
   margin: 0px auto;
   overflow: auto;
 }
-/* line 771, ../_scss/screen.scss */
+/* line 782, ../_scss/screen.scss */
 .winners-container header h1 {
   width: 640px;
   height: 220px;
@@ -879,51 +887,51 @@ span {
   background-image: url("../assets/winnaar-header.png");
   background-repeat: no-repeat;
 }
-/* line 779, ../_scss/screen.scss */
+/* line 790, ../_scss/screen.scss */
 .winners-container li {
   overflow: auto;
   margin-top: 20px;
   margin-bottom: 40px;
   margin-left: 50px;
 }
-/* line 784, ../_scss/screen.scss */
+/* line 795, ../_scss/screen.scss */
 .winners-container li:after {
   overflow: hidden;
   display: block;
   content: url("../assets/stripe.png");
   margin-top: 50px;
 }
-/* line 793, ../_scss/screen.scss */
+/* line 804, ../_scss/screen.scss */
 .winners-container .square {
   float: left;
   width: 183px;
   height: 183px;
   overflow: hidden;
 }
-/* line 798, ../_scss/screen.scss */
+/* line 809, ../_scss/screen.scss */
 .winners-container .square img {
   width: 183px;
 }
-/* line 801, ../_scss/screen.scss */
+/* line 812, ../_scss/screen.scss */
 .winners-container .square:before {
   position: absolute;
   margin-left: -10px;
   margin-top: -8px;
   content: url("../assets/seam.png");
 }
-/* line 809, ../_scss/screen.scss */
+/* line 820, ../_scss/screen.scss */
 .winners-container li h1 {
   font-size: 2.6em;
   color: #373737;
   margin-bottom: 14px;
   font-family: aleobold, aleoregular, sans-serif;
 }
-/* line 816, ../_scss/screen.scss */
+/* line 827, ../_scss/screen.scss */
 .winners-container .reg {
   display: inline;
   font-family: aleoregular, sans-serif;
 }
-/* line 821, ../_scss/screen.scss */
+/* line 832, ../_scss/screen.scss */
 .winners-container .label {
   display: inline-block;
   padding-left: 50px;
@@ -933,13 +941,13 @@ span {
   background-color: #ebebeb;
   font-size: 2.3em;
 }
-/* line 832, ../_scss/screen.scss */
+/* line 843, ../_scss/screen.scss */
 .winners-container .label-el {
   box-sizing: border-box;
   margin-top: 24px;
   display: block;
 }
-/* line 838, ../_scss/screen.scss */
+/* line 849, ../_scss/screen.scss */
 .winners-container .score {
   position: absolute;
   margin-left: -20px;
@@ -955,37 +963,37 @@ span {
   background-image: url("../assets/ruit.png");
   background-repeat: no-repeat;
 }
-/* line 855, ../_scss/screen.scss */
+/* line 866, ../_scss/screen.scss */
 .winners-container .terug-week {
   padding-top: 22px;
   width: 390px;
   margin-bottom: 30px;
 }
-/* line 862, ../_scss/screen.scss */
+/* line 873, ../_scss/screen.scss */
 .winners-container .number1 {
   margin-top: 0px;
   margin-bottom: 60px;
 }
-/* line 866, ../_scss/screen.scss */
+/* line 877, ../_scss/screen.scss */
 .winners-container .number1:after {
   margin-top: 80px;
 }
-/* line 869, ../_scss/screen.scss */
+/* line 880, ../_scss/screen.scss */
 .winners-container .number1 .square {
   width: 233px;
   height: 233px;
 }
-/* line 873, ../_scss/screen.scss */
+/* line 884, ../_scss/screen.scss */
 .winners-container .number1 .square img {
   width: 233px;
 }
-/* line 876, ../_scss/screen.scss */
+/* line 887, ../_scss/screen.scss */
 .winners-container .number1 .square:before {
   margin-left: -37px;
   margin-top: -58px;
   content: url("../assets/winner-frame.png");
 }
-/* line 884, ../_scss/screen.scss */
+/* line 895, ../_scss/screen.scss */
 .winners-container .number1 h1 {
   font-family: manus, sans-serif;
   font-size: 3.4em;
@@ -996,16 +1004,16 @@ span {
   -webkit-transform: translateY(60px);
   transform: translateY(60px);
 }
-/* line 891, ../_scss/screen.scss */
+/* line 902, ../_scss/screen.scss */
 .winners-container .number1 h1 .reg {
   display: none;
 }
-/* line 896, ../_scss/screen.scss */
+/* line 907, ../_scss/screen.scss */
 .winners-container .number1 .top-label {
   margin-top: 70px;
 }
 
-/* line 903, ../_scss/screen.scss */
+/* line 914, ../_scss/screen.scss */
 .cms {
   display: block;
   margin: 0px auto;
