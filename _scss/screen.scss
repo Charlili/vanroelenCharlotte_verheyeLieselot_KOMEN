@@ -1062,14 +1062,16 @@ span{
 			overflow: hidden;
 			height: 197px;
 			display: block;
+			float: left;
+			margin-right: 8px;
+			margin-top: 15px;
+			margin-left: 8px;
+
 
 			img{
 				width: 197px;
 			}
 
-			float: left;
-			margin-right: 15px;
-			margin-top: 15px;
 
 			&:nth-child(2){
 				margin-right: 150px;

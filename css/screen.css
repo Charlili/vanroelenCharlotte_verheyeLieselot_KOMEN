@@ -1162,14 +1162,15 @@ span {
   height: 197px;
   display: block;
   float: left;
-  margin-right: 15px;
+  margin-right: 8px;
   margin-top: 15px;
+  margin-left: 8px;
 }
-/* line 1066, ../_scss/screen.scss */
+/* line 1071, ../_scss/screen.scss */
 .gallery .photos .img-gallery img {
   width: 197px;
 }
-/* line 1074, ../_scss/screen.scss */
+/* line 1076, ../_scss/screen.scss */
 .gallery .photos .img-gallery:nth-child(2) {
   margin-right: 150px;
 }
