@@ -1053,7 +1053,10 @@ span{
 
 
 
-	.img-gallery{
+	
+	.photos{
+
+		.img-gallery{
 
 			width: 197px;
 			overflow: hidden;
@@ -1064,13 +1067,16 @@ span{
 				width: 197px;
 			}
 
-	float: left;
-	margin-right: 15px;
-	margin-top: 15px;
+			float: left;
+			margin-right: 15px;
+			margin-top: 15px;
+
+			&:nth-child(2){
+				margin-right: 150px;
+			}
 	}
 
-	.photos .image-gallery img{
-		width: 100px;
+	
 	}
 
 	/*:first-child + div{
