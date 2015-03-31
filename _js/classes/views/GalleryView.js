@@ -49,7 +49,7 @@ var GalleryView = Backbone.View.extend({
 		$img.attr('alt','image');
 		$img.attr('title','Klik om te zien.');
 		$div.append($img);
-		this.$el.append($div);
+		this.$el.find('.photos').append($div);
 	},
 
 	saveImage: function(){
@@ -134,7 +134,7 @@ var GalleryView = Backbone.View.extend({
 		});
 		this.saveImage();
 		//this.$el.find('.photo-input').remove();
-		this.$el.find('.preview-cont').append(fileB);
+		this.$el.find('.photos').append(fileB);
 
 			//make 
 		}
