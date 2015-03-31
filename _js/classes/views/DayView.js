@@ -55,15 +55,19 @@ var DayView = Backbone.View.extend({
 							//this.renderGallery();
 							this.listenToOnce(user,'sync',function(){
 								this.name = user.get('name');
-								this.day.set('name',this.name);
+								this.day.set('name',user.get('name'));
+								this.day.set('street',user.get('street'));
+								this.day.set('town',user.get('town'));
+								this.day.set('extension',user.get('extension'));
+								this.day.set('user_id',user.get('id'));
 								//console.log(this.day.get('user_id'));
 								if(this.day.get('user_id') != this.me){
 									this.createVoteView();
 								}else{
-									//this.listenTo(this.galleryView.collection,'sync',this.renderGallery);
+									this.listenTo(this.galleryView.collection,'sync',this.renderGallery);
 									console.log('Cant vote for yourself dearie.');
 								}
-								//this.render();
+								this.render();
 							}.bind(this));
 						}
 					}.bind(this)
