@@ -1069,7 +1069,13 @@ span{
 	margin-top: 15px;
 	}
 
+	.photos .image-gallery img{
+		width: 100px;
+	}
 
+	/*:first-child + div{
+		width: 100px;
+	} */
 
 
 }
