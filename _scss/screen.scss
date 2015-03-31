@@ -322,6 +322,7 @@ span{
 	h1{
 		background-image: url('../assets/deelnemers_header.png');
 		width: 640px;
+		margin: 0px auto;
 		height: 172px;
 	}
 
@@ -421,7 +422,7 @@ span{
 	}
 
 	.frame4{
-		margin-left: 36px;
+		margin-left: 66px;
 		margin-top: 40px;
 
 		.square{
@@ -760,7 +761,7 @@ span{
 	text-align: center;
 }
 
-.winner-container{
+.winners-container{
 	.winners{
 		width: 640px;
 		margin: 0px auto;
@@ -849,4 +850,12 @@ span{
 		width: 390px;
 		
 	}
+}
+
+.cms{
+	display: block;
+	width: 200px;
+	padding: 10px;
+	position: fixed;
+	height: 46px;
 }
