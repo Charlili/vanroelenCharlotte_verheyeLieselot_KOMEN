@@ -23,10 +23,12 @@ var GalleryView = Backbone.View.extend({
 		this.collection = new ImageCollection({
 			day_id: this.day_id
 		});
-		//this.listenTo(this.collection, 'sync', this.renderImages);
+		//this.listenTo(this.collection, 'sync', this.render);
 		this.collection.fetch({success:function(model,response){
-			if(response.length === 0){
+			if(response .length === 0){
 				console.log('empty collection');
+			}else{
+				this.render();
 			}
 		}});
 
@@ -34,9 +36,6 @@ var GalleryView = Backbone.View.extend({
 	},
 
 	renderImages: function(){
-		//this.$users.empty();
-		//this.collection.sort();
-		//console.log(this.collection);
 		this.collection.forEach(this.renderImage, this);
 		
 	},
@@ -97,8 +96,10 @@ var GalleryView = Backbone.View.extend({
 			
 			if(file.type.search('image') != -1) {
 				var reader = new FileReader();
+				var div = document.createElement('div');
+				$(div).addClass('img-gallery');
 				var img = document.createElement('img');
-				$(img).addClass('photo-preview');
+				$(img).addClass('image');
 	        	reader.onload = function(event) {
 		        	var errorString = "no error in errorString";
 		        	img.onload = function() {
@@ -111,7 +112,8 @@ var GalleryView = Backbone.View.extend({
 		          	img.setAttribute('src', reader.result);
 		        };
 		        reader.readAsDataURL(file);
-		        return img;
+		        $(div).append(img);
+		        return div;
 			}else{
 				return false;
 			}
@@ -134,7 +136,7 @@ var GalleryView = Backbone.View.extend({
 		});
 		this.saveImage();
 		//this.$el.find('.photo-input').remove();
-		//this.$el.find('.preview-cont').append(fileB);
+		this.$el.find('.preview-cont').append(fileB);
 
 			//make 
 		}

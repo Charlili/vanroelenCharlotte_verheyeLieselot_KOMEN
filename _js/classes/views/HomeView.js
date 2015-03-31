@@ -70,15 +70,11 @@ var HomeView = Backbone.View.extend({
 					}
 				}.bind(this)
 			});				
-				//password hash via js?
-				//Becrypt opzoeken
 		}
 	},
 
 	addToSession: function(){
 		console.log('HomeView: login - addToSession');
-		//Window.Application.activeUser = this.user;
-		//$.post('login.php',data);
 		var dataUser = {
 			'id': this.user.get('id')			
 		};

@@ -47,12 +47,20 @@ var DayView = Backbone.View.extend({
 								id: model.get('user_id')
 							});
 							user.fetch();
+
+							this.galleryView = new GalleryView({
+								day_id: this.day.get('id')								
+							});
+							//this.listenTo(this.galleryView.collection,'sync',this.galleryView.render);
+							//this.renderGallery();
 							this.listenToOnce(user,'sync',function(){
 								this.name = user.get('name');
 								this.day.set('name',this.name);
+								//console.log(this.day.get('user_id'));
 								if(this.day.get('user_id') != this.me){
 									this.createVoteView();
 								}else{
+									//this.listenTo(this.galleryView.collection,'sync',this.renderGallery);
 									console.log('Cant vote for yourself dearie.');
 								}
 								//this.render();
@@ -82,21 +90,18 @@ var DayView = Backbone.View.extend({
 
 	renderVote: function(){
 		this.$el.append(this.voteView.render().el);
+		this.renderGallery();
 	},
 
 	renderGallery: function(){
 		console.log('renderGallery');
 		this.$el.append(this.galleryView.render().el);
+		
 	},
 
 	render: function(){
 
 		this.$el.html(this.template(this.day.attributes));
-		this.galleryView = new GalleryView({
-				day_id: this.day.get('id')								
-			});
-		this.listenTo(this.galleryView.collection,'sync',this.renderGallery);
-
 		return this;
 
 	}
