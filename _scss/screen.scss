@@ -46,10 +46,10 @@ span{
 .home-container{
 
 
-	h1{
+	.home-headerke{
 		background-image: url('../assets/home_header.png');
-		background-position: top center;
 		background-repeat: no-repeat;
+		margin: 0px auto;
 		width: 640px;
 		height: 507px;
 		display: block;
@@ -62,13 +62,12 @@ span{
 		height: 54px;
 		display: block;
 		margin: 25px auto;
-		p{
+		
 			color: #FFFFFF;
-			display: inline-block;
-			margin-left: 23px;
-			margin-top: 12px;
+			padding-left: 23px;
+			padding-top: 12px;
 			font-size: 3em;
-		}
+		
 	}
 
 	.register{
@@ -97,7 +96,7 @@ span{
 	}
 }
 
-.login-submit, .terug-week{
+.login-submit, .terug-week, .back{
 		color: #fff;
 		font-family: inherit;
 		border: none;
@@ -130,6 +129,7 @@ span{
 		width: 130px;
 		@include border-radius(0px 4px 4px 0px);
 		@include transform(translateY(-100px));
+
 		&:before{
 			display: inline-block;
 			@include transform(translate(-5px, 5px));
@@ -255,8 +255,7 @@ span{
 
 	.frame{
 		position: relative;
-				z-index: -2;
-
+		z-index: -2;
 		background-image: url('../assets/frame.png');
 		width: 289px;
 		height: 327px;
@@ -361,6 +360,7 @@ span{
 	.frame1{
 		margin-left: 52px;
 		margin-top: 60px;
+
 		.square{
 			width: 250px;
 			height: 250px;
@@ -370,22 +370,25 @@ span{
 		.img-usr{
 			width: 250px;
 		}
+
 		&:before{
-		margin-left: -139px;
-		margin-top: -50px;
-		 position: absolute;
-		 content: url('../assets/frame1.png');
+			margin-left: -139px;
+			margin-top: -50px;
+			position: absolute;
+			content: url('../assets/frame1.png');
 		}
 	}
 
 	.frame2{
+
 		margin-left: 68px;
 		margin-top: 105px;
 		margin-bottom: 40px;
+
 		.square{
-		width: 224px;
-		height: 224px;
-		overflow: hidden;
+			width: 224px;
+			height: 224px;
+			overflow: hidden;
 		}
 
 		.img-usr{
@@ -403,10 +406,11 @@ span{
 	.frame3{
 		margin-left: 60px;
 		margin-top: 63px;
+
 		.square{
-		width: 225px;
-		height: 225px;
-		overflow: hidden;
+			width: 225px;
+			height: 225px;
+			overflow: hidden;
 		}
 
 		.img-usr{
@@ -436,10 +440,10 @@ span{
 		}
 
 		&:before{
-		margin-left: -139px;
-		margin-top: -50px;
-		 position: absolute;
-		 content: url('../assets/frame4.png');
+			margin-left: -139px;
+			margin-top: -50px;
+			position: absolute;
+			content: url('../assets/frame4.png');
 		}
 	}
 
@@ -521,42 +525,41 @@ span{
 
 	.date-overview p, .winner p{
 		color: #fff;
-			padding-top: 8px;
-			background-repeat: no-repeat;
-			background-position: center;
-			width: 181px;
-			height: 53px;
-			margin: 0px auto;
-			margin-top: 73px;
-			display: block;
-			background-image: url('../assets/grey-date.png');
+		padding-top: 8px;
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 181px;
+		height: 53px;
+		margin: 0px auto;
+		margin-top: 73px;
+		display: block;
+		background-image: url('../assets/grey-date.png');
 
 	}
 
 	.thisDay{
-		.active .date-overview p{
-			
-			background-image: url('../assets/red-date.png');
 
+		.active .date-overview p{
+			background-image: url('../assets/red-date.png');
 		}
+
 		.active:after{
-				content: url('../assets/red-arrow.png');
-				float: right;
-				margin-top: 70px;
-				margin-right: 20px;
+			content: url('../assets/red-arrow.png');
+			float: right;
+			margin-top: 70px;
+			margin-right: 20px;
 			
 		}
 
 		.date-overview:before{
-				display: block;
-				position: absolute;
-				@include transform(translateY(-10px));
-				content: url('../assets/vandaag_label.png');
+			display: block;
+			position: absolute;
+			@include transform(translateY(-10px));
+			content: url('../assets/vandaag_label.png');
 		}
 	}
 
 	.active .date-overview p{
-
 			background-image: url('../assets/green-date.png');
 	}
 
@@ -570,7 +573,9 @@ span{
 	}
 
 	.winner{
+		
 		text-align: center;
+
 		p{
 			font-size: 3.8em;
 		}
@@ -613,13 +618,13 @@ span{
 		background-repeat: no-repeat;
 		width: 640px;
 		height: 172px;
+		margin: 0px auto;
+
 	}
-}
 
-
-.votes{
-	text-align: center;
 	header h1{
+			text-align: center;
+
 		display: block;
 		background-color: $green;
 		font-size: 3.4em;
@@ -639,9 +644,14 @@ span{
 			position: absolute;
 			margin-left: 10px;
 			margin-top: -4px;
-
 		}
 	}
+}
+
+
+.votes{
+	text-align: center;
+	
 
 	ul{
 		width: 600px;
@@ -660,6 +670,7 @@ span{
 			background-repeat: no-repeat;
 			margin-right: 20px;
 			text-align: left;
+
 			p{
 				margin-top: 130px;
 				background-image: url('../assets/green-dot.png');
@@ -669,18 +680,13 @@ span{
 				color: #fff;
 				padding-left: 17px;
 				padding-top: 11px;
-
-
 			}
 
 			.voted{
 				background-image: url('../assets/red-dot.png');
 			}
 		}
-
-	
 	}
-
 
 		.gebak li{
 			width: 183px;
@@ -691,19 +697,18 @@ span{
 			width: 164px;
 			height: 156px;
 			margin-right: 35px;
+
 			p{
-					margin-top: 105px;
+				margin-top: 105px;
 			}
 		}
 
 		.geur li{
 			margin-right: 0px;
-
 		}
 
 
 	.one-gebak{
-
 		background-image: url('../assets/gebak-een.png');
 	}
 
@@ -717,7 +722,6 @@ span{
 	}
 
 	.one-lach{
-	
 		background-image: url('../assets/lach-een.png');
 	}
 
@@ -733,7 +737,6 @@ span{
 	.one-geur{
 		width: 204px;
 		height: 195px;
-
 		background-image: url('../assets/geur-een.png');
 	}
 
@@ -877,15 +880,15 @@ span{
 		&:after{
 			margin-top: 80px;
 		}
-			.square{
-			width: 233px;
-			height: 233px;
+		.square{
+		width: 233px;
+		height: 233px;
 
 			img{
 				width: 233px;
 			}
-			&:before{
 
+			&:before{
 			 margin-left: -37px;
 			 margin-top: -58px;
 				content: url('../assets/winner-frame.png');
@@ -907,7 +910,6 @@ span{
 		.top-label{
 			margin-top: 70px;
 		}
-
 	}
 }
 
@@ -921,4 +923,60 @@ span{
 	-webkit-appearance: menulist-button;
 
 	height: 46px;
+}
+
+.outer{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #fff;
+	background-color: rgba(0,0,0,0.8);
+	text-align: center;
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.mid{
+	display: table-cell;
+	vertical-align: middle
+}
+
+/*outter DIV: display: table; position: absolute; height: 100%; width: 100%
+middle DIV: display: table-cell; vertical-align: middle
+inner DIV: margin-left: auto; margin-right: auto; width: [whatever width you want]*/
+
+.inner{
+	margin-left: auto;
+	margin-right: auto;
+	width: 540px;
+	height: 560px;
+	color: #666666;
+	font-size: 2.6em;
+	background-color: #fff;
+	text-align: center;
+	@include border-radius(5px);
+
+	h1{
+		color: $green;
+		padding-top: 40px;
+		font-size: 1.9em;
+		margin-bottom: 50px;
+	}
+
+	p{
+		width: 490px;
+		margin-left: 20px;
+		line-height: 34px;
+	}
+
+	.back{
+		background-color: $green;
+		font-size: 1.4em;
+		padding-top: 19px;
+		margin-top: 50px;
+		margin-bottom: 30px;
+	}
 }
