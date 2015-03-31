@@ -8,9 +8,7 @@ var DayCollection = require('../collections/DayCollection.js');
 var WinnerView = Backbone.View.extend({
 
 	template: template,
-	
-	tagName: 'div',
-	className: 'winner-container',
+
 	events:{
 		'click .vote': 'addVote'
 	},
@@ -93,6 +91,7 @@ var WinnerView = Backbone.View.extend({
 			total: this.total
 		};
 		return obj;
+
 	},
 
 	/*render: function(){
@@ -111,8 +110,11 @@ var WinnerView = Backbone.View.extend({
 	},*/
 
 	render: function(obj){
-		console.log(obj);
+		//console.log(obj);
 		$('.winners').append(this.template(obj));
+		if(obj.placed == 1){
+
+		}
 		return this;
 	}
 

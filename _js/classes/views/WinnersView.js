@@ -83,7 +83,7 @@ var WinnersView = Backbone.View.extend({
 			var i = 1;
 			this.elementsArray.forEach(function(obj){
 				obj['placed']=i;
-				$('.winners').append(view.render(obj).el);
+				view.render(obj);
 				i++;
 				//this.$winners.append(view.render().el);
 			}, this);
