@@ -1044,12 +1044,14 @@ span{
 		    border:#ebebeb solid 1px;
 		    width:197px;
 		    height: 197px; 
-		    margin-top: 15px;
-		    margin-left: 430px;
-		   
+		    	left: 430px;
+		    	margin-top: 15px;
+		   z-index: 2;
 		    background:white;
 		    background-image: url('../assets/plus.jpg');
 	}
+
+
 
 	.img-gallery{
 
@@ -1061,14 +1063,13 @@ span{
 			img{
 				width: 197px;
 			}
+
 	float: left;
 	margin-right: 15px;
 	margin-top: 15px;
 	}
 
-	/*:first-child + div{
-		width: 100px;
-	} */
+
 
 
 }
