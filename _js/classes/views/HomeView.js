@@ -15,7 +15,7 @@ var HomeView = Backbone.View.extend({
 	events: {
 		'click .login-submit': 'login',
 		'click .info': 'showInfo',
-		'click .terug': 'removeInfo'
+		'click .back': 'removeInfo'
 	},
 
 	initialize: function(){
@@ -135,10 +135,12 @@ var HomeView = Backbone.View.extend({
 		var $innerdiv = $(document.createElement('div'));
 		$innerdiv.addClass('inner');
 		var h1 = document.createElement('h1');
+		h1.innerText = "info";
+
 		var $p = $(document.createElement('p'));
 		$p.text("Komen kaarten is een variant op Komen Eten. Vier dagen lang ga je met dezelfde mensen kaarten, elke dag bij iemand anders thuis. De winnaar ontvangt een zak kattenkorrels. Zet dus de koffie maar al klaar en vergeet niet je oven te voorverwarmen!");
 		var $a = $(document.createElement('a'));
-		$a.addClass('terug');
+		$a.addClass('back');
 		$a.text('Terug');
 		$innerdiv.append(h1);
 		$innerdiv.append($p);

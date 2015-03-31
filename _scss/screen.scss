@@ -46,7 +46,7 @@ span{
 .home-container{
 
 
-	h1{
+	.home-headerke{
 		background-image: url('../assets/home_header.png');
 		background-repeat: no-repeat;
 		margin: 0px auto;
@@ -65,7 +65,7 @@ span{
 		
 			color: #FFFFFF;
 			padding-left: 23px;
-			padding-top: 13px;
+			padding-top: 12px;
 			font-size: 3em;
 		
 	}
@@ -96,7 +96,7 @@ span{
 	}
 }
 
-.login-submit, .terug-week{
+.login-submit, .terug-week, .back{
 		color: #fff;
 		font-family: inherit;
 		border: none;
@@ -923,4 +923,60 @@ span{
 	-webkit-appearance: menulist-button;
 
 	height: 46px;
+}
+
+.outer{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #fff;
+	background-color: rgba(0,0,0,0.8);
+	text-align: center;
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.mid{
+	display: table-cell;
+	vertical-align: middle
+}
+
+/*outter DIV: display: table; position: absolute; height: 100%; width: 100%
+middle DIV: display: table-cell; vertical-align: middle
+inner DIV: margin-left: auto; margin-right: auto; width: [whatever width you want]*/
+
+.inner{
+	margin-left: auto;
+	margin-right: auto;
+	width: 540px;
+	height: 560px;
+	color: #666666;
+	font-size: 2.6em;
+	background-color: #fff;
+	text-align: center;
+	@include border-radius(5px);
+
+	h1{
+		color: $green;
+		padding-top: 40px;
+		font-size: 1.9em;
+		margin-bottom: 50px;
+	}
+
+	p{
+		width: 490px;
+		margin-left: 20px;
+		line-height: 34px;
+	}
+
+	.back{
+		background-color: $green;
+		font-size: 1.4em;
+		padding-top: 19px;
+		margin-top: 50px;
+		margin-bottom: 30px;
+	}
 }
