@@ -85,6 +85,7 @@ var WeekView = Backbone.View.extend({
 			this.$a.prop("disabled", "disabled");
 			//this.$a.prop("href", '#waiting');
 		}else{
+			this.$el.find('.winner').addClass('lastDay');
 			this.$a.prop("href","#winners");
 		}
 		this.count = 1;

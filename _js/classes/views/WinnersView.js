@@ -71,8 +71,6 @@ var WinnersView = Backbone.View.extend({
 		//console.log(view);
 		var obj = view.getInfo();
 
-		//var user = new User({view});
-
 		this.elementsArray.push(obj);
 		//console.log(this.elementsArray.length);
 
