@@ -27,8 +27,6 @@ var GalleryView = Backbone.View.extend({
 		this.collection.fetch({success:function(model,response){
 			if(response .length === 0){
 				console.log('empty collection');
-			}else{
-				this.render();
 			}
 		}});
 

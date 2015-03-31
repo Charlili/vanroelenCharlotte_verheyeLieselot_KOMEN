@@ -44,6 +44,20 @@ Handlebars.registerHelper("endDate", function(date) {
     return string;
 });
 
+Handlebars.registerHelper("formatDateEl", function(date) {
+
+    //return moment(date).format("MMMM, YYYY");
+    var m = new Date(date).getMonth();
+    var d =  new Date(date).getDate();
+
+    var month = m.toString();
+    var day= d.toString();
+    if(m<10){month = "0" + m;}
+    if(d<10){day = "0"+ d;}
+    var string = day + "/" + month;
+    return string;
+});
+
 Handlebars.registerHelper("formatDate", function(date) {
     var day= date;
     if(date<10){day = "0"+ day;}
