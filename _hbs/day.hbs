@@ -1,9 +1,10 @@
 <h1 class="header-name">{{name}}</h1>
 <a href="#week" class="terug">terug</a>
-<p>{{formatDateEl date}}</p>
-<div>
+<p class="datum-vandaag">{{formatDateEl date}}</p>
+<div class="info-user">
+	<div class="crop"><img src="uploads/users/{{user_id}}{{extension}}" alt="foto" title="Dit is een foto van {{name}}"/></div>
 	<h1>{{name}}</h1>
-	<p>{{street}},</p>
+	<p class="street-p">{{street}},</p>
 	<p>{{town}}</p>
-	<img src="uploads/users/{{user_id}}{{extension}}" alt="foto" title="Dit is een foto van {{name}}"/>
+	
 </div>

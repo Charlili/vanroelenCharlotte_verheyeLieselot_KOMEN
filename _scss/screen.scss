@@ -351,7 +351,7 @@ span{
 		float: left;
 		p{
 			margin-top: 30px;
-			font-family: Manus, sans-serif;
+			font-family: manus, sans-serif;
 			font-size: 3em;
 			color: #352725;
 			letter-spacing: 2px;
@@ -620,7 +620,68 @@ span{
 		width: 640px;
 		height: 172px;
 		margin: 0px auto;
+		color: #302725;
+		font-family: manus, sans-serif;
+		font-size: 5.8em;
+		text-align: center;
+		padding-top: 100px;
 
+	}
+
+	.datum-vandaag{
+		text-align: center;
+		font-size: 2.8em;
+		color: $green;
+
+	}
+
+	.crop{
+		float: left;
+		width: 185px;
+		height: 185px;
+		overflow: hidden;
+		margin: 15px;
+		img{
+			width: 185px;
+		}
+
+		&:before{
+		 position: absolute;
+		 margin-left: -9px;
+		 margin-top: -8px;
+			content: url('../assets/seam.png');
+		}
+	}
+
+	.info-user{
+		margin-top: 20px;
+		overflow: auto;
+		background-image: url('../assets/pattern-week.jpg');
+		margin-bottom: 20px;
+
+		h1, p{
+			margin-left: 10px;
+			float: left;
+			display: block;
+		}
+
+		h1{
+			font-family: aleobold, sans-serif;
+			font-size: 2.5em;
+			width: 400px;
+			margin-top: 60px;
+		}
+
+		p{
+			font-size: 2.5em;
+		}
+
+		.street-p{
+						margin-top: 20px;
+
+			width: 490px;
+			overflow: hidden;
+		}
 	}
 
 	header h1{
@@ -945,10 +1006,6 @@ span{
 	vertical-align: middle
 }
 
-/*outter DIV: display: table; position: absolute; height: 100%; width: 100%
-middle DIV: display: table-cell; vertical-align: middle
-inner DIV: margin-left: auto; margin-right: auto; width: [whatever width you want]*/
-
 .inner{
 	margin-left: auto;
 	margin-right: auto;
@@ -986,12 +1043,11 @@ inner DIV: margin-left: auto; margin-right: auto; width: [whatever width you wan
 
 
 	.photo-gal-upload{
-		 	position:absolute;
+		 	position: absolute;
 		    display:inline-block;
 		    border:#ebebeb solid 1px;
 		    width:197px;
 		    height: 197px; 
-		    z-index: 1;
 		    margin-top: 15px;
 		    margin-left: 430px;
 		   
@@ -1000,12 +1056,23 @@ inner DIV: margin-left: auto; margin-right: auto; width: [whatever width you wan
 	}
 
 	.img-gallery{
-		img{
-			width: 200px;
-			height: 200px;
+
+			width: 197px;
+			overflow: hidden;
+			height: 197px;
 			display: block;
-		}
+
+			img{
+				width: 197px;
+			}
+	float: left;
+	margin-right: 15px;
+	margin-top: 15px;
 	}
+
+	/*:first-child + div{
+		width: 100px;
+	} */
 
 
 }
