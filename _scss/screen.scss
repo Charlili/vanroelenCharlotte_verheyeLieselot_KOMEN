@@ -469,6 +469,7 @@ span{
 		width: 640px;
 		height: 172px;
 		background-image: url('../assets/week_header.png');
+		margin: 0px auto;
 	}
 
 	.gray-p{
@@ -777,9 +778,16 @@ span{
 
 	li{
 		overflow: auto;
+		margin-top: 20px;
 		margin-bottom: 40px;
-				margin-left: 50px;
+		margin-left: 50px;
+		&:after{
+			overflow: hidden;
+			display: block;
+			content: url('../assets/stripe.png');
+						margin-top: 50px;
 
+		}
 	}
 
 	.square{
@@ -829,16 +837,16 @@ span{
 
 	.score{
 		position: absolute;
-		margin-left: -19px;
-				margin-top: -7px;
 
+		margin-left: -20px;
+				margin-top: -7px;
 		color: #fff;
 		font-size: 2.8em;
 		font-family: aleobold, aleoregular, sans-serif;
 		display: inline-block;
 		width: 42px;
-		padding-top: 11px;
-		padding-left: 7px;
+		padding-top: 13px;
+		padding-left: 13px;
 		height: 55px;
 		background-image: url('../assets/ruit.png');
 		background-repeat: no-repeat;
@@ -848,14 +856,58 @@ span{
 
 		padding-top: 22px;
 		width: 390px;
-		
+		margin-bottom: 30px;
+	}
+
+	.number1{
+		margin-top: 0px;
+		margin-bottom: 60px;
+
+		&:after{
+			margin-top: 80px;
+		}
+			.square{
+			width: 233px;
+			height: 233px;
+
+			img{
+				width: 233px;
+			}
+			&:before{
+
+			 margin-left: -37px;
+			 margin-top: -58px;
+				content: url('../assets/winner-frame.png');
+			}
+		}
+
+		h1{
+			font-family: manus, sans-serif;
+			font-size: 3.4em;
+			padding: 17px;
+			margin-left: 240px;
+			@include transform(translateY(60px));
+
+			.reg{
+				display: none;
+			}
+		}
+
+		.top-label{
+			margin-top: 70px;
+		}
+
 	}
 }
 
 .cms{
 	display: block;
-	width: 200px;
-	padding: 10px;
+	margin: 0px auto;
+	width: 240px;
+	padding: 20px;
 	position: fixed;
+	font-size: 2em;
+	-webkit-appearance: menulist-button;
+
 	height: 46px;
 }

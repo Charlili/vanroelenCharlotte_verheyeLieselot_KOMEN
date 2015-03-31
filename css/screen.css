@@ -583,55 +583,56 @@ span {
   width: 640px;
   height: 172px;
   background-image: url("../assets/week_header.png");
+  margin: 0px auto;
 }
-/* line 474, ../_scss/screen.scss */
+/* line 475, ../_scss/screen.scss */
 .week-container .gray-p {
   margin-top: 10px;
   margin-bottom: 37px;
 }
-/* line 479, ../_scss/screen.scss */
+/* line 480, ../_scss/screen.scss */
 .week-container ul {
   width: 640px;
   margin: 0px auto;
 }
-/* line 484, ../_scss/screen.scss */
+/* line 485, ../_scss/screen.scss */
 .week-container li {
   height: 200px;
   background-image: url("../assets/pattern-week.jpg");
   margin-top: 20px;
   overflow: auto;
 }
-/* line 491, ../_scss/screen.scss */
+/* line 492, ../_scss/screen.scss */
 .week-container .date-overview {
   float: left;
   width: 220px;
 }
-/* line 495, ../_scss/screen.scss */
+/* line 496, ../_scss/screen.scss */
 .week-container .date-overview p {
   margin-top: 80px;
   text-align: center;
   font-size: 3.8em;
   color: #FFF;
 }
-/* line 503, ../_scss/screen.scss */
+/* line 504, ../_scss/screen.scss */
 .week-container .info-overview {
   float: left;
   color: #413934;
   margin-left: 10px;
   width: 340px;
 }
-/* line 509, ../_scss/screen.scss */
+/* line 510, ../_scss/screen.scss */
 .week-container .info-overview h1 {
   font-family: aleobold, aleoregular, sans-serif;
   font-size: 3em;
   margin-top: 50px;
   margin-bottom: 10px;
 }
-/* line 516, ../_scss/screen.scss */
+/* line 517, ../_scss/screen.scss */
 .week-container .info-overview p {
   font-size: 2.8em;
 }
-/* line 521, ../_scss/screen.scss */
+/* line 522, ../_scss/screen.scss */
 .week-container .date-overview p, .week-container .winner p {
   color: #fff;
   padding-top: 8px;
@@ -644,18 +645,18 @@ span {
   display: block;
   background-image: url("../assets/grey-date.png");
 }
-/* line 536, ../_scss/screen.scss */
+/* line 537, ../_scss/screen.scss */
 .week-container .thisDay .active .date-overview p {
   background-image: url("../assets/red-date.png");
 }
-/* line 541, ../_scss/screen.scss */
+/* line 542, ../_scss/screen.scss */
 .week-container .thisDay .active:after {
   content: url("../assets/red-arrow.png");
   float: right;
   margin-top: 70px;
   margin-right: 20px;
 }
-/* line 549, ../_scss/screen.scss */
+/* line 550, ../_scss/screen.scss */
 .week-container .thisDay .date-overview:before {
   display: block;
   position: absolute;
@@ -665,26 +666,26 @@ span {
   transform: translateY(-10px);
   content: url("../assets/vandaag_label.png");
 }
-/* line 557, ../_scss/screen.scss */
+/* line 558, ../_scss/screen.scss */
 .week-container .active .date-overview p {
   background-image: url("../assets/green-date.png");
 }
-/* line 563, ../_scss/screen.scss */
+/* line 564, ../_scss/screen.scss */
 .week-container .active:after {
   content: url("../assets/green-arrow.png");
   float: right;
   margin-top: 70px;
   margin-right: 20px;
 }
-/* line 571, ../_scss/screen.scss */
+/* line 572, ../_scss/screen.scss */
 .week-container .winner {
   text-align: center;
 }
-/* line 573, ../_scss/screen.scss */
+/* line 574, ../_scss/screen.scss */
 .week-container .winner p {
   font-size: 3.8em;
 }
-/* line 577, ../_scss/screen.scss */
+/* line 578, ../_scss/screen.scss */
 .week-container .winner a {
   display: block;
   margin: 20px 0px;
@@ -693,18 +694,18 @@ span {
   background-color: #636363;
   color: #FFF;
 }
-/* line 584, ../_scss/screen.scss */
+/* line 585, ../_scss/screen.scss */
 .week-container .winner a:before {
   content: url("../assets/leftie.png");
   margin-right: 15px;
 }
-/* line 588, ../_scss/screen.scss */
+/* line 589, ../_scss/screen.scss */
 .week-container .winner a:after {
   content: url("../assets/rightie.png");
   margin-left: 15px;
 }
 
-/* line 599, ../_scss/screen.scss */
+/* line 600, ../_scss/screen.scss */
 .day-container .header-name {
   background-image: url("../assets/empty-header.png");
   background-repeat: no-repeat;
@@ -712,11 +713,11 @@ span {
   height: 172px;
 }
 
-/* line 608, ../_scss/screen.scss */
+/* line 609, ../_scss/screen.scss */
 .votes {
   text-align: center;
 }
-/* line 610, ../_scss/screen.scss */
+/* line 611, ../_scss/screen.scss */
 .votes header h1 {
   display: block;
   background-color: #6cbca3;
@@ -724,33 +725,33 @@ span {
   color: #fff;
   padding: 10px 0px;
 }
-/* line 617, ../_scss/screen.scss */
+/* line 618, ../_scss/screen.scss */
 .votes header h1:before {
   content: url("../assets/stitches.png");
   position: absolute;
   margin-left: -80px;
   margin-top: -4px;
 }
-/* line 625, ../_scss/screen.scss */
+/* line 626, ../_scss/screen.scss */
 .votes header h1:after {
   content: url("../assets/stitches.png");
   position: absolute;
   margin-left: 10px;
   margin-top: -4px;
 }
-/* line 634, ../_scss/screen.scss */
+/* line 635, ../_scss/screen.scss */
 .votes ul {
   width: 600px;
   margin: 0px auto;
   overflow: auto;
 }
-/* line 638, ../_scss/screen.scss */
+/* line 639, ../_scss/screen.scss */
 .votes ul p {
   margin-top: 30px;
   font-size: 2.5em;
   color: #3b3b3b;
 }
-/* line 644, ../_scss/screen.scss */
+/* line 645, ../_scss/screen.scss */
 .votes ul li {
   margin-top: 40px;
   float: left;
@@ -759,7 +760,7 @@ span {
   margin-right: 20px;
   text-align: left;
 }
-/* line 651, ../_scss/screen.scss */
+/* line 652, ../_scss/screen.scss */
 .votes ul li p {
   margin-top: 130px;
   background-image: url("../assets/green-dot.png");
@@ -770,68 +771,68 @@ span {
   padding-left: 17px;
   padding-top: 11px;
 }
-/* line 664, ../_scss/screen.scss */
+/* line 665, ../_scss/screen.scss */
 .votes ul li .voted {
   background-image: url("../assets/red-dot.png");
 }
-/* line 673, ../_scss/screen.scss */
+/* line 674, ../_scss/screen.scss */
 .votes .gebak li {
   width: 183px;
   height: 189px;
 }
-/* line 678, ../_scss/screen.scss */
+/* line 679, ../_scss/screen.scss */
 .votes .gelach li {
   width: 164px;
   height: 156px;
   margin-right: 35px;
 }
-/* line 682, ../_scss/screen.scss */
+/* line 683, ../_scss/screen.scss */
 .votes .gelach li p {
   margin-top: 105px;
 }
-/* line 687, ../_scss/screen.scss */
+/* line 688, ../_scss/screen.scss */
 .votes .geur li {
   margin-right: 0px;
 }
-/* line 693, ../_scss/screen.scss */
+/* line 694, ../_scss/screen.scss */
 .votes .one-gebak {
   background-image: url("../assets/gebak-een.png");
 }
-/* line 698, ../_scss/screen.scss */
+/* line 699, ../_scss/screen.scss */
 .votes .two-gebak {
   background-image: url("../assets/gebak-twee.png");
 }
-/* line 702, ../_scss/screen.scss */
+/* line 703, ../_scss/screen.scss */
 .votes .three-gebak {
   margin-right: 0px;
   background-image: url("../assets/gebak-twee.png");
 }
-/* line 707, ../_scss/screen.scss */
+/* line 708, ../_scss/screen.scss */
 .votes .one-lach {
   background-image: url("../assets/lach-een.png");
 }
-/* line 712, ../_scss/screen.scss */
+/* line 713, ../_scss/screen.scss */
 .votes .two-lach {
   background-image: url("../assets/lach-twee.png");
 }
-/* line 716, ../_scss/screen.scss */
+/* line 717, ../_scss/screen.scss */
 .votes .three-lach {
   margin-right: 0px;
   background-image: url("../assets/lach-twee.png");
 }
-/* line 721, ../_scss/screen.scss */
+/* line 722, ../_scss/screen.scss */
 .votes .one-geur {
   width: 204px;
   height: 195px;
   background-image: url("../assets/geur-een.png");
 }
-/* line 728, ../_scss/screen.scss */
+/* line 729, ../_scss/screen.scss */
 .votes .two-geur {
   width: 188px;
   height: 189px;
   background-image: url("../assets/geur-twee.png");
 }
-/* line 734, ../_scss/screen.scss */
+/* line 735, ../_scss/screen.scss */
 .votes .three-geur {
   width: 167px;
   height: 192px;
@@ -839,23 +840,23 @@ span {
   background-image: url("../assets/geur-drie.png");
 }
 
-/* line 743, ../_scss/screen.scss */
+/* line 744, ../_scss/screen.scss */
 .error {
   display: block;
   border-color: #ed564d;
 }
 
-/* line 748, ../_scss/screen.scss */
+/* line 749, ../_scss/screen.scss */
 .register-container .red {
   color: #ed564d;
 }
 
-/* line 752, ../_scss/screen.scss */
+/* line 753, ../_scss/screen.scss */
 .error-town {
   margin-top: 5px;
 }
 
-/* line 756, ../_scss/screen.scss */
+/* line 757, ../_scss/screen.scss */
 .empty {
   color: #ed564d;
   font-size: 2.2em;
@@ -864,13 +865,13 @@ span {
   text-align: center;
 }
 
-/* line 765, ../_scss/screen.scss */
+/* line 766, ../_scss/screen.scss */
 .winners-container .winners {
   width: 640px;
   margin: 0px auto;
   overflow: auto;
 }
-/* line 770, ../_scss/screen.scss */
+/* line 771, ../_scss/screen.scss */
 .winners-container header h1 {
   width: 640px;
   height: 220px;
@@ -878,43 +879,51 @@ span {
   background-image: url("../assets/winnaar-header.png");
   background-repeat: no-repeat;
 }
-/* line 778, ../_scss/screen.scss */
+/* line 779, ../_scss/screen.scss */
 .winners-container li {
   overflow: auto;
+  margin-top: 20px;
   margin-bottom: 40px;
   margin-left: 50px;
 }
-/* line 785, ../_scss/screen.scss */
+/* line 784, ../_scss/screen.scss */
+.winners-container li:after {
+  overflow: hidden;
+  display: block;
+  content: url("../assets/stripe.png");
+  margin-top: 50px;
+}
+/* line 793, ../_scss/screen.scss */
 .winners-container .square {
   float: left;
   width: 183px;
   height: 183px;
   overflow: hidden;
 }
-/* line 790, ../_scss/screen.scss */
+/* line 798, ../_scss/screen.scss */
 .winners-container .square img {
   width: 183px;
 }
-/* line 793, ../_scss/screen.scss */
+/* line 801, ../_scss/screen.scss */
 .winners-container .square:before {
   position: absolute;
   margin-left: -10px;
   margin-top: -8px;
   content: url("../assets/seam.png");
 }
-/* line 801, ../_scss/screen.scss */
+/* line 809, ../_scss/screen.scss */
 .winners-container li h1 {
   font-size: 2.6em;
   color: #373737;
   margin-bottom: 14px;
   font-family: aleobold, aleoregular, sans-serif;
 }
-/* line 808, ../_scss/screen.scss */
+/* line 816, ../_scss/screen.scss */
 .winners-container .reg {
   display: inline;
   font-family: aleoregular, sans-serif;
 }
-/* line 813, ../_scss/screen.scss */
+/* line 821, ../_scss/screen.scss */
 .winners-container .label {
   display: inline-block;
   padding-left: 50px;
@@ -924,39 +933,86 @@ span {
   background-color: #ebebeb;
   font-size: 2.3em;
 }
-/* line 824, ../_scss/screen.scss */
+/* line 832, ../_scss/screen.scss */
 .winners-container .label-el {
   box-sizing: border-box;
   margin-top: 24px;
   display: block;
 }
-/* line 830, ../_scss/screen.scss */
+/* line 838, ../_scss/screen.scss */
 .winners-container .score {
   position: absolute;
-  margin-left: -19px;
+  margin-left: -20px;
   margin-top: -7px;
   color: #fff;
   font-size: 2.8em;
   font-family: aleobold, aleoregular, sans-serif;
   display: inline-block;
   width: 42px;
-  padding-top: 11px;
-  padding-left: 7px;
+  padding-top: 13px;
+  padding-left: 13px;
   height: 55px;
   background-image: url("../assets/ruit.png");
   background-repeat: no-repeat;
 }
-/* line 847, ../_scss/screen.scss */
+/* line 855, ../_scss/screen.scss */
 .winners-container .terug-week {
   padding-top: 22px;
   width: 390px;
+  margin-bottom: 30px;
+}
+/* line 862, ../_scss/screen.scss */
+.winners-container .number1 {
+  margin-top: 0px;
+  margin-bottom: 60px;
+}
+/* line 866, ../_scss/screen.scss */
+.winners-container .number1:after {
+  margin-top: 80px;
+}
+/* line 869, ../_scss/screen.scss */
+.winners-container .number1 .square {
+  width: 233px;
+  height: 233px;
+}
+/* line 873, ../_scss/screen.scss */
+.winners-container .number1 .square img {
+  width: 233px;
+}
+/* line 876, ../_scss/screen.scss */
+.winners-container .number1 .square:before {
+  margin-left: -37px;
+  margin-top: -58px;
+  content: url("../assets/winner-frame.png");
+}
+/* line 884, ../_scss/screen.scss */
+.winners-container .number1 h1 {
+  font-family: manus, sans-serif;
+  font-size: 3.4em;
+  padding: 17px;
+  margin-left: 240px;
+  -moz-transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  transform: translateY(60px);
+}
+/* line 891, ../_scss/screen.scss */
+.winners-container .number1 h1 .reg {
+  display: none;
+}
+/* line 896, ../_scss/screen.scss */
+.winners-container .number1 .top-label {
+  margin-top: 70px;
 }
 
-/* line 855, ../_scss/screen.scss */
+/* line 903, ../_scss/screen.scss */
 .cms {
   display: block;
-  width: 200px;
-  padding: 10px;
+  margin: 0px auto;
+  width: 240px;
+  padding: 20px;
   position: fixed;
+  font-size: 2em;
+  -webkit-appearance: menulist-button;
   height: 46px;
 }
