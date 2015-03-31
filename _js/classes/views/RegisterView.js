@@ -15,7 +15,8 @@ var RegisterView = Backbone.View.extend({
 
 	events: {
 		'click .submit': 'addUser',
-		'change .photo-input': 'previewImage'
+		'change .photo-input': 'previewImage',
+		'click .use-location': 'useLocation' 
 	},
 
 	initialize: function(){
@@ -29,6 +30,21 @@ var RegisterView = Backbone.View.extend({
 		return this;
 	},
 	
+	useLocation: function(e){
+		//console.log('use location');
+		navigator.geolocation.getCurrentPosition(foundLocation, noLocation);
+
+		function foundLocation(position)
+		{
+		var lat = position.coords.latitude;
+		var long = position.coords.longitude;
+		//alert('Found location: ' + lat + ', ' + long);
+		}
+		function noLocation()
+		{
+			alert('Could not find location');
+		}
+	},
 
 	previewImage: function(e){
 		console.log('changed');

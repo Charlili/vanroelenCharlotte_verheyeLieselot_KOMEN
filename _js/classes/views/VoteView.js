@@ -39,29 +39,33 @@ var VoteView = Backbone.View.extend({
 		this.week = new Week({id:this.week_id});
 		this.week.fetch({
 			success:function(week,response){
-				var yesterday = week.get('currentDate') - 1;
-				if(yesterday > 0){
-					var lastVote = new Vote({
-						user_id: this.user_id,
-						day_id: week.get('day'+yesterday + '_id')
-					});
-					lastVote.fetch({success:function(vote,response){
-						if(vote.get('gebak') == -1 || vote.get('gelach') == -1 ||vote.get('geur') == -1){
-							this.votedYesterday = false;
-						}
-					}.bind(this)});
-				}
-				var tomorrow = week.get('currentDate') + 1;
-				if(tomorrow < 5){
-					var nextVote = new Vote({
-						user_id: this.user_id,
-						day_id: week.get('day'+tomorrow + '_id')
-					});
-					nextvote.fetch({success:function(vote,response){
-						if(response.length != 0){
-							this.votedTomorrow = true;
-						}
-					}.bind(this)});
+				//normale werking voor user.
+				//we gaan dit skippen voor admins /cms users
+				if(this.me.role == 'user'){
+					var yesterday = week.get('currentDate') - 1;
+					if(yesterday > 0){
+						var lastVote = new Vote({
+							user_id: this.user_id,
+							day_id: week.get('day'+yesterday + '_id')
+						});
+						lastVote.fetch({success:function(vote,response){
+							if(vote.get('gebak') == -1 || vote.get('gelach') == -1 ||vote.get('geur') == -1){
+								this.votedYesterday = false;
+							}
+						}.bind(this)});
+					}
+					var tomorrow = week.get('currentDate') + 1;
+					if(tomorrow < 5){
+						var nextVote = new Vote({
+							user_id: this.user_id,
+							day_id: week.get('day'+tomorrow + '_id')
+						});
+						nextvote.fetch({success:function(vote,response){
+							if(response.length != 0){
+								this.votedTomorrow = true;
+							}
+						}.bind(this)});
+					}
 				}
 				//if()
 				

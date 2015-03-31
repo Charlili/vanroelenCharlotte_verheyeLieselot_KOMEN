@@ -33,7 +33,7 @@ var DayView = Backbone.View.extend({
 				Window.Application.navigate('home',{trigger:true});
 			}else{
 				//console.log(data);
-				this.me = data.id;
+				this.me = data;
 				this.day.fetch({
 					success: function(model,response){
 						//console.log('in success '+response);
@@ -61,7 +61,7 @@ var DayView = Backbone.View.extend({
 								this.day.set('extension',user.get('extension'));
 								this.day.set('user_id',user.get('id'));
 								//console.log(this.day.get('user_id'));
-								if(this.day.get('user_id') != this.me){
+								if(this.day.get('user_id') != this.me.id){
 									this.createVoteView();
 								}else{
 									this.listenTo(this.galleryView.collection,'sync',this.renderGallery);
@@ -79,7 +79,7 @@ var DayView = Backbone.View.extend({
 	createVoteView: function(){
 		var vote = new Vote({
 			day_id: this.day.get('id'),
-			user_id: this.me
+			user_id: this.me.id
 		});
 		//make Voteview
 		this.voteView = new VoteView({
