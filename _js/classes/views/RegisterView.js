@@ -40,10 +40,38 @@ var RegisterView = Backbone.View.extend({
 			var long = position.coords.longitude;
 
 			$.get('http://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+long+'&sensor=false').success(function(data){
-			console.log(data.results[0].formatted_address);
+			console.log(data.results[0].address_components);
 			//var straat = data.address_components.long_name + " " + data.address_components.long_name;
 			//var postcode = parseInt(data.results.address_components.long_name);
 			//console.log(straat,postcode);
+
+			var itemRoute='';
+			var itemPc='';
+			var itemSnumber='';
+			var arrAddress = data.results[0].address_components;
+			// iterate through address_component array
+			$.each(arrAddress, function (i, address_component) {
+			    //console.log('address_component:'+i);
+
+			    if (address_component.types[0] == "route"){
+			        //console.log(i+": route:"+address_component.long_name);
+			        itemRoute = address_component.long_name;
+			    }
+
+			    if (address_component.types[0] == "postal_code"){ 
+			        //console.log("pc:"+address_component.long_name);  
+			        itemPc = address_component.long_name;
+			    }
+
+			    if (address_component.types[0] == "street_number"){ 
+			        //console.log("street_number:"+address_component.long_name);  
+			        itemSnumber = address_component.long_name;
+			    }
+			    //return false; // break the loop   
+			});
+			//console.log(itemRoute,itemSnumber,itemPc);
+			$('.street-input').val(itemRoute + " " + itemSnumber);
+			$('.town-input').val(itemPc);
 		});
 		//alert('Found location: ' + lat + ', ' + long);
 		}
