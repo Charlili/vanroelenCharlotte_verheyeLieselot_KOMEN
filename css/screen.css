@@ -1155,21 +1155,22 @@ span {
   background: white;
   background-image: url("../assets/plus.jpg");
 }
-/* line 1056, ../_scss/screen.scss */
-.gallery .img-gallery {
+/* line 1059, ../_scss/screen.scss */
+.gallery .photos .img-gallery {
   width: 197px;
   overflow: hidden;
   height: 197px;
   display: block;
   float: left;
-  margin-right: 15px;
+  margin-right: 8px;
   margin-top: 15px;
+  margin-left: 8px;
 }
-/* line 1063, ../_scss/screen.scss */
-.gallery .img-gallery img {
+/* line 1071, ../_scss/screen.scss */
+.gallery .photos .img-gallery img {
   width: 197px;
 }
-/* line 1072, ../_scss/screen.scss */
-.gallery .photos .image-gallery img {
-  width: 100px;
+/* line 1076, ../_scss/screen.scss */
+.gallery .photos .img-gallery:nth-child(2) {
+  margin-right: 150px;
 }
