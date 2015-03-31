@@ -36,14 +36,23 @@ var RegisterView = Backbone.View.extend({
 
 		function foundLocation(position)
 		{
-		var lat = position.coords.latitude;
-		var long = position.coords.longitude;
+			var lat = position.coords.latitude;
+			var long = position.coords.longitude;
+
+			$.get('http://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+long+'&sensor=false').success(function(data){
+			console.log(data.results[0].formatted_address);
+			//var straat = data.address_components.long_name + " " + data.address_components.long_name;
+			//var postcode = parseInt(data.results.address_components.long_name);
+			//console.log(straat,postcode);
+		});
 		//alert('Found location: ' + lat + ', ' + long);
 		}
 		function noLocation()
 		{
 			alert('Could not find location');
 		}
+
+		
 	},
 
 	previewImage: function(e){

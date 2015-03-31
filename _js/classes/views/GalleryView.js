@@ -9,7 +9,7 @@ var GalleryView = Backbone.View.extend({
 	tagName: 'section',
 	className: 'gallery',
 	events:{
-		'change .photo-upload': 'addImage'
+		'change .gall-input': 'addImage'
 	},
 
 	initialize: function(options){
@@ -57,7 +57,7 @@ var GalleryView = Backbone.View.extend({
 		if(fileB != false){
 
 			var data = new FormData();
-		    data.append('SelectedFile', this.$el.find('.photo-input')[0].files[0]);
+		    data.append('SelectedFile', this.$el.find('.gall-input')[0].files[0]);
 		    var request = new XMLHttpRequest();
 
 			request.onreadystatechange = function(){
@@ -84,9 +84,9 @@ var GalleryView = Backbone.View.extend({
 	},
 
 	checkFile: function(){
-		//console.log(this.$el.find('.photo-input')[0].files);
-		if(this.$el.find('.photo-input')[0].files.length > 0){
-			var file = this.$el.find('.photo-input')[0].files[0];
+		//console.log(this.$el.find('.gall-input')[0].files);
+		if(this.$el.find('.gall-input')[0].files.length > 0){
+			var file = this.$el.find('.gall-input')[0].files[0];
 			var filename = file.name;
 	        this.extension = filename.replace(/^.*\./, '.');
 	        this.name = filename.replace(/^\.*/, '');
@@ -133,7 +133,7 @@ var GalleryView = Backbone.View.extend({
 			extension: this.extension
 		});
 		this.saveImage();
-		//this.$el.find('.photo-input').remove();
+		//this.$el.find('.gall-input').remove();
 		this.$el.find('.photos').append(fileB);
 
 			//make 
